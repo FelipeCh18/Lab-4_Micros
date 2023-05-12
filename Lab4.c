@@ -1,7 +1,5 @@
 //Primera seccion
 #include<xc.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #define _XTAL_FREQ 1000000
 #include "LibLCDXC8.h"
@@ -55,7 +53,7 @@ void main(void){
 }
 
 unsigned char LeerTeclado(void){
-    LATB = 0b00000000;
+    /*LATB = 0b00000000;
     while(PORTB == 0b11110000){
     }
     LATB = 0b0111; //fila 1
@@ -113,9 +111,30 @@ unsigned char LeerTeclado(void){
     if ((PORTB&0b11110000) == 0b01110000){ //columna 4
         return '/';
     }
-    return '?';
+    return '?';*/
+    while(RB4==1 && RB5==1 && RB6==1 && RB7==1);
+    LATB=0b11111110;
+    if(RB4==0) return 1;
+    if(RB5==0) return 2;
+    if(RB6==0) return 3;
+    if(RB7==0) return 4;
+    LATB=0b11111101;
+    if(RB4==0) return 5;
+    if(RB5==0) return 6;
+    if(RB6==0) return 7;
+    if(RB7==0) return 8;
+    LATB=0b11111011;
+    if(RB4==0) return 9;
+    if(RB5==0) return 10;
+    if(RB6==0) return 11;
+    if(RB7==0) return 12;
+    LATB=0b11110111;
+    if(RB4==0) return 13;
+    if(RB5==0) return 14;
+    if(RB6==0) return 15;
+    if(RB7==0) return 16;
 }
-void __interrupt ISR(void){
+void interrupt ISR(void){
     if(RBIF==1){
         if(PORTB!=0b11110000){
             Tecla=16;

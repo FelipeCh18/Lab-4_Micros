@@ -25,11 +25,11 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"22 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"20 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
-"57
+"55
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-"118
+"116
 [v _ISR ISR `II(v  1 e 1 0 ]
 "47 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
@@ -91,14 +91,14 @@
 [v _RBPU RBPU `VEb  1 e 0 @32655 ]
 "10820
 [v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
-"16 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"14 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _Tecla Tecla `uc  1 e 1 0 ]
 "35 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _interfaz interfaz `uc  1 e 1 0 ]
-"22 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"20 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
 {
-"55
+"53
 } 0
 "215 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
@@ -118,10 +118,10 @@
 [v EscribeLCD_c@a a `uc  1 a 1 5 ]
 "124
 } 0
-"57 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"55 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 {
-"117
+"115
 } 0
 "61 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
@@ -171,8 +171,8 @@
 [v ConfiguraLCD@a a `uc  1 a 1 1 ]
 "50
 } 0
-"118 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"116 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"158
+"156
 } 0

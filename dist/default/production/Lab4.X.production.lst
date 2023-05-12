@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Fri May 12 12:02:11 2023
+                                                                                               Fri May 12 14:12:04 2023
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9 
      1                           	processor	18F4550
@@ -265,7 +265,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    251 ;;
    252 ;; *************** function _main *****************
    253 ;; Defined at:
-   254 ;;		line 22 in file "Lab4.c"
+   254 ;;		line 20 in file "Lab4.c"
    255 ;; Parameters:    Size  Location     Type
    256 ;;		None
    257 ;; Auto vars:     Size  Location     Type
@@ -303,37 +303,37 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    289   0009FC                     _main:
    290                           	callstack 26
    291                           
-   292                           ;Lab4.c: 23: unsigned char i;;Lab4.c: 24: ADCON1=15;
+   292                           ;Lab4.c: 21: unsigned char i;;Lab4.c: 22: ADCON1=15;
    293                           
    294                           ;incstack = 0
    295   0009FC  0E0F               	movlw	15
    296   0009FE  6EC1               	movwf	193,c	;volatile
    297                           
-   298                           ;Lab4.c: 25: TRISD = 0;
+   298                           ;Lab4.c: 23: TRISD = 0;
    299   000A00  0E00               	movlw	0
    300   000A02  6E95               	movwf	149,c	;volatile
    301                           
-   302                           ;Lab4.c: 26: TRISE = 0;
+   302                           ;Lab4.c: 24: TRISE = 0;
    303   000A04  0E00               	movlw	0
    304   000A06  6E96               	movwf	150,c	;volatile
    305                           
-   306                           ;Lab4.c: 27: TRISB = 0b11110000;
+   306                           ;Lab4.c: 25: TRISB = 0b11110000;
    307   000A08  0EF0               	movlw	240
    308   000A0A  6E93               	movwf	147,c	;volatile
    309                           
-   310                           ;Lab4.c: 28: LATD = 0;
+   310                           ;Lab4.c: 26: LATD = 0;
    311   000A0C  0E00               	movlw	0
    312   000A0E  6E8C               	movwf	140,c	;volatile
    313                           
-   314                           ;Lab4.c: 29: LATE = 0;
+   314                           ;Lab4.c: 27: LATE = 0;
    315   000A10  0E00               	movlw	0
    316   000A12  6E8D               	movwf	141,c	;volatile
    317                           
-   318                           ;Lab4.c: 30: LATB = 0;
+   318                           ;Lab4.c: 28: LATB = 0;
    319   000A14  0E00               	movlw	0
    320   000A16  6E8A               	movwf	138,c	;volatile
    321                           
-   322                           ;Lab4.c: 31: _delay((unsigned long)((100)*(1000000/4000.0)));
+   322                           ;Lab4.c: 29: _delay((unsigned long)((100)*(1000000/4000.0)));
    323   000A18  0E21               	movlw	33
    324   000A1A  6E0D               	movwf	??_main^0,c
    325   000A1C  0E76               	movlw	118
@@ -344,10 +344,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    330   000A24  D7FC               	bra	u557
    331   000A26  D000               	nop2	
    332                           
-   333                           ;Lab4.c: 32: RBPU = 0;
+   333                           ;Lab4.c: 30: RBPU = 0;
    334   000A28  9EF1               	bcf	4081,7,c	;volatile
    335                           
-   336                           ;Lab4.c: 33: _delay((unsigned long)((100)*(1000000/4000.0)));
+   336                           ;Lab4.c: 31: _delay((unsigned long)((100)*(1000000/4000.0)));
    337   000A2A  0E21               	movlw	33
    338   000A2C  6E0D               	movwf	??_main^0,c
    339   000A2E  0E76               	movlw	118
@@ -358,16 +358,16 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    344   000A36  D7FC               	bra	u567
    345   000A38  D000               	nop2	
    346                           
-   347                           ;Lab4.c: 39: RBIF=0;
+   347                           ;Lab4.c: 37: RBIF=0;
    348   000A3A  90F2               	bcf	4082,0,c	;volatile
    349                           
-   350                           ;Lab4.c: 40: RBIE=1;
+   350                           ;Lab4.c: 38: RBIE=1;
    351   000A3C  86F2               	bsf	4082,3,c	;volatile
    352                           
-   353                           ;Lab4.c: 41: GIE=1;
+   353                           ;Lab4.c: 39: GIE=1;
    354   000A3E  8EF2               	bsf	4082,7,c	;volatile
    355                           
-   356                           ;Lab4.c: 42: _delay((unsigned long)((1000)*(1000000/4000.0)));
+   356                           ;Lab4.c: 40: _delay((unsigned long)((1000)*(1000000/4000.0)));
    357   000A40  0E02               	movlw	2
    358   000A42  6E0E               	movwf	(??_main+1)^0,c
    359   000A44  0E45               	movlw	69
@@ -381,17 +381,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    367   000A52  2E0E               	decfsz	(??_main+1)^0,f,c
    368   000A54  D7FA               	bra	u577
    369                           
-   370                           ;Lab4.c: 43: ConfiguraLCD(4);
+   370                           ;Lab4.c: 41: ConfiguraLCD(4);
    371   000A56  0E04               	movlw	4
    372   000A58  EC4B  F006         	call	_ConfiguraLCD
    373                           
-   374                           ;Lab4.c: 44: InicializaLCD();
+   374                           ;Lab4.c: 42: InicializaLCD();
    375   000A5C  EC5D  F005         	call	_InicializaLCD	;wreg free
    376                           
-   377                           ;Lab4.c: 45: BorraLCD();
+   377                           ;Lab4.c: 43: BorraLCD();
    378   000A60  EC6D  F006         	call	_BorraLCD	;wreg free
    379                           
-   380                           ;Lab4.c: 46: MensajeLCD_Var("Hola mundo");
+   380                           ;Lab4.c: 44: MensajeLCD_Var("Hola mundo");
    381   000A64  0E01               	movlw	low STR_1
    382   000A66  6E07               	movwf	MensajeLCD_Var@a^0,c
    383   000A68  5007               	movf	MensajeLCD_Var@a^0,w,c
@@ -400,11 +400,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    386   000A6E  6E08               	movwf	(MensajeLCD_Var@a+1)^0,c
    387   000A70  ECAB  F005         	call	_MensajeLCD_Var	;wreg free
    388                           
-   389                           ;Lab4.c: 47: DireccionaLCD(0xC0);
+   389                           ;Lab4.c: 45: DireccionaLCD(0xC0);
    390   000A74  0EC0               	movlw	192
    391   000A76  EC62  F006         	call	_DireccionaLCD
    392                           
-   393                           ;Lab4.c: 48: MensajeLCD_Var("7");
+   393                           ;Lab4.c: 46: MensajeLCD_Var("7");
    394   000A7A  0E20               	movlw	low STR_2
    395   000A7C  6E07               	movwf	MensajeLCD_Var@a^0,c
    396   000A7E  5007               	movf	MensajeLCD_Var@a^0,w,c
@@ -413,7 +413,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    399   000A84  6E08               	movwf	(MensajeLCD_Var@a+1)^0,c
    400   000A86  ECAB  F005         	call	_MensajeLCD_Var	;wreg free
    401                           
-   402                           ;Lab4.c: 49: _delay((unsigned long)((1000)*(1000000/4000.0)));
+   402                           ;Lab4.c: 47: _delay((unsigned long)((1000)*(1000000/4000.0)));
    403   000A8A  0E02               	movlw	2
    404   000A8C  6E0E               	movwf	(??_main+1)^0,c
    405   000A8E  0E45               	movlw	69
@@ -428,11 +428,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    414   000A9E  D7FA               	bra	u587
    415   000AA0                     l1311:
    416                           
-   417                           ;Lab4.c: 51: Tecla=LeerTeclado();
+   417                           ;Lab4.c: 49: Tecla=LeerTeclado();
    418   000AA0  EC14  F004         	call	_LeerTeclado	;wreg free
    419   000AA4  6E0F               	movwf	_Tecla^0,c
    420                           
-   421                           ;Lab4.c: 53: MensajeLCD_Var(Tecla);
+   421                           ;Lab4.c: 51: MensajeLCD_Var(Tecla);
    422   000AA6  500F               	movf	_Tecla^0,w,c
    423   000AA8  6E0D               	movwf	??_main^0,c
    424   000AAA  6A0E               	clrf	(??_main+1)^0,c
@@ -613,7 +613,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    599                           
    600 ;; *************** function _LeerTeclado *****************
    601 ;; Defined at:
-   602 ;;		line 57 in file "Lab4.c"
+   602 ;;		line 55 in file "Lab4.c"
    603 ;; Parameters:    Size  Location     Type
    604 ;;		None
    605 ;; Auto vars:     Size  Location     Type
@@ -647,7 +647,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    633   000828                     _LeerTeclado:
    634                           	callstack 29
    635                           
-   636                           ;Lab4.c: 58: LATB = 0b00000000;
+   636                           ;Lab4.c: 56: LATB = 0b00000000;
    637                           
    638                           ;incstack = 0
    639   000828  0E00               	movlw	0
@@ -658,215 +658,215 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
    644   000830  B4D8               	btfsc	status,2,c
    645   000832  D7FC               	goto	l1057
    646                           
-   647                           ;Lab4.c: 60: };Lab4.c: 61: LATB = 0b0111;
+   647                           ;Lab4.c: 58: };Lab4.c: 59: LATB = 0b0111;
    648   000834  0E07               	movlw	7
    649   000836  6E8A               	movwf	138,c	;volatile
    650                           
-   651                           ;Lab4.c: 62: if ((PORTB&0b11110000) == 0b11100000){
+   651                           ;Lab4.c: 60: if ((PORTB&0b11110000) == 0b11100000){
    652   000838  5081               	movf	129,w,c	;volatile
    653   00083A  0BF0               	andlw	240
    654   00083C  0AE0               	xorlw	224
    655   00083E  A4D8               	btfss	status,2,c
    656   000840  D002               	goto	l1067
    657                           
-   658                           ;Lab4.c: 63: return '1';
+   658                           ;Lab4.c: 61: return '1';
    659   000842  0E31               	movlw	49
    660   000844  0012               	return	
    661   000846                     l1067:
    662                           
-   663                           ;Lab4.c: 64: };Lab4.c: 65: if ((PORTB&0b11110000) == 0b11010000){
+   663                           ;Lab4.c: 62: };Lab4.c: 63: if ((PORTB&0b11110000) == 0b11010000){
    664   000846  5081               	movf	129,w,c	;volatile
    665   000848  0BF0               	andlw	240
    666   00084A  0AD0               	xorlw	208
    667   00084C  A4D8               	btfss	status,2,c
    668   00084E  D002               	goto	l1073
    669                           
-   670                           ;Lab4.c: 66: return '2';
+   670                           ;Lab4.c: 64: return '2';
    671   000850  0E32               	movlw	50
    672   000852  0012               	return	
    673   000854                     l1073:
    674                           
-   675                           ;Lab4.c: 67: };Lab4.c: 68: if ((PORTB&0b11110000) == 0b10110000){
+   675                           ;Lab4.c: 65: };Lab4.c: 66: if ((PORTB&0b11110000) == 0b10110000){
    676   000854  5081               	movf	129,w,c	;volatile
    677   000856  0BF0               	andlw	240
    678   000858  0AB0               	xorlw	176
    679   00085A  A4D8               	btfss	status,2,c
    680   00085C  D002               	goto	l1079
    681                           
-   682                           ;Lab4.c: 69: return '3';
+   682                           ;Lab4.c: 67: return '3';
    683   00085E  0E33               	movlw	51
    684   000860  0012               	return	
    685   000862                     l1079:
    686                           
-   687                           ;Lab4.c: 70: };Lab4.c: 71: if ((PORTB&0b11110000) == 0b01110000){
+   687                           ;Lab4.c: 68: };Lab4.c: 69: if ((PORTB&0b11110000) == 0b01110000){
    688   000862  5081               	movf	129,w,c	;volatile
    689   000864  0BF0               	andlw	240
    690   000866  0A70               	xorlw	112
    691   000868  A4D8               	btfss	status,2,c
    692   00086A  D002               	goto	l1085
    693                           
-   694                           ;Lab4.c: 72: return '+';
+   694                           ;Lab4.c: 70: return '+';
    695   00086C  0E2B               	movlw	43
    696   00086E  0012               	return	
    697   000870                     l1085:
    698                           
-   699                           ;Lab4.c: 73: };Lab4.c: 75: LATB = 0b1011;
+   699                           ;Lab4.c: 71: };Lab4.c: 73: LATB = 0b1011;
    700   000870  0E0B               	movlw	11
    701   000872  6E8A               	movwf	138,c	;volatile
    702                           
-   703                           ;Lab4.c: 76: if ((PORTB&0b11110000) == 0b11100000){
+   703                           ;Lab4.c: 74: if ((PORTB&0b11110000) == 0b11100000){
    704   000874  5081               	movf	129,w,c	;volatile
    705   000876  0BF0               	andlw	240
    706   000878  0AE0               	xorlw	224
    707   00087A  A4D8               	btfss	status,2,c
    708   00087C  D002               	goto	l1093
    709                           
-   710                           ;Lab4.c: 77: return '4';
+   710                           ;Lab4.c: 75: return '4';
    711   00087E  0E34               	movlw	52
    712   000880  0012               	return	
    713   000882                     l1093:
    714                           
-   715                           ;Lab4.c: 78: };Lab4.c: 79: if ((PORTB&0b11110000) == 0b11010000){
+   715                           ;Lab4.c: 76: };Lab4.c: 77: if ((PORTB&0b11110000) == 0b11010000){
    716   000882  5081               	movf	129,w,c	;volatile
    717   000884  0BF0               	andlw	240
    718   000886  0AD0               	xorlw	208
    719   000888  A4D8               	btfss	status,2,c
    720   00088A  D002               	goto	l1099
    721                           
-   722                           ;Lab4.c: 80: return '5';
+   722                           ;Lab4.c: 78: return '5';
    723   00088C  0E35               	movlw	53
    724   00088E  0012               	return	
    725   000890                     l1099:
    726                           
-   727                           ;Lab4.c: 81: };Lab4.c: 82: if ((PORTB&0b11110000) == 0b10110000){
+   727                           ;Lab4.c: 79: };Lab4.c: 80: if ((PORTB&0b11110000) == 0b10110000){
    728   000890  5081               	movf	129,w,c	;volatile
    729   000892  0BF0               	andlw	240
    730   000894  0AB0               	xorlw	176
    731   000896  A4D8               	btfss	status,2,c
    732   000898  D002               	goto	l1105
    733                           
-   734                           ;Lab4.c: 83: return '6';
+   734                           ;Lab4.c: 81: return '6';
    735   00089A  0E36               	movlw	54
    736   00089C  0012               	return	
    737   00089E                     l1105:
    738                           
-   739                           ;Lab4.c: 84: };Lab4.c: 85: if ((PORTB&0b11110000) == 0b01110000){
+   739                           ;Lab4.c: 82: };Lab4.c: 83: if ((PORTB&0b11110000) == 0b01110000){
    740   00089E  5081               	movf	129,w,c	;volatile
    741   0008A0  0BF0               	andlw	240
    742   0008A2  0A70               	xorlw	112
    743   0008A4  A4D8               	btfss	status,2,c
    744   0008A6  D002               	goto	l1111
    745                           
-   746                           ;Lab4.c: 86: return '-';
+   746                           ;Lab4.c: 84: return '-';
    747   0008A8  0E2D               	movlw	45
    748   0008AA  0012               	return	
    749   0008AC                     l1111:
    750                           
-   751                           ;Lab4.c: 87: };Lab4.c: 89: LATB = 0b1101;
+   751                           ;Lab4.c: 85: };Lab4.c: 87: LATB = 0b1101;
    752   0008AC  0E0D               	movlw	13
    753   0008AE  6E8A               	movwf	138,c	;volatile
    754                           
-   755                           ;Lab4.c: 90: if ((PORTB&0b11110000) == 0b11100000){
+   755                           ;Lab4.c: 88: if ((PORTB&0b11110000) == 0b11100000){
    756   0008B0  5081               	movf	129,w,c	;volatile
    757   0008B2  0BF0               	andlw	240
    758   0008B4  0AE0               	xorlw	224
    759   0008B6  A4D8               	btfss	status,2,c
    760   0008B8  D002               	goto	l1119
    761                           
-   762                           ;Lab4.c: 91: return '7';
+   762                           ;Lab4.c: 89: return '7';
    763   0008BA  0E37               	movlw	55
    764   0008BC  0012               	return	
    765   0008BE                     l1119:
    766                           
-   767                           ;Lab4.c: 92: };Lab4.c: 93: if ((PORTB&0b11110000) == 0b11010000){
+   767                           ;Lab4.c: 90: };Lab4.c: 91: if ((PORTB&0b11110000) == 0b11010000){
    768   0008BE  5081               	movf	129,w,c	;volatile
    769   0008C0  0BF0               	andlw	240
    770   0008C2  0AD0               	xorlw	208
    771   0008C4  A4D8               	btfss	status,2,c
    772   0008C6  D002               	goto	l1125
    773                           
-   774                           ;Lab4.c: 94: return '8';
+   774                           ;Lab4.c: 92: return '8';
    775   0008C8  0E38               	movlw	56
    776   0008CA  0012               	return	
    777   0008CC                     l1125:
    778                           
-   779                           ;Lab4.c: 95: };Lab4.c: 96: if ((PORTB&0b11110000) == 0b10110000){
+   779                           ;Lab4.c: 93: };Lab4.c: 94: if ((PORTB&0b11110000) == 0b10110000){
    780   0008CC  5081               	movf	129,w,c	;volatile
    781   0008CE  0BF0               	andlw	240
    782   0008D0  0AB0               	xorlw	176
    783   0008D2  A4D8               	btfss	status,2,c
    784   0008D4  D002               	goto	l1131
    785                           
-   786                           ;Lab4.c: 97: return '9';
+   786                           ;Lab4.c: 95: return '9';
    787   0008D6  0E39               	movlw	57
    788   0008D8  0012               	return	
    789   0008DA                     l1131:
    790                           
-   791                           ;Lab4.c: 98: };Lab4.c: 99: if ((PORTB&0b11110000) == 0b01110000){
+   791                           ;Lab4.c: 96: };Lab4.c: 97: if ((PORTB&0b11110000) == 0b01110000){
    792   0008DA  5081               	movf	129,w,c	;volatile
    793   0008DC  0BF0               	andlw	240
    794   0008DE  0A70               	xorlw	112
    795   0008E0  A4D8               	btfss	status,2,c
    796   0008E2  D002               	goto	l1137
    797                           
-   798                           ;Lab4.c: 100: return '*';
+   798                           ;Lab4.c: 98: return '*';
    799   0008E4  0E2A               	movlw	42
    800   0008E6  0012               	return	
    801   0008E8                     l1137:
    802                           
-   803                           ;Lab4.c: 101: };Lab4.c: 103: LATB = 0b1110;
+   803                           ;Lab4.c: 99: };Lab4.c: 101: LATB = 0b1110;
    804   0008E8  0E0E               	movlw	14
    805   0008EA  6E8A               	movwf	138,c	;volatile
    806                           
-   807                           ;Lab4.c: 104: if ((PORTB&0b11110000) == 0b11100000){
+   807                           ;Lab4.c: 102: if ((PORTB&0b11110000) == 0b11100000){
    808   0008EC  5081               	movf	129,w,c	;volatile
    809   0008EE  0BF0               	andlw	240
    810   0008F0  0AE0               	xorlw	224
    811   0008F2  A4D8               	btfss	status,2,c
    812   0008F4  D002               	goto	l1145
    813                           
-   814                           ;Lab4.c: 105: return 'e';
+   814                           ;Lab4.c: 103: return 'e';
    815   0008F6  0E65               	movlw	101
    816   0008F8  0012               	return	
    817   0008FA                     l1145:
    818                           
-   819                           ;Lab4.c: 106: };Lab4.c: 107: if ((PORTB&0b11110000) == 0b11010000){
+   819                           ;Lab4.c: 104: };Lab4.c: 105: if ((PORTB&0b11110000) == 0b11010000){
    820   0008FA  5081               	movf	129,w,c	;volatile
    821   0008FC  0BF0               	andlw	240
    822   0008FE  0AD0               	xorlw	208
    823   000900  A4D8               	btfss	status,2,c
    824   000902  D002               	goto	l1151
    825                           
-   826                           ;Lab4.c: 108: return '0';
+   826                           ;Lab4.c: 106: return '0';
    827   000904  0E30               	movlw	48
    828   000906  0012               	return	
    829   000908                     l1151:
    830                           
-   831                           ;Lab4.c: 109: };Lab4.c: 110: if ((PORTB&0b11110000) == 0b10110000){
+   831                           ;Lab4.c: 107: };Lab4.c: 108: if ((PORTB&0b11110000) == 0b10110000){
    832   000908  5081               	movf	129,w,c	;volatile
    833   00090A  0BF0               	andlw	240
    834   00090C  0AB0               	xorlw	176
    835   00090E  A4D8               	btfss	status,2,c
    836   000910  D002               	goto	l1157
    837                           
-   838                           ;Lab4.c: 111: return '=';
+   838                           ;Lab4.c: 109: return '=';
    839   000912  0E3D               	movlw	61
    840   000914  0012               	return	
    841   000916                     l1157:
    842                           
-   843                           ;Lab4.c: 112: };Lab4.c: 113: if ((PORTB&0b11110000) == 0b01110000){
+   843                           ;Lab4.c: 110: };Lab4.c: 111: if ((PORTB&0b11110000) == 0b01110000){
    844   000916  5081               	movf	129,w,c	;volatile
    845   000918  0BF0               	andlw	240
    846   00091A  0A70               	xorlw	112
    847   00091C  A4D8               	btfss	status,2,c
    848   00091E  D002               	goto	l1163
    849                           
-   850                           ;Lab4.c: 114: return '/';
+   850                           ;Lab4.c: 112: return '/';
    851   000920  0E2F               	movlw	47
    852   000922  0012               	return	
    853   000924                     l1163:
    854                           
-   855                           ;Lab4.c: 115: };Lab4.c: 116: return '?';
+   855                           ;Lab4.c: 113: };Lab4.c: 114: return '?';
    856   000924  0E3F               	movlw	63
    857   000926  0012               	return		;funcret
    858   000928                     __end_of_LeerTeclado:
@@ -1480,7 +1480,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1466                           
   1467 ;; *************** function _ISR *****************
   1468 ;; Defined at:
-  1469 ;;		line 118 in file "Lab4.c"
+  1469 ;;		line 116 in file "Lab4.c"
   1470 ;; Parameters:    Size  Location     Type
   1471 ;;		None
   1472 ;; Auto vars:     Size  Location     Type
@@ -1524,142 +1524,142 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1510                           	callstack 26
   1511   000928  0006               	pop		; remove dummy address from shadow register refresh
   1512                           
-  1513                           ;Lab4.c: 119: if(RBIF==1){
+  1513                           ;Lab4.c: 117: if(RBIF==1){
   1514   00092A  A0F2               	btfss	4082,0,c	;volatile
   1515   00092C  D059               	goto	i2l1257
   1516                           
-  1517                           ;Lab4.c: 120: if(PORTB!=0b11110000){
+  1517                           ;Lab4.c: 118: if(PORTB!=0b11110000){
   1518   00092E  0EF0               	movlw	240
   1519   000930  1881               	xorwf	129,w,c	;volatile
   1520   000932  B4D8               	btfsc	status,2,c
   1521   000934  D04C               	goto	i2l1253
   1522                           
-  1523                           ;Lab4.c: 121: Tecla=16;
+  1523                           ;Lab4.c: 119: Tecla=16;
   1524   000936  0E10               	movlw	16
   1525   000938  6E0F               	movwf	_Tecla^0,c
   1526                           
-  1527                           ;Lab4.c: 122: LATB=0b11111110;
+  1527                           ;Lab4.c: 120: LATB=0b11111110;
   1528   00093A  0EFE               	movlw	254
   1529   00093C  6E8A               	movwf	138,c	;volatile
   1530                           
-  1531                           ;Lab4.c: 123: if(RB4==0) Tecla="0";
+  1531                           ;Lab4.c: 121: if(RB4==0) Tecla="0";
   1532   00093E  B881               	btfsc	3969,4,c	;volatile
   1533   000940  D002               	goto	i2l143
   1534   000942  0E0D               	movlw	low (low (STR_13+1))
   1535   000944  D041               	goto	L18
   1536   000946                     i2l143:
   1537                           
-  1538                           ;Lab4.c: 124: else if(RB5==0) Tecla="1";
+  1538                           ;Lab4.c: 122: else if(RB5==0) Tecla="1";
   1539   000946  BA81               	btfsc	3969,5,c	;volatile
   1540   000948  D002               	goto	i2l145
   1541   00094A  0E10               	movlw	low (low (STR_14+1))
   1542   00094C  D03D               	goto	L18
   1543   00094E                     i2l145:
   1544                           
-  1545                           ;Lab4.c: 125: else if(RB6==0) Tecla="2";
+  1545                           ;Lab4.c: 123: else if(RB6==0) Tecla="2";
   1546   00094E  BC81               	btfsc	3969,6,c	;volatile
   1547   000950  D002               	goto	i2l147
   1548   000952  0E13               	movlw	low (low (STR_15+1))
   1549   000954  D039               	goto	L18
   1550   000956                     i2l147:
   1551                           
-  1552                           ;Lab4.c: 126: else if(RB7==0) Tecla="3";
+  1552                           ;Lab4.c: 124: else if(RB7==0) Tecla="3";
   1553   000956  BE81               	btfsc	3969,7,c	;volatile
   1554   000958  D002               	goto	i2l1217
   1555   00095A  0E16               	movlw	low (low (STR_16+1))
   1556   00095C  D035               	goto	L18
   1557   00095E                     i2l1217:
   1558                           
-  1559                           ;Lab4.c: 127: else{;Lab4.c: 128: LATB=0b11111101;
+  1559                           ;Lab4.c: 125: else{;Lab4.c: 126: LATB=0b11111101;
   1560   00095E  0EFD               	movlw	253
   1561   000960  6E8A               	movwf	138,c	;volatile
   1562                           
-  1563                           ;Lab4.c: 129: if(RB4==0) Tecla="4";
+  1563                           ;Lab4.c: 127: if(RB4==0) Tecla="4";
   1564   000962  B881               	btfsc	3969,4,c	;volatile
   1565   000964  D002               	goto	i2l151
   1566   000966  0E19               	movlw	low (low (STR_17+1))
   1567   000968  D02F               	goto	L18
   1568   00096A                     i2l151:
   1569                           
-  1570                           ;Lab4.c: 130: else if(RB5==0) Tecla="5";
+  1570                           ;Lab4.c: 128: else if(RB5==0) Tecla="5";
   1571   00096A  BA81               	btfsc	3969,5,c	;volatile
   1572   00096C  D002               	goto	i2l153
   1573   00096E  0E1C               	movlw	low (low (STR_18+1))
   1574   000970  D02B               	goto	L18
   1575   000972                     i2l153:
   1576                           
-  1577                           ;Lab4.c: 131: else if(RB6==0) Tecla="6";
+  1577                           ;Lab4.c: 129: else if(RB6==0) Tecla="6";
   1578   000972  BC81               	btfsc	3969,6,c	;volatile
   1579   000974  D002               	goto	i2l155
   1580   000976  0E1E               	movlw	low (low STR_9)
   1581   000978  D027               	goto	L18
   1582   00097A                     i2l155:
   1583                           
-  1584                           ;Lab4.c: 132: else if(RB7==0) Tecla="7";
+  1584                           ;Lab4.c: 130: else if(RB7==0) Tecla="7";
   1585   00097A  BE81               	btfsc	3969,7,c	;volatile
   1586   00097C  D002               	goto	i2l1229
   1587   00097E  0E20               	movlw	low (low STR_2)
   1588   000980  D023               	goto	L18
   1589   000982                     i2l1229:
   1590                           
-  1591                           ;Lab4.c: 133: else{;Lab4.c: 134: LATB=0b11111011;
+  1591                           ;Lab4.c: 131: else{;Lab4.c: 132: LATB=0b11111011;
   1592   000982  0EFB               	movlw	251
   1593   000984  6E8A               	movwf	138,c	;volatile
   1594                           
-  1595                           ;Lab4.c: 135: if(RB4==0) Tecla="8";
+  1595                           ;Lab4.c: 133: if(RB4==0) Tecla="8";
   1596   000986  B881               	btfsc	3969,4,c	;volatile
   1597   000988  D002               	goto	i2l159
   1598   00098A  0E22               	movlw	low (low STR_11)
   1599   00098C  D01D               	goto	L18
   1600   00098E                     i2l159:
   1601                           
-  1602                           ;Lab4.c: 136: else if(RB5==0) Tecla="9";
+  1602                           ;Lab4.c: 134: else if(RB5==0) Tecla="9";
   1603   00098E  BA81               	btfsc	3969,5,c	;volatile
   1604   000990  D002               	goto	i2l161
   1605   000992  0E24               	movlw	low (low STR_12)
   1606   000994  D019               	goto	L18
   1607   000996                     i2l161:
   1608                           
-  1609                           ;Lab4.c: 137: else if(RB6==0) Tecla="10";
+  1609                           ;Lab4.c: 135: else if(RB6==0) Tecla="10";
   1610   000996  BC81               	btfsc	3969,6,c	;volatile
   1611   000998  D002               	goto	i2l163
   1612   00099A  0E0C               	movlw	low (low STR_13)
   1613   00099C  D015               	goto	L18
   1614   00099E                     i2l163:
   1615                           
-  1616                           ;Lab4.c: 138: else if(RB7==0) Tecla="11";
+  1616                           ;Lab4.c: 136: else if(RB7==0) Tecla="11";
   1617   00099E  BE81               	btfsc	3969,7,c	;volatile
   1618   0009A0  D002               	goto	i2l1241
   1619   0009A2  0E0F               	movlw	low (low STR_14)
   1620   0009A4  D011               	goto	L18
   1621   0009A6                     i2l1241:
   1622                           
-  1623                           ;Lab4.c: 139: else{;Lab4.c: 140: LATB=0b11110111;
+  1623                           ;Lab4.c: 137: else{;Lab4.c: 138: LATB=0b11110111;
   1624   0009A6  0EF7               	movlw	247
   1625   0009A8  6E8A               	movwf	138,c	;volatile
   1626                           
-  1627                           ;Lab4.c: 141: if(RB4==0) Tecla="12";
+  1627                           ;Lab4.c: 139: if(RB4==0) Tecla="12";
   1628   0009AA  B881               	btfsc	3969,4,c	;volatile
   1629   0009AC  D002               	goto	i2l167
   1630   0009AE  0E12               	movlw	low (low STR_15)
   1631   0009B0  D00B               	goto	L18
   1632   0009B2                     i2l167:
   1633                           
-  1634                           ;Lab4.c: 142: else if(RB5==0) Tecla="13";
+  1634                           ;Lab4.c: 140: else if(RB5==0) Tecla="13";
   1635   0009B2  BA81               	btfsc	3969,5,c	;volatile
   1636   0009B4  D002               	goto	i2l169
   1637   0009B6  0E15               	movlw	low (low STR_16)
   1638   0009B8  D007               	goto	L18
   1639   0009BA                     i2l169:
   1640                           
-  1641                           ;Lab4.c: 143: else if(RB6==0) Tecla="14";
+  1641                           ;Lab4.c: 141: else if(RB6==0) Tecla="14";
   1642   0009BA  BC81               	btfsc	3969,6,c	;volatile
   1643   0009BC  D002               	goto	i2l171
   1644   0009BE  0E18               	movlw	low (low STR_17)
   1645   0009C0  D003               	goto	L18
   1646   0009C2                     i2l171:
   1647                           
-  1648                           ;Lab4.c: 144: else if(RB7==0) Tecla="15";
+  1648                           ;Lab4.c: 142: else if(RB7==0) Tecla="15";
   1649   0009C2  BE81               	btfsc	3969,7,c	;volatile
   1650   0009C4  D002               	goto	i2l168
   1651   0009C6  0E1B               	movlw	low (low STR_18)
@@ -1667,12 +1667,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1653   0009C8  6E0F               	movwf	_Tecla^0,c
   1654   0009CA                     i2l168:
   1655                           
-  1656                           ;Lab4.c: 145: };Lab4.c: 146: };Lab4.c: 147: };Lab4.c: 148: LATB=0b11110000;
+  1656                           ;Lab4.c: 143: };Lab4.c: 144: };Lab4.c: 145: };Lab4.c: 146: LATB=0b11110000;
   1657   0009CA  0EF0               	movlw	240
   1658   0009CC  6E8A               	movwf	138,c	;volatile
   1659   0009CE                     i2l1253:
   1660                           
-  1661                           ;Lab4.c: 149: };Lab4.c: 150: _delay((unsigned long)((100)*(1000000/4000.0)));
+  1661                           ;Lab4.c: 147: };Lab4.c: 148: _delay((unsigned long)((100)*(1000000/4000.0)));
   1662   0009CE  0E21               	movlw	33
   1663   0009D0  6E01               	movwf	??_ISR^0,c
   1664   0009D2  0E76               	movlw	118
@@ -1683,24 +1683,24 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1669   0009DA  D7FC               	bra	i2u65_47
   1670   0009DC  D000               	nop2	
   1671                           
-  1672                           ;Lab4.c: 151: RBIF=0;
+  1672                           ;Lab4.c: 149: RBIF=0;
   1673   0009DE  90F2               	bcf	4082,0,c	;volatile
   1674   0009E0                     i2l1257:
   1675                           
-  1676                           ;Lab4.c: 152: };Lab4.c: 153: if(TMR0IF==1){
+  1676                           ;Lab4.c: 150: };Lab4.c: 151: if(TMR0IF==1){
   1677   0009E0  A4F2               	btfss	4082,2,c	;volatile
   1678   0009E2  D00A               	goto	i2u50_45
   1679                           
-  1680                           ;Lab4.c: 154: TMR0IF=0;
+  1680                           ;Lab4.c: 152: TMR0IF=0;
   1681   0009E4  94F2               	bcf	4082,2,c	;volatile
   1682                           
-  1683                           ;Lab4.c: 155: TMR0=3036;
+  1683                           ;Lab4.c: 153: TMR0=3036;
   1684   0009E6  0E0B               	movlw	11
   1685   0009E8  6ED7               	movwf	215,c	;volatile
   1686   0009EA  0EDC               	movlw	220
   1687   0009EC  6ED6               	movwf	214,c	;volatile
   1688                           
-  1689                           ;Lab4.c: 156: LATD1=LATD1^1;
+  1689                           ;Lab4.c: 154: LATD1=LATD1^1;
   1690   0009EE  B28C               	btfsc	3980,1,c	;volatile
   1691   0009F0  D002               	goto	i2u49_40
   1692   0009F2  828C               	bsf	3980,1,c	;volatile
@@ -2188,7 +2188,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Fri May 12 12:02:11 2023
+Symbol Table                                                                                   Fri May 12 14:12:04 2023
 
                      u40 0CA8               EnviaDato@a 0005            ??_LeerTeclado 0002  
           _InicializaLCD 0ABA                      l931 0BDC                      l933 0BEC  
