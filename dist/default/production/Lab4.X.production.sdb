@@ -29,7 +29,7 @@
 [v _main main `(v  1 e 1 0 ]
 "55
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-"137
+"142
 [v _ISR ISR `II(v  1 e 1 0 ]
 "47 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
@@ -121,7 +121,7 @@
 "55 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 {
-"136
+"141
 } 0
 "61 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
@@ -171,8 +171,8 @@
 [v ConfiguraLCD@a a `uc  1 a 1 1 ]
 "50
 } 0
-"137 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"142 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"177
+"182
 } 0
