@@ -38,11 +38,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _GIE `Vb ~T0 @X0 0 e@32663 ]
 "15 Lab4.c
 [v _LeerTeclado `(uc ~T0 @X0 0 ef ]
-"2454 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4550.h
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
 [t ~ __deprecated__ ]
 [t T16 __deprecated__ ]
-"10376
+"10376 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4550.h
 [v _RB4 `Vb ~T16 @X0 0 e@31756 ]
 "10379
 [v _RB5 `Vb ~T16 @X0 0 e@31757 ]
@@ -50,6 +48,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RB6 `Vb ~T16 @X0 0 e@31758 ]
 "10385
 [v _RB7 `Vb ~T16 @X0 0 e@31759 ]
+"2454
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
 "10820
 [v _TMR0IF `Vb ~T0 @X0 0 e@32658 ]
 "8140
@@ -4014,7 +4014,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Tecla `uc ~T0 @X0 1 e ]
 [; ;Lab4.c: 14: unsigned char Tecla;
 [; ;Lab4.c: 15: unsigned char LeerTeclado(void);
-[; ;Lab4.c: 16: void __interrupt ISR(void);
+[; ;Lab4.c: 16: void interrupt ISR(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
 "20
 [v _main `(v ~T0 @X0 1 ef ]
@@ -4115,369 +4115,261 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Lab4.c: 55: unsigned char LeerTeclado(void){
 [e :U _LeerTeclado ]
 [f ]
-[; ;Lab4.c: 56: LATB = 0b00000000;
-"56
-[e = _LATB -> -> 0 `i `uc ]
-[; ;Lab4.c: 57: while(PORTB == 0b11110000){
-"57
+[; ;Lab4.c: 115: while(RB4==1 && RB5==1 && RB6==1 && RB7==1);
+"115
 [e $U 398  ]
 [e :U 399 ]
-{
-"58
-}
 [e :U 398 ]
-"57
-[e $ == -> _PORTB `i -> 240 `i 399  ]
+[e $ && && && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 1 `i == -> _RB6 `i -> 1 `i == -> _RB7 `i -> 1 `i 399  ]
 [e :U 400 ]
-[; ;Lab4.c: 58: }
-[; ;Lab4.c: 59: LATB = 0b0111;
-"59
-[e = _LATB -> -> 7 `i `uc ]
-[; ;Lab4.c: 60: if ((PORTB&0b11110000) == 0b11100000){
-"60
-[e $ ! == & -> _PORTB `i -> 240 `i -> 224 `i 401  ]
-{
-[; ;Lab4.c: 61: return '1';
-"61
-[e ) -> -> 49 `ui `uc ]
+[; ;Lab4.c: 116: LATB=0b11111110;
+"116
+[e = _LATB -> -> 254 `i `uc ]
+[; ;Lab4.c: 117: if(RB4==0) return "1";
+"117
+[e $ ! == -> _RB4 `i -> 0 `i 401  ]
+[e ) -> :s 3C `uc ]
 [e $UE 397  ]
-"62
-}
 [e :U 401 ]
-[; ;Lab4.c: 62: }
-[; ;Lab4.c: 63: if ((PORTB&0b11110000) == 0b11010000){
-"63
-[e $ ! == & -> _PORTB `i -> 240 `i -> 208 `i 402  ]
-{
-[; ;Lab4.c: 64: return '2';
-"64
-[e ) -> -> 50 `ui `uc ]
+[; ;Lab4.c: 118: if(RB5==0) return "2";
+"118
+[e $ ! == -> _RB5 `i -> 0 `i 402  ]
+[e ) -> :s 4C `uc ]
 [e $UE 397  ]
-"65
-}
 [e :U 402 ]
-[; ;Lab4.c: 65: }
-[; ;Lab4.c: 66: if ((PORTB&0b11110000) == 0b10110000){
-"66
-[e $ ! == & -> _PORTB `i -> 240 `i -> 176 `i 403  ]
-{
-[; ;Lab4.c: 67: return '3';
-"67
-[e ) -> -> 51 `ui `uc ]
+[; ;Lab4.c: 119: if(RB6==0) return "3";
+"119
+[e $ ! == -> _RB6 `i -> 0 `i 403  ]
+[e ) -> :s 5C `uc ]
 [e $UE 397  ]
-"68
-}
 [e :U 403 ]
-[; ;Lab4.c: 68: }
-[; ;Lab4.c: 69: if ((PORTB&0b11110000) == 0b01110000){
-"69
-[e $ ! == & -> _PORTB `i -> 240 `i -> 112 `i 404  ]
-{
-[; ;Lab4.c: 70: return '+';
-"70
-[e ) -> -> 43 `ui `uc ]
+[; ;Lab4.c: 120: if(RB7==0) return "4";
+"120
+[e $ ! == -> _RB7 `i -> 0 `i 404  ]
+[e ) -> :s 6C `uc ]
 [e $UE 397  ]
-"71
-}
 [e :U 404 ]
-[; ;Lab4.c: 71: }
-[; ;Lab4.c: 73: LATB = 0b1011;
-"73
-[e = _LATB -> -> 11 `i `uc ]
-[; ;Lab4.c: 74: if ((PORTB&0b11110000) == 0b11100000){
-"74
-[e $ ! == & -> _PORTB `i -> 240 `i -> 224 `i 405  ]
-{
-[; ;Lab4.c: 75: return '4';
-"75
-[e ) -> -> 52 `ui `uc ]
+[; ;Lab4.c: 121: LATB=0b11111101;
+"121
+[e = _LATB -> -> 253 `i `uc ]
+[; ;Lab4.c: 122: if(RB4==0) return "5";
+"122
+[e $ ! == -> _RB4 `i -> 0 `i 405  ]
+[e ) -> :s 7C `uc ]
 [e $UE 397  ]
-"76
-}
 [e :U 405 ]
-[; ;Lab4.c: 76: }
-[; ;Lab4.c: 77: if ((PORTB&0b11110000) == 0b11010000){
-"77
-[e $ ! == & -> _PORTB `i -> 240 `i -> 208 `i 406  ]
-{
-[; ;Lab4.c: 78: return '5';
-"78
-[e ) -> -> 53 `ui `uc ]
+[; ;Lab4.c: 123: if(RB5==0) return "6";
+"123
+[e $ ! == -> _RB5 `i -> 0 `i 406  ]
+[e ) -> :s 8C `uc ]
 [e $UE 397  ]
-"79
-}
 [e :U 406 ]
-[; ;Lab4.c: 79: }
-[; ;Lab4.c: 80: if ((PORTB&0b11110000) == 0b10110000){
-"80
-[e $ ! == & -> _PORTB `i -> 240 `i -> 176 `i 407  ]
-{
-[; ;Lab4.c: 81: return '6';
-"81
-[e ) -> -> 54 `ui `uc ]
+[; ;Lab4.c: 124: if(RB6==0) return "7";
+"124
+[e $ ! == -> _RB6 `i -> 0 `i 407  ]
+[e ) -> :s 9C `uc ]
 [e $UE 397  ]
-"82
-}
 [e :U 407 ]
-[; ;Lab4.c: 82: }
-[; ;Lab4.c: 83: if ((PORTB&0b11110000) == 0b01110000){
-"83
-[e $ ! == & -> _PORTB `i -> 240 `i -> 112 `i 408  ]
-{
-[; ;Lab4.c: 84: return '-';
-"84
-[e ) -> -> 45 `ui `uc ]
+[; ;Lab4.c: 125: if(RB7==0) return "8";
+"125
+[e $ ! == -> _RB7 `i -> 0 `i 408  ]
+[e ) -> :s 10C `uc ]
 [e $UE 397  ]
-"85
-}
 [e :U 408 ]
-[; ;Lab4.c: 85: }
-[; ;Lab4.c: 87: LATB = 0b1101;
-"87
-[e = _LATB -> -> 13 `i `uc ]
-[; ;Lab4.c: 88: if ((PORTB&0b11110000) == 0b11100000){
-"88
-[e $ ! == & -> _PORTB `i -> 240 `i -> 224 `i 409  ]
-{
-[; ;Lab4.c: 89: return '7';
-"89
-[e ) -> -> 55 `ui `uc ]
+[; ;Lab4.c: 126: LATB=0b11111011;
+"126
+[e = _LATB -> -> 251 `i `uc ]
+[; ;Lab4.c: 127: if(RB4==0) return "9";
+"127
+[e $ ! == -> _RB4 `i -> 0 `i 409  ]
+[e ) -> :s 11C `uc ]
 [e $UE 397  ]
-"90
-}
 [e :U 409 ]
-[; ;Lab4.c: 90: }
-[; ;Lab4.c: 91: if ((PORTB&0b11110000) == 0b11010000){
-"91
-[e $ ! == & -> _PORTB `i -> 240 `i -> 208 `i 410  ]
-{
-[; ;Lab4.c: 92: return '8';
-"92
-[e ) -> -> 56 `ui `uc ]
+[; ;Lab4.c: 128: if(RB5==0) return "10";
+"128
+[e $ ! == -> _RB5 `i -> 0 `i 410  ]
+[e ) -> :s 12C `uc ]
 [e $UE 397  ]
-"93
-}
 [e :U 410 ]
-[; ;Lab4.c: 93: }
-[; ;Lab4.c: 94: if ((PORTB&0b11110000) == 0b10110000){
-"94
-[e $ ! == & -> _PORTB `i -> 240 `i -> 176 `i 411  ]
-{
-[; ;Lab4.c: 95: return '9';
-"95
-[e ) -> -> 57 `ui `uc ]
+[; ;Lab4.c: 129: if(RB6==0) return "11";
+"129
+[e $ ! == -> _RB6 `i -> 0 `i 411  ]
+[e ) -> :s 13C `uc ]
 [e $UE 397  ]
-"96
-}
 [e :U 411 ]
-[; ;Lab4.c: 96: }
-[; ;Lab4.c: 97: if ((PORTB&0b11110000) == 0b01110000){
-"97
-[e $ ! == & -> _PORTB `i -> 240 `i -> 112 `i 412  ]
-{
-[; ;Lab4.c: 98: return '*';
-"98
-[e ) -> -> 42 `ui `uc ]
+[; ;Lab4.c: 130: if(RB7==0) return "12";
+"130
+[e $ ! == -> _RB7 `i -> 0 `i 412  ]
+[e ) -> :s 14C `uc ]
 [e $UE 397  ]
-"99
-}
 [e :U 412 ]
-[; ;Lab4.c: 99: }
-[; ;Lab4.c: 101: LATB = 0b1110;
-"101
-[e = _LATB -> -> 14 `i `uc ]
-[; ;Lab4.c: 102: if ((PORTB&0b11110000) == 0b11100000){
-"102
-[e $ ! == & -> _PORTB `i -> 240 `i -> 224 `i 413  ]
-{
-[; ;Lab4.c: 103: return 'e';
-"103
-[e ) -> -> 101 `ui `uc ]
+[; ;Lab4.c: 131: LATB=0b11110111;
+"131
+[e = _LATB -> -> 247 `i `uc ]
+[; ;Lab4.c: 132: if(RB4==0) return "13";
+"132
+[e $ ! == -> _RB4 `i -> 0 `i 413  ]
+[e ) -> :s 15C `uc ]
 [e $UE 397  ]
-"104
-}
 [e :U 413 ]
-[; ;Lab4.c: 104: }
-[; ;Lab4.c: 105: if ((PORTB&0b11110000) == 0b11010000){
-"105
-[e $ ! == & -> _PORTB `i -> 240 `i -> 208 `i 414  ]
-{
-[; ;Lab4.c: 106: return '0';
-"106
-[e ) -> -> 48 `ui `uc ]
+[; ;Lab4.c: 133: if(RB5==0) return "14";
+"133
+[e $ ! == -> _RB5 `i -> 0 `i 414  ]
+[e ) -> :s 16C `uc ]
 [e $UE 397  ]
-"107
-}
 [e :U 414 ]
-[; ;Lab4.c: 107: }
-[; ;Lab4.c: 108: if ((PORTB&0b11110000) == 0b10110000){
-"108
-[e $ ! == & -> _PORTB `i -> 240 `i -> 176 `i 415  ]
-{
-[; ;Lab4.c: 109: return '=';
-"109
-[e ) -> -> 61 `ui `uc ]
+[; ;Lab4.c: 134: if(RB6==0) return "15";
+"134
+[e $ ! == -> _RB6 `i -> 0 `i 415  ]
+[e ) -> :s 17C `uc ]
 [e $UE 397  ]
-"110
-}
 [e :U 415 ]
-[; ;Lab4.c: 110: }
-[; ;Lab4.c: 111: if ((PORTB&0b11110000) == 0b01110000){
-"111
-[e $ ! == & -> _PORTB `i -> 240 `i -> 112 `i 416  ]
-{
-[; ;Lab4.c: 112: return '/';
-"112
-[e ) -> -> 47 `ui `uc ]
+[; ;Lab4.c: 135: if(RB7==0) return "16";
+"135
+[e $ ! == -> _RB7 `i -> 0 `i 416  ]
+[e ) -> :s 18C `uc ]
 [e $UE 397  ]
-"113
-}
 [e :U 416 ]
-[; ;Lab4.c: 113: }
-[; ;Lab4.c: 114: return '?';
-"114
-[e ) -> -> 63 `ui `uc ]
-[e $UE 397  ]
-[; ;Lab4.c: 115: }
-"115
+[; ;Lab4.c: 136: }
+"136
 [e :UE 397 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
 [v F3174 `(v ~T0 @X0 1 tf ]
-"116
+"137
 [v _ISR `IF3174 ~T0 @X0 1 e ]
 {
-[; ;Lab4.c: 116: void __interrupt ISR(void){
+[; ;Lab4.c: 137: void interrupt ISR(void){
 [e :U _ISR ]
 [f ]
-[; ;Lab4.c: 117: if(RBIF==1){
-"117
+[; ;Lab4.c: 138: if(RBIF==1){
+"138
 [e $ ! == -> _RBIF `i -> 1 `i 418  ]
 {
-[; ;Lab4.c: 118: if(PORTB!=0b11110000){
-"118
+[; ;Lab4.c: 139: if(PORTB!=0b11110000){
+"139
 [e $ ! != -> _PORTB `i -> 240 `i 419  ]
 {
-[; ;Lab4.c: 119: Tecla=16;
-"119
-[e = _Tecla -> -> 16 `i `uc ]
-[; ;Lab4.c: 120: LATB=0b11111110;
-"120
-[e = _LATB -> -> 254 `i `uc ]
-[; ;Lab4.c: 121: if(RB4==0) Tecla="0";
-"121
-[e $ ! == -> _RB4 `i -> 0 `i 420  ]
-[e = _Tecla -> :s 3C `uc ]
-[e $U 421  ]
-"122
-[e :U 420 ]
-[; ;Lab4.c: 122: else if(RB5==0) Tecla="1";
-[e $ ! == -> _RB5 `i -> 0 `i 422  ]
-[e = _Tecla -> :s 4C `uc ]
-[e $U 423  ]
-"123
-[e :U 422 ]
-[; ;Lab4.c: 123: else if(RB6==0) Tecla="2";
-[e $ ! == -> _RB6 `i -> 0 `i 424  ]
-[e = _Tecla -> :s 5C `uc ]
-[e $U 425  ]
-"124
-[e :U 424 ]
-[; ;Lab4.c: 124: else if(RB7==0) Tecla="3";
-[e $ ! == -> _RB7 `i -> 0 `i 426  ]
-[e = _Tecla -> :s 6C `uc ]
-[e $U 427  ]
-"125
-[e :U 426 ]
-[; ;Lab4.c: 125: else{
-{
-[; ;Lab4.c: 126: LATB=0b11111101;
-"126
-[e = _LATB -> -> 253 `i `uc ]
-[; ;Lab4.c: 127: if(RB4==0) Tecla="4";
-"127
-[e $ ! == -> _RB4 `i -> 0 `i 428  ]
-[e = _Tecla -> :s 7C `uc ]
-[e $U 429  ]
-"128
-[e :U 428 ]
-[; ;Lab4.c: 128: else if(RB5==0) Tecla="5";
-[e $ ! == -> _RB5 `i -> 0 `i 430  ]
-[e = _Tecla -> :s 8C `uc ]
-[e $U 431  ]
-"129
-[e :U 430 ]
-[; ;Lab4.c: 129: else if(RB6==0) Tecla="6";
-[e $ ! == -> _RB6 `i -> 0 `i 432  ]
-[e = _Tecla -> :s 9C `uc ]
-[e $U 433  ]
-"130
-[e :U 432 ]
-[; ;Lab4.c: 130: else if(RB7==0) Tecla="7";
-[e $ ! == -> _RB7 `i -> 0 `i 434  ]
-[e = _Tecla -> :s 10C `uc ]
-[e $U 435  ]
-"131
-[e :U 434 ]
-[; ;Lab4.c: 131: else{
-{
-[; ;Lab4.c: 132: LATB=0b11111011;
-"132
-[e = _LATB -> -> 251 `i `uc ]
-[; ;Lab4.c: 133: if(RB4==0) Tecla="8";
-"133
-[e $ ! == -> _RB4 `i -> 0 `i 436  ]
-[e = _Tecla -> :s 11C `uc ]
-[e $U 437  ]
-"134
-[e :U 436 ]
-[; ;Lab4.c: 134: else if(RB5==0) Tecla="9";
-[e $ ! == -> _RB5 `i -> 0 `i 438  ]
-[e = _Tecla -> :s 12C `uc ]
-[e $U 439  ]
-"135
-[e :U 438 ]
-[; ;Lab4.c: 135: else if(RB6==0) Tecla="10";
-[e $ ! == -> _RB6 `i -> 0 `i 440  ]
-[e = _Tecla -> :s 13C `uc ]
-[e $U 441  ]
-"136
-[e :U 440 ]
-[; ;Lab4.c: 136: else if(RB7==0) Tecla="11";
-[e $ ! == -> _RB7 `i -> 0 `i 442  ]
-[e = _Tecla -> :s 14C `uc ]
-[e $U 443  ]
-"137
-[e :U 442 ]
-[; ;Lab4.c: 137: else{
-{
-[; ;Lab4.c: 138: LATB=0b11110111;
-"138
-[e = _LATB -> -> 247 `i `uc ]
-[; ;Lab4.c: 139: if(RB4==0) Tecla="12";
-"139
-[e $ ! == -> _RB4 `i -> 0 `i 444  ]
-[e = _Tecla -> :s 15C `uc ]
-[e $U 445  ]
+[; ;Lab4.c: 140: Tecla=16;
 "140
-[e :U 444 ]
-[; ;Lab4.c: 140: else if(RB5==0) Tecla="13";
-[e $ ! == -> _RB5 `i -> 0 `i 446  ]
-[e = _Tecla -> :s 16C `uc ]
-[e $U 447  ]
+[e = _Tecla -> -> 16 `i `uc ]
+[; ;Lab4.c: 141: LATB=0b11111110;
 "141
-[e :U 446 ]
-[; ;Lab4.c: 141: else if(RB6==0) Tecla="14";
-[e $ ! == -> _RB6 `i -> 0 `i 448  ]
-[e = _Tecla -> :s 17C `uc ]
-[e $U 449  ]
+[e = _LATB -> -> 254 `i `uc ]
+[; ;Lab4.c: 142: if(RB4==0) Tecla="0";
 "142
-[e :U 448 ]
-[; ;Lab4.c: 142: else if(RB7==0) Tecla="15";
-[e $ ! == -> _RB7 `i -> 0 `i 450  ]
-[e = _Tecla -> :s 18C `uc ]
-[e :U 450 ]
+[e $ ! == -> _RB4 `i -> 0 `i 420  ]
+[e = _Tecla -> :s 19C `uc ]
+[e $U 421  ]
 "143
+[e :U 420 ]
+[; ;Lab4.c: 143: else if(RB5==0) Tecla="1";
+[e $ ! == -> _RB5 `i -> 0 `i 422  ]
+[e = _Tecla -> :s 20C `uc ]
+[e $U 423  ]
+"144
+[e :U 422 ]
+[; ;Lab4.c: 144: else if(RB6==0) Tecla="2";
+[e $ ! == -> _RB6 `i -> 0 `i 424  ]
+[e = _Tecla -> :s 21C `uc ]
+[e $U 425  ]
+"145
+[e :U 424 ]
+[; ;Lab4.c: 145: else if(RB7==0) Tecla="3";
+[e $ ! == -> _RB7 `i -> 0 `i 426  ]
+[e = _Tecla -> :s 22C `uc ]
+[e $U 427  ]
+"146
+[e :U 426 ]
+[; ;Lab4.c: 146: else{
+{
+[; ;Lab4.c: 147: LATB=0b11111101;
+"147
+[e = _LATB -> -> 253 `i `uc ]
+[; ;Lab4.c: 148: if(RB4==0) Tecla="4";
+"148
+[e $ ! == -> _RB4 `i -> 0 `i 428  ]
+[e = _Tecla -> :s 23C `uc ]
+[e $U 429  ]
+"149
+[e :U 428 ]
+[; ;Lab4.c: 149: else if(RB5==0) Tecla="5";
+[e $ ! == -> _RB5 `i -> 0 `i 430  ]
+[e = _Tecla -> :s 24C `uc ]
+[e $U 431  ]
+"150
+[e :U 430 ]
+[; ;Lab4.c: 150: else if(RB6==0) Tecla="6";
+[e $ ! == -> _RB6 `i -> 0 `i 432  ]
+[e = _Tecla -> :s 25C `uc ]
+[e $U 433  ]
+"151
+[e :U 432 ]
+[; ;Lab4.c: 151: else if(RB7==0) Tecla="7";
+[e $ ! == -> _RB7 `i -> 0 `i 434  ]
+[e = _Tecla -> :s 26C `uc ]
+[e $U 435  ]
+"152
+[e :U 434 ]
+[; ;Lab4.c: 152: else{
+{
+[; ;Lab4.c: 153: LATB=0b11111011;
+"153
+[e = _LATB -> -> 251 `i `uc ]
+[; ;Lab4.c: 154: if(RB4==0) Tecla="8";
+"154
+[e $ ! == -> _RB4 `i -> 0 `i 436  ]
+[e = _Tecla -> :s 27C `uc ]
+[e $U 437  ]
+"155
+[e :U 436 ]
+[; ;Lab4.c: 155: else if(RB5==0) Tecla="9";
+[e $ ! == -> _RB5 `i -> 0 `i 438  ]
+[e = _Tecla -> :s 28C `uc ]
+[e $U 439  ]
+"156
+[e :U 438 ]
+[; ;Lab4.c: 156: else if(RB6==0) Tecla="10";
+[e $ ! == -> _RB6 `i -> 0 `i 440  ]
+[e = _Tecla -> :s 29C `uc ]
+[e $U 441  ]
+"157
+[e :U 440 ]
+[; ;Lab4.c: 157: else if(RB7==0) Tecla="11";
+[e $ ! == -> _RB7 `i -> 0 `i 442  ]
+[e = _Tecla -> :s 30C `uc ]
+[e $U 443  ]
+"158
+[e :U 442 ]
+[; ;Lab4.c: 158: else{
+{
+[; ;Lab4.c: 159: LATB=0b11110111;
+"159
+[e = _LATB -> -> 247 `i `uc ]
+[; ;Lab4.c: 160: if(RB4==0) Tecla="12";
+"160
+[e $ ! == -> _RB4 `i -> 0 `i 444  ]
+[e = _Tecla -> :s 31C `uc ]
+[e $U 445  ]
+"161
+[e :U 444 ]
+[; ;Lab4.c: 161: else if(RB5==0) Tecla="13";
+[e $ ! == -> _RB5 `i -> 0 `i 446  ]
+[e = _Tecla -> :s 32C `uc ]
+[e $U 447  ]
+"162
+[e :U 446 ]
+[; ;Lab4.c: 162: else if(RB6==0) Tecla="14";
+[e $ ! == -> _RB6 `i -> 0 `i 448  ]
+[e = _Tecla -> :s 33C `uc ]
+[e $U 449  ]
+"163
+[e :U 448 ]
+[; ;Lab4.c: 163: else if(RB7==0) Tecla="15";
+[e $ ! == -> _RB7 `i -> 0 `i 450  ]
+[e = _Tecla -> :s 34C `uc ]
+[e :U 450 ]
+"164
 [e :U 449 ]
 [e :U 447 ]
 [e :U 445 ]
@@ -4486,74 +4378,90 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 441 ]
 [e :U 439 ]
 [e :U 437 ]
-"144
+"165
 }
 [e :U 435 ]
 [e :U 433 ]
 [e :U 431 ]
 [e :U 429 ]
-"145
+"166
 }
 [e :U 427 ]
 [e :U 425 ]
 [e :U 423 ]
 [e :U 421 ]
-[; ;Lab4.c: 143: }
-[; ;Lab4.c: 144: }
-[; ;Lab4.c: 145: }
-[; ;Lab4.c: 146: LATB=0b11110000;
-"146
+[; ;Lab4.c: 164: }
+[; ;Lab4.c: 165: }
+[; ;Lab4.c: 166: }
+[; ;Lab4.c: 167: LATB=0b11110000;
+"167
 [e = _LATB -> -> 240 `i `uc ]
-"147
+"168
 }
 [e :U 419 ]
-[; ;Lab4.c: 147: }
-[; ;Lab4.c: 148: _delay((unsigned long)((100)*(1000000/4000.0)));
-"148
+[; ;Lab4.c: 168: }
+[; ;Lab4.c: 169: _delay((unsigned long)((100)*(1000000/4000.0)));
+"169
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;Lab4.c: 149: RBIF=0;
-"149
+[; ;Lab4.c: 170: RBIF=0;
+"170
 [e = _RBIF -> -> 0 `i `b ]
-"150
+"171
 }
 [e :U 418 ]
-[; ;Lab4.c: 150: }
-[; ;Lab4.c: 151: if(TMR0IF==1){
-"151
+[; ;Lab4.c: 171: }
+[; ;Lab4.c: 172: if(TMR0IF==1){
+"172
 [e $ ! == -> _TMR0IF `i -> 1 `i 451  ]
 {
-[; ;Lab4.c: 152: TMR0IF=0;
-"152
+[; ;Lab4.c: 173: TMR0IF=0;
+"173
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;Lab4.c: 153: TMR0=3036;
-"153
+[; ;Lab4.c: 174: TMR0=3036;
+"174
 [e = _TMR0 -> -> 3036 `i `us ]
-[; ;Lab4.c: 154: LATD1=LATD1^1;
-"154
+[; ;Lab4.c: 175: LATD1=LATD1^1;
+"175
 [e = _LATD1 -> ^ -> _LATD1 `i -> 1 `i `b ]
-"155
+"176
 }
 [e :U 451 ]
-[; ;Lab4.c: 155: }
-[; ;Lab4.c: 156: }
-"156
+[; ;Lab4.c: 176: }
+[; ;Lab4.c: 177: }
+"177
 [e :UE 417 ]
 }
 [a 1C 72 111 108 97 32 109 117 110 100 111 0 ]
-[a 12C 57 0 ]
-[a 11C 56 0 ]
+[a 11C 57 0 ]
+[a 28C 57 0 ]
+[a 10C 56 0 ]
+[a 27C 56 0 ]
 [a 2C 55 0 ]
-[a 10C 55 0 ]
-[a 9C 54 0 ]
-[a 18C 49 53 0 ]
-[a 8C 53 0 ]
-[a 17C 49 52 0 ]
-[a 7C 52 0 ]
-[a 16C 49 51 0 ]
-[a 6C 51 0 ]
-[a 15C 49 50 0 ]
-[a 5C 50 0 ]
-[a 14C 49 49 0 ]
-[a 4C 49 0 ]
-[a 13C 49 48 0 ]
-[a 3C 48 0 ]
+[a 9C 55 0 ]
+[a 26C 55 0 ]
+[a 18C 49 54 0 ]
+[a 8C 54 0 ]
+[a 25C 54 0 ]
+[a 17C 49 53 0 ]
+[a 34C 49 53 0 ]
+[a 7C 53 0 ]
+[a 24C 53 0 ]
+[a 16C 49 52 0 ]
+[a 33C 49 52 0 ]
+[a 6C 52 0 ]
+[a 23C 52 0 ]
+[a 15C 49 51 0 ]
+[a 32C 49 51 0 ]
+[a 5C 51 0 ]
+[a 22C 51 0 ]
+[a 14C 49 50 0 ]
+[a 31C 49 50 0 ]
+[a 4C 50 0 ]
+[a 21C 50 0 ]
+[a 13C 49 49 0 ]
+[a 30C 49 49 0 ]
+[a 3C 49 0 ]
+[a 20C 49 0 ]
+[a 12C 49 48 0 ]
+[a 29C 49 48 0 ]
+[a 19C 48 0 ]

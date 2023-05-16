@@ -11,33 +11,33 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\Lab4.X.production.obj
-cinit CODE 0 C74 C74 22 1 2
+$C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
 idloc IDLOC 5 200000 200000 8 1 1
-intcode_body CODE 0 928 928 D4 1 2
-text0 CODE 0 9FC 9FC BE 1 2
-text1 CODE 0 B56 B56 82 1 2
-text2 CODE 0 CAE CAE 16 1 2
-text3 CODE 0 828 828 100 1 2
-text4 CODE 0 ABA ABA 9C 1 2
-text5 CODE 0 CDA CDA 14 1 2
-text6 CODE 0 CC4 CC4 16 1 2
-text7 CODE 0 C2E C2E 46 1 2
-text8 CODE 0 BD8 BD8 56 1 2
-text9 CODE 0 CEE CEE E 1 2
-text10 CODE 0 C96 C96 18 1 2
-idataCOMRAM CODE 0 CFC CFC 1 1 1
+init CODE 0 E E 4 1 2
+reset_vec CODE 0 0 0 4 1 2
+config CONFIG 4 300000 300000 E 1 1
+$dist/default/production\Lab4.X.production.obj
+cinit CODE 0 C12 C12 22 1 2
+idloc IDLOC 5 200000 200000 8 1 1
+intcode_body CODE 0 828 828 D4 1 2
+text0 CODE 0 8FC 8FC BE 1 2
+text1 CODE 0 AF4 AF4 82 1 2
+text2 CODE 0 C4C C4C 16 1 2
+text3 CODE 0 9BA 9BA 9E 1 2
+text4 CODE 0 A58 A58 9C 1 2
+text5 CODE 0 C78 C78 14 1 2
+text6 CODE 0 C62 C62 16 1 2
+text7 CODE 0 BCC BCC 46 1 2
+text8 CODE 0 B76 B76 56 1 2
+text9 CODE 0 C8C C8C E 1 2
+text10 CODE 0 C34 C34 18 1 2
+idataCOMRAM CODE 0 C9A C9A 1 1 1
 cstackCOMRAM COMRAM 1 1 1 E 1 1
 temp COMRAM 1 11 11 1 1 1
 intcode CODE 0 8 8 6 1 2
 smallconst SMALLCONST 0 800 800 28 1 2
 dataCOMRAM COMRAM 1 10 10 1 1 1
 bssCOMRAM COMRAM 1 F F 1 1 1
-config CONFIG 4 300000 300000 E 1 1
-$C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-idloc IDLOC 5 200000 200000 8 1 1
-init CODE 0 E E 4 1 2
-reset_vec CODE 0 0 0 4 1 2
 config CONFIG 4 300000 300000 E 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -57,16 +57,16 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 CONST 4-7 1
 CONST 12-7FF 1
-CONST CFD-7FFF 1
-SMALLCONST CFD-7FFF 1
+CONST C9B-7FFF 1
+SMALLCONST C9B-7FFF 1
 CODE 4-7 1
 CODE 12-7FF 1
-CODE CFD-7FFF 1
+CODE C9B-7FFF 1
 BIGRAM 12-7FF 1
 BIGSFR F60-FFF 1
 COMRAM 12-5F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST CFD-7FFF 1
+MEDIUMCONST C9B-7FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -81,212 +81,194 @@ MEDIUMCONST CFD-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab4.X.production.obj
-8 intcode CODE >2715:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-8 intcode CODE >116:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-928 intcode_body CODE >116:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-92A intcode_body CODE >117:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-92E intcode_body CODE >118:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-936 intcode_body CODE >119:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-93A intcode_body CODE >120:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-93E intcode_body CODE >121:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-946 intcode_body CODE >122:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-94E intcode_body CODE >123:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-956 intcode_body CODE >124:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-95E intcode_body CODE >126:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-962 intcode_body CODE >127:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-96A intcode_body CODE >128:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-972 intcode_body CODE >129:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-97A intcode_body CODE >130:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-982 intcode_body CODE >132:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-986 intcode_body CODE >133:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-98E intcode_body CODE >134:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-996 intcode_body CODE >135:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-99E intcode_body CODE >136:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9A6 intcode_body CODE >138:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9AA intcode_body CODE >139:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9B2 intcode_body CODE >140:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9BA intcode_body CODE >141:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9C2 intcode_body CODE >142:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9CA intcode_body CODE >143:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9CA intcode_body CODE >146:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9CE intcode_body CODE >148:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9DE intcode_body CODE >149:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9E0 intcode_body CODE >151:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9E4 intcode_body CODE >152:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9E6 intcode_body CODE >153:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9EE intcode_body CODE >154:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9F8 intcode_body CODE >156:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-C96 text10 CODE >47:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C98 text10 CODE >48:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CA8 text10 CODE >49:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CAC text10 CODE >50:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CEE text9 CODE >95:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CEE text9 CODE >97:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CF0 text9 CODE >98:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CF8 text9 CODE >100:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CFA text9 CODE >101:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BD8 text8 CODE >263:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BDA text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BDC text8 CODE >265:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BEA text8 CODE >267:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BEC text8 CODE >268:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BF4 text8 CODE >269:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BFC text8 CODE >271:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BFE text8 CODE >272:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C06 text8 CODE >274:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C08 text8 CODE >275:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C10 text8 CODE >277:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C12 text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C16 text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C1C text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C22 text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C28 text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C2E text7 CODE >51:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C30 text7 CODE >52:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C38 text7 CODE >53:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C48 text7 CODE >54:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C4C text7 CODE >55:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C52 text7 CODE >56:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C64 text7 CODE >57:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C6E text7 CODE >58:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-C72 text7 CODE >60:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CC4 text6 CODE >227:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CC6 text6 CODE >230:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CC8 text6 CODE >231:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CCE text6 CODE >232:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CD2 text6 CODE >233:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CD8 text6 CODE >234:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CDA text5 CODE >102:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CDA text5 CODE >104:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CDC text5 CODE >105:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CE2 text5 CODE >106:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CE6 text5 CODE >107:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CEC text5 CODE >108:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-ABA text4 CODE >61:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-ABA text4 CODE >63:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-ABC text4 CODE >64:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-AC4 text4 CODE >65:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-ACC text4 CODE >67:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-AD0 text4 CODE >68:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-AD4 text4 CODE >69:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-ADA text4 CODE >70:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-AE2 text4 CODE >71:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-AEA text4 CODE >73:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-AEE text4 CODE >74:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-AF2 text4 CODE >75:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-AF8 text4 CODE >76:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B00 text4 CODE >77:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B08 text4 CODE >79:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B0C text4 CODE >80:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B10 text4 CODE >81:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B16 text4 CODE >82:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B1E text4 CODE >83:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B26 text4 CODE >84:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B2A text4 CODE >85:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B30 text4 CODE >86:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B36 text4 CODE >87:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B3A text4 CODE >88:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B40 text4 CODE >90:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B44 text4 CODE >91:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B4A text4 CODE >92:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B4E text4 CODE >93:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B54 text4 CODE >94:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-828 text3 CODE >55:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-828 text3 CODE >56:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-82C text3 CODE >57:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-834 text3 CODE >59:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-838 text3 CODE >60:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-842 text3 CODE >61:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-846 text3 CODE >63:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-850 text3 CODE >64:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-854 text3 CODE >66:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-85E text3 CODE >67:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-862 text3 CODE >69:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-86C text3 CODE >70:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-870 text3 CODE >73:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-874 text3 CODE >74:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-87E text3 CODE >75:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-882 text3 CODE >77:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-88C text3 CODE >78:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-890 text3 CODE >80:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-89A text3 CODE >81:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-89E text3 CODE >83:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8A8 text3 CODE >84:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8AC text3 CODE >87:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8B0 text3 CODE >88:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8BA text3 CODE >89:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8BE text3 CODE >91:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8C8 text3 CODE >92:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8CC text3 CODE >94:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8D6 text3 CODE >95:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8DA text3 CODE >97:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8E4 text3 CODE >98:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8E8 text3 CODE >101:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8EC text3 CODE >102:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8F6 text3 CODE >103:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-8FA text3 CODE >105:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-904 text3 CODE >106:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-908 text3 CODE >108:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-912 text3 CODE >109:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-916 text3 CODE >111:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-920 text3 CODE >112:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-924 text3 CODE >114:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-926 text3 CODE >115:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-CAE text2 CODE >116:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CB0 text2 CODE >120:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CB2 text2 CODE >121:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CB8 text2 CODE >122:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CBC text2 CODE >123:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-CC2 text2 CODE >124:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B56 text1 CODE >215:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B56 text1 CODE >219:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B5E text1 CODE >220:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-B90 text1 CODE >223:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BC0 text1 CODE >219:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-BD6 text1 CODE >225:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
-9FC text0 CODE >20:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-9FC text0 CODE >22:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A00 text0 CODE >23:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A04 text0 CODE >24:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A08 text0 CODE >25:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A0C text0 CODE >26:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A10 text0 CODE >27:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A14 text0 CODE >28:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A18 text0 CODE >29:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A28 text0 CODE >30:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A2A text0 CODE >31:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A3A text0 CODE >37:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A3C text0 CODE >38:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A3E text0 CODE >39:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A40 text0 CODE >40:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A56 text0 CODE >41:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A5C text0 CODE >42:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A60 text0 CODE >43:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A64 text0 CODE >44:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A74 text0 CODE >45:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A7A text0 CODE >46:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-A8A text0 CODE >47:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-AA0 text0 CODE >49:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-AA6 text0 CODE >51:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-C74 cinit CODE >611:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C74 cinit CODE >613:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C74 cinit CODE >616:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C74 cinit CODE >637:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C76 cinit CODE >638:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C78 cinit CODE >639:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C7A cinit CODE >640:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C7C cinit CODE >641:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C7E cinit CODE >642:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C80 cinit CODE >643:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C82 cinit CODE >644:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C86 cinit CODE >648:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C88 cinit CODE >654:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C88 cinit CODE >656:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C8A cinit CODE >657:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C8C cinit CODE >659:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C8E cinit CODE >660:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C90 cinit CODE >661:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
-C92 cinit CODE >662:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
+8 intcode CODE >2663:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+8 intcode CODE >137:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+828 intcode_body CODE >137:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+82A intcode_body CODE >138:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+82E intcode_body CODE >139:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+836 intcode_body CODE >140:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+83A intcode_body CODE >141:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+83E intcode_body CODE >142:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+846 intcode_body CODE >143:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+84E intcode_body CODE >144:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+856 intcode_body CODE >145:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+85E intcode_body CODE >147:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+862 intcode_body CODE >148:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+86A intcode_body CODE >149:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+872 intcode_body CODE >150:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+87A intcode_body CODE >151:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+882 intcode_body CODE >153:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+886 intcode_body CODE >154:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+88E intcode_body CODE >155:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+896 intcode_body CODE >156:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+89E intcode_body CODE >157:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8A6 intcode_body CODE >159:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8AA intcode_body CODE >160:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8B2 intcode_body CODE >161:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8BA intcode_body CODE >162:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8C2 intcode_body CODE >163:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8CA intcode_body CODE >164:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8CA intcode_body CODE >167:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8CE intcode_body CODE >169:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8DE intcode_body CODE >170:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8E0 intcode_body CODE >172:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8E4 intcode_body CODE >173:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8E6 intcode_body CODE >174:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8EE intcode_body CODE >175:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8F8 intcode_body CODE >177:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+C34 text10 CODE >47:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C36 text10 CODE >48:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C46 text10 CODE >49:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C4A text10 CODE >50:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C8C text9 CODE >95:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C8C text9 CODE >97:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C8E text9 CODE >98:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C96 text9 CODE >100:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C98 text9 CODE >101:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B76 text8 CODE >263:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B78 text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B7A text8 CODE >265:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B88 text8 CODE >267:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B8A text8 CODE >268:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B92 text8 CODE >269:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B9A text8 CODE >271:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B9C text8 CODE >272:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BA4 text8 CODE >274:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BA6 text8 CODE >275:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BAE text8 CODE >277:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BB0 text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BB4 text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BBA text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BC0 text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BC6 text8 CODE >264:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BCC text7 CODE >51:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BCE text7 CODE >52:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BD6 text7 CODE >53:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BE6 text7 CODE >54:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BEA text7 CODE >55:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+BF0 text7 CODE >56:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C02 text7 CODE >57:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C0C text7 CODE >58:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C10 text7 CODE >60:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C62 text6 CODE >227:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C64 text6 CODE >230:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C66 text6 CODE >231:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C6C text6 CODE >232:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C70 text6 CODE >233:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C76 text6 CODE >234:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C78 text5 CODE >102:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C78 text5 CODE >104:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C7A text5 CODE >105:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C80 text5 CODE >106:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C84 text5 CODE >107:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C8A text5 CODE >108:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A58 text4 CODE >61:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A58 text4 CODE >63:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A5A text4 CODE >64:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A62 text4 CODE >65:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A6A text4 CODE >67:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A6E text4 CODE >68:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A72 text4 CODE >69:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A78 text4 CODE >70:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A80 text4 CODE >71:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A88 text4 CODE >73:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A8C text4 CODE >74:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A90 text4 CODE >75:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A96 text4 CODE >76:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+A9E text4 CODE >77:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AA6 text4 CODE >79:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AAA text4 CODE >80:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AAE text4 CODE >81:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AB4 text4 CODE >82:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+ABC text4 CODE >83:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AC4 text4 CODE >84:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AC8 text4 CODE >85:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+ACE text4 CODE >86:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AD4 text4 CODE >87:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AD8 text4 CODE >88:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+ADE text4 CODE >90:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AE2 text4 CODE >91:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AE8 text4 CODE >92:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AEC text4 CODE >93:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AF2 text4 CODE >94:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+9BA text3 CODE >55:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9BA text3 CODE >115:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9C8 text3 CODE >116:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9CC text3 CODE >117:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9D4 text3 CODE >118:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9DC text3 CODE >119:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9E4 text3 CODE >120:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9EC text3 CODE >121:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9F0 text3 CODE >122:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9F8 text3 CODE >123:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A00 text3 CODE >124:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A08 text3 CODE >125:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A10 text3 CODE >126:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A14 text3 CODE >127:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A1C text3 CODE >128:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A24 text3 CODE >129:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A2C text3 CODE >130:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A34 text3 CODE >131:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A38 text3 CODE >132:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A40 text3 CODE >133:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A48 text3 CODE >134:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A50 text3 CODE >135:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+A56 text3 CODE >136:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+C4C text2 CODE >116:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C4E text2 CODE >120:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C50 text2 CODE >121:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C56 text2 CODE >122:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C5A text2 CODE >123:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+C60 text2 CODE >124:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AF4 text1 CODE >215:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AF4 text1 CODE >219:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+AFC text1 CODE >220:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B2E text1 CODE >223:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B5E text1 CODE >219:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+B74 text1 CODE >225:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+8FC text0 CODE >20:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+8FC text0 CODE >22:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+900 text0 CODE >23:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+904 text0 CODE >24:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+908 text0 CODE >25:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+90C text0 CODE >26:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+910 text0 CODE >27:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+914 text0 CODE >28:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+918 text0 CODE >29:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+928 text0 CODE >30:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+92A text0 CODE >31:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+93A text0 CODE >37:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+93C text0 CODE >38:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+93E text0 CODE >39:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+940 text0 CODE >40:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+956 text0 CODE >41:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+95C text0 CODE >42:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+960 text0 CODE >43:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+964 text0 CODE >44:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+974 text0 CODE >45:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+97A text0 CODE >46:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+98A text0 CODE >47:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9A0 text0 CODE >49:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+9A6 text0 CODE >51:E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+C12 cinit CODE >628:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C12 cinit CODE >630:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C12 cinit CODE >633:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C12 cinit CODE >654:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C14 cinit CODE >655:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C16 cinit CODE >656:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C18 cinit CODE >657:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C1A cinit CODE >658:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C1C cinit CODE >659:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C1E cinit CODE >660:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C20 cinit CODE >661:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C24 cinit CODE >665:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C26 cinit CODE >671:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C26 cinit CODE >673:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C28 cinit CODE >674:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C2A cinit CODE >676:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C2C cinit CODE >677:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C2E cinit CODE >678:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
+C30 cinit CODE >679:C:\Users\acer\AppData\Local\Temp\xcAsgio.as
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -299,16 +281,16 @@ C92 cinit CODE >662:C:\Users\acer\AppData\Local\Temp\xcAs1oc.as
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__end_of_InicializaLCD B56 0 CODE 0 text4 dist/default/production\Lab4.X.production.obj
+__end_of_InicializaLCD AF4 0 CODE 0 text4 dist/default/production\Lab4.X.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Lab4.X.production.obj
 EnviaDato@a 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab4.X.production.obj
-__Hspace_0 CFD 0 ABS 0 - dist/default/production\Lab4.X.production.obj
+__Hspace_0 C9B 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __Hspace_1 12 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __Hspace_4 60000E 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Lab4.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-__end_of_EnviaDato C74 0 CODE 0 text7 dist/default/production\Lab4.X.production.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+__end_of_EnviaDato C12 0 CODE 0 text7 dist/default/production\Lab4.X.production.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Lab4.X.production.obj
 __Lsmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\Lab4.X.production.obj
 _LATB F8A 0 ABS 0 - dist/default/production\Lab4.X.production.obj
@@ -318,36 +300,36 @@ _RBIE 7F93 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 _RBIF 7F90 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 _RBPU 7F8F 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 _TMR0 FD6 0 ABS 0 - dist/default/production\Lab4.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-_main 9FC 0 CODE 0 text0 dist/default/production\Lab4.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+_main 8FC 0 CODE 0 text0 dist/default/production\Lab4.X.production.obj
 btemp 11 0 COMRAM 1 temp dist/default/production\Lab4.X.production.obj
 MensajeLCD_Var@a 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab4.X.production.obj
 MensajeLCD_Var@i B 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab4.X.production.obj
-start E 0 CODE 0 init C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-_LeerTeclado 828 0 CODE 0 text3 dist/default/production\Lab4.X.production.obj
+start E 0 CODE 0 init C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+_LeerTeclado 9BA 0 CODE 0 text3 dist/default/production\Lab4.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Lab4.X.production.obj
-__end_of_RetardoLCD C2E 0 CODE 0 text8 dist/default/production\Lab4.X.production.obj
-_EnviaDato C2E 0 CODE 0 text7 dist/default/production\Lab4.X.production.obj
+__end_of_RetardoLCD BCC 0 CODE 0 text8 dist/default/production\Lab4.X.production.obj
+_EnviaDato BCC 0 CODE 0 text7 dist/default/production\Lab4.X.production.obj
 __Hpowerup E 0 CODE 0 powerup dist/default/production\Lab4.X.production.obj
 ttemp5 12 0 COMRAM 1 temp dist/default/production\Lab4.X.production.obj
 ttemp6 15 0 COMRAM 1 temp dist/default/production\Lab4.X.production.obj
 ttemp7 19 0 COMRAM 1 temp dist/default/production\Lab4.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Lab4.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-intlevel0 0 0 CODE 0 text C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-intlevel1 0 0 CODE 0 text C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-intlevel2 0 0 CODE 0 text C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-intlevel3 0 0 CODE 0 text C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
+__accesstop 60 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+intlevel0 0 0 CODE 0 text C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+intlevel1 0 0 CODE 0 text C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+intlevel2 0 0 CODE 0 text C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+intlevel3 0 0 CODE 0 text C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Lab4.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Lab4.X.production.obj
 wtemp8 12 0 COMRAM 1 temp dist/default/production\Lab4.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\Lab4.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Lab4.X.production.obj
-__pidataCOMRAM CFC 0 CODE 0 idataCOMRAM dist/default/production\Lab4.X.production.obj
+__pidataCOMRAM C9A 0 CODE 0 idataCOMRAM dist/default/production\Lab4.X.production.obj
 _ADCON1 FC1 0 ABS 0 - dist/default/production\Lab4.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-_DireccionaLCD CC4 0 CODE 0 text6 dist/default/production\Lab4.X.production.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+_DireccionaLCD C62 0 CODE 0 text6 dist/default/production\Lab4.X.production.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Lab4.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Lab4.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Lab4.X.production.obj
@@ -357,11 +339,11 @@ __Hintcodelo E 0 CODE 0 intcodelo dist/default/production\Lab4.X.production.obj
 DireccionaLCD@a 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab4.X.production.obj
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\Lab4.X.production.obj
 __Lintcodelo E 0 CODE 0 intcodelo dist/default/production\Lab4.X.production.obj
-start_initialization C74 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
+start_initialization C12 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Lab4.X.production.obj
 ___rparam_used 1 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 _TMR0IF 7F92 0 ABS 0 - dist/default/production\Lab4.X.production.obj
-isa$xinst 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
+isa$xinst 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\Lab4.X.production.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\Lab4.X.production.obj
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\Lab4.X.production.obj
@@ -391,7 +373,7 @@ __Htext9 0 0 ABS 0 text9 dist/default/production\Lab4.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Lab4.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Lab4.X.production.obj
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\Lab4.X.production.obj
-__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
+__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\Lab4.X.production.obj
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\Lab4.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\Lab4.X.production.obj
@@ -438,10 +420,10 @@ __Lrbit 0 0 COMRAM 1 rbit dist/default/production\Lab4.X.production.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\Lab4.X.production.obj
 __Ltemp 11 0 COMRAM 1 temp dist/default/production\Lab4.X.production.obj
 __Ltext 0 0 ABS 0 text dist/default/production\Lab4.X.production.obj
-__end_of_LeerTeclado 928 0 CODE 0 text3 dist/default/production\Lab4.X.production.obj
+__end_of_LeerTeclado A58 0 CODE 0 text3 dist/default/production\Lab4.X.production.obj
 int$flags 11 0 COMRAM 1 temp dist/default/production\Lab4.X.production.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Lab4.X.production.obj
-__end_of_DireccionaLCD CDA 0 CODE 0 text6 dist/default/production\Lab4.X.production.obj
+__end_of_DireccionaLCD C78 0 CODE 0 text6 dist/default/production\Lab4.X.production.obj
 __Hintret 0 0 ABS 0 intret dist/default/production\Lab4.X.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\Lab4.X.production.obj
 _GIE 7F97 0 ABS 0 - dist/default/production\Lab4.X.production.obj
@@ -450,37 +432,37 @@ _RB4 7C0C 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 _RB5 7C0D 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 _RB6 7C0E 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 _RB7 7C0F 0 ABS 0 - dist/default/production\Lab4.X.production.obj
-__S0 CFD 0 ABS 0 - dist/default/production\Lab4.X.production.obj
+__S0 C9B 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __S1 12 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __S4 0 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __S5 0 0 ABS 0 - dist/default/production\Lab4.X.production.obj
-_HabilitaLCD CEE 0 CODE 0 text9 dist/default/production\Lab4.X.production.obj
+_HabilitaLCD C8C 0 CODE 0 text9 dist/default/production\Lab4.X.production.obj
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\Lab4.X.production.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Lab4.X.production.obj
-_BorraLCD CDA 0 CODE 0 text5 dist/default/production\Lab4.X.production.obj
+_BorraLCD C78 0 CODE 0 text5 dist/default/production\Lab4.X.production.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\Lab4.X.production.obj
-__end_of_ISR 9FC 0 CODE 0 intcode_body dist/default/production\Lab4.X.production.obj
-int_func 928 0 CODE 0 intcode_body dist/default/production\Lab4.X.production.obj
+__end_of_ISR 8FC 0 CODE 0 intcode_body dist/default/production\Lab4.X.production.obj
+int_func 828 0 CODE 0 intcode_body dist/default/production\Lab4.X.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production\Lab4.X.production.obj
-__end_of_BorraLCD CEE 0 CODE 0 text5 dist/default/production\Lab4.X.production.obj
+__end_of_BorraLCD C8C 0 CODE 0 text5 dist/default/production\Lab4.X.production.obj
 __Hramtop 800 0 RAM 0 ramtop dist/default/production\Lab4.X.production.obj
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\Lab4.X.production.obj
 __activetblptr 2 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\Lab4.X.production.obj
 __Htext10 0 0 ABS 0 text10 dist/default/production\Lab4.X.production.obj
-__ptext10 C96 0 CODE 0 text10 dist/default/production\Lab4.X.production.obj
-__pintcode_body 928 0 CODE 0 intcode_body dist/default/production\Lab4.X.production.obj
+__ptext10 C34 0 CODE 0 text10 dist/default/production\Lab4.X.production.obj
+__pintcode_body 828 0 CODE 0 intcode_body dist/default/production\Lab4.X.production.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Lab4.X.production.obj
 __Lbigram 0 0 ABS 0 bigram dist/default/production\Lab4.X.production.obj
 __Lbigsfr 0 0 ABS 0 bigsfr dist/default/production\Lab4.X.production.obj
 __Lcomram 0 0 ABS 0 comram dist/default/production\Lab4.X.production.obj
 __Lconfig 0 0 CONFIG 4 config dist/default/production\Lab4.X.production.obj
-_ConfiguraLCD C96 0 CODE 0 text10 dist/default/production\Lab4.X.production.obj
+_ConfiguraLCD C34 0 CODE 0 text10 dist/default/production\Lab4.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Lab4.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Lab4.X.production.obj
-isa$std 1 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-stackhi 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-stacklo 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
+isa$std 1 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+stackhi 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+stacklo 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\Lab4.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\Lab4.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Lab4.X.production.obj
@@ -490,48 +472,48 @@ __Lspace_2 0 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __Lspace_4 0 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __pbssCOMRAM F 0 COMRAM 1 bssCOMRAM dist/default/production\Lab4.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Lab4.X.production.obj
-_MensajeLCD_Var B56 0 CODE 0 text1 dist/default/production\Lab4.X.production.obj
-_InicializaLCD ABA 0 CODE 0 text4 dist/default/production\Lab4.X.production.obj
-end_of_initialization C88 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
-_EscribeLCD_c CAE 0 CODE 0 text2 dist/default/production\Lab4.X.production.obj
+_MensajeLCD_Var AF4 0 CODE 0 text1 dist/default/production\Lab4.X.production.obj
+_InicializaLCD A58 0 CODE 0 text4 dist/default/production\Lab4.X.production.obj
+end_of_initialization C26 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
+_EscribeLCD_c C4C 0 CODE 0 text2 dist/default/production\Lab4.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Lab4.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\Lab4.X.production.obj
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\Lab4.X.production.obj
 __Lramtop 800 0 RAM 0 ramtop dist/default/production\Lab4.X.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\Lab4.X.production.obj
-__pcinit C74 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
-__ptext0 9FC 0 CODE 0 text0 dist/default/production\Lab4.X.production.obj
-__ptext1 B56 0 CODE 0 text1 dist/default/production\Lab4.X.production.obj
-__ptext2 CAE 0 CODE 0 text2 dist/default/production\Lab4.X.production.obj
-__ptext3 828 0 CODE 0 text3 dist/default/production\Lab4.X.production.obj
-__ptext4 ABA 0 CODE 0 text4 dist/default/production\Lab4.X.production.obj
-__ptext5 CDA 0 CODE 0 text5 dist/default/production\Lab4.X.production.obj
-__ptext6 CC4 0 CODE 0 text6 dist/default/production\Lab4.X.production.obj
-__ptext7 C2E 0 CODE 0 text7 dist/default/production\Lab4.X.production.obj
-__ptext8 BD8 0 CODE 0 text8 dist/default/production\Lab4.X.production.obj
-__ptext9 CEE 0 CODE 0 text9 dist/default/production\Lab4.X.production.obj
+__pcinit C12 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
+__ptext0 8FC 0 CODE 0 text0 dist/default/production\Lab4.X.production.obj
+__ptext1 AF4 0 CODE 0 text1 dist/default/production\Lab4.X.production.obj
+__ptext2 C4C 0 CODE 0 text2 dist/default/production\Lab4.X.production.obj
+__ptext3 9BA 0 CODE 0 text3 dist/default/production\Lab4.X.production.obj
+__ptext4 A58 0 CODE 0 text4 dist/default/production\Lab4.X.production.obj
+__ptext5 C78 0 CODE 0 text5 dist/default/production\Lab4.X.production.obj
+__ptext6 C62 0 CODE 0 text6 dist/default/production\Lab4.X.production.obj
+__ptext7 BCC 0 CODE 0 text7 dist/default/production\Lab4.X.production.obj
+__ptext8 B76 0 CODE 0 text8 dist/default/production\Lab4.X.production.obj
+__ptext9 C8C 0 CODE 0 text9 dist/default/production\Lab4.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Lab4.X.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production\Lab4.X.production.obj
-__ramtop 800 0 RAM 0 ramtop C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-__end_of_ConfiguraLCD CAE 0 CODE 0 text10 dist/default/production\Lab4.X.production.obj
+__ramtop 800 0 RAM 0 ramtop C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+__end_of_ConfiguraLCD C4C 0 CODE 0 text10 dist/default/production\Lab4.X.production.obj
 __Lpowerup E 0 CODE 0 powerup dist/default/production\Lab4.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Lab4.X.production.obj
 __psmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\Lab4.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Lab4.X.production.obj
 ConfiguraLCD@a 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab4.X.production.obj
-___heap_hi 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
-___heap_lo 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAs1oc.obj
+___heap_hi 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
+___heap_lo 0 0 ABS 0 - C:\Users\acer\AppData\Local\Temp\xcAsgio.obj
 ___param_bank 0 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Lab4.X.production.obj
-__end_of__initialization C88 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
-__end_of_MensajeLCD_Var BD8 0 CODE 0 text1 dist/default/production\Lab4.X.production.obj
+__end_of__initialization C26 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
+__end_of_MensajeLCD_Var B76 0 CODE 0 text1 dist/default/production\Lab4.X.production.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\Lab4.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\Lab4.X.production.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab4.X.production.obj
-__end_of_EscribeLCD_c CC4 0 CODE 0 text2 dist/default/production\Lab4.X.production.obj
-__end_of_main ABA 0 CODE 0 text0 dist/default/production\Lab4.X.production.obj
+__end_of_EscribeLCD_c C62 0 CODE 0 text2 dist/default/production\Lab4.X.production.obj
+__end_of_main 9BA 0 CODE 0 text0 dist/default/production\Lab4.X.production.obj
 __pintcode 8 0 CODE 0 intcode dist/default/production\Lab4.X.production.obj
-__end_of_HabilitaLCD CFC 0 CODE 0 text9 dist/default/production\Lab4.X.production.obj
+__end_of_HabilitaLCD C9A 0 CODE 0 text9 dist/default/production\Lab4.X.production.obj
 _LATD1 7C61 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 _LATE0 7C68 0 ABS 0 - dist/default/production\Lab4.X.production.obj
 _LATE1 7C69 0 ABS 0 - dist/default/production\Lab4.X.production.obj
@@ -550,8 +532,8 @@ __Lbss 0 0 RAM 1 bss dist/default/production\Lab4.X.production.obj
 __Lram 0 0 ABS 0 ram dist/default/production\Lab4.X.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production\Lab4.X.production.obj
 EscribeLCD_c@a 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab4.X.production.obj
-_RetardoLCD BD8 0 CODE 0 text8 dist/default/production\Lab4.X.production.obj
-__initialization C74 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
+_RetardoLCD B76 0 CODE 0 text8 dist/default/production\Lab4.X.production.obj
+__initialization C12 0 CODE 0 cinit dist/default/production\Lab4.X.production.obj
 __pdataCOMRAM 10 0 COMRAM 1 dataCOMRAM dist/default/production\Lab4.X.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\Lab4.X.production.obj
 __Hsmallconst 828 0 SMALLCONST 0 smallconst dist/default/production\Lab4.X.production.obj
@@ -582,7 +564,7 @@ __Hintcode E 0 CODE 0 intcode dist/default/production\Lab4.X.production.obj
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text3 0 828 828 4D5 1
+intcode_body 0 828 828 473 1
 cstackCOMRAM 1 1 1 11 1
 reset_vec 0 0 0 4 1
 intcode 0 8 8 A 1

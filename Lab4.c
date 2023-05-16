@@ -117,7 +117,7 @@ unsigned char LeerTeclado(void){
     if(RB4==0) return "1";
     if(RB5==0) return "2";
     if(RB6==0) return "3";
-    if(RB7==0) return "4;
+    if(RB7==0) return "4";
     LATB=0b11111101;
     if(RB4==0) return "5";
     if(RB5==0) return "6";
