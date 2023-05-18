@@ -6255,7 +6255,6 @@ BorraLCD();
 DireccionaLCD(0x82);
 MensajeLCD_Var("LVP Activado");
 asm(" sleep");
-while(1);
 }
 }
 
@@ -6292,7 +6291,7 @@ MensajeLCD_Var("de calcular");
 }else{
 if(r>=0xA & r!=1000 & r !=1001){
 
-# 358
+# 357
 for(int j=9;j>=0;j--){
 if(r/(long)pow(10,j)>0){
 EscribeLCD_c(r/(long)pow(10,j)+48);

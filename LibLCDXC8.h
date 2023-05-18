@@ -19,6 +19,7 @@ extern "C" {
 }
 #endif
 #include<xc.h>
+#include<string.h>
 #ifndef _XTAL_FREQ
 #define _XTAL_FREQ 20000000
 #endif
@@ -261,7 +262,7 @@ void MensajeLCD_Var(char* a){
 //Función que escribe una cadena de caracteres variable en la pantalla
 //a es una cadena de caracteres guardada en una variable *char
 //Ejemplo: char aux[4]="Hola"; MensajeLCD_Var(aux);
-      for(int i = 0; i<16; i++){
+      for(int i = 0; i<strlen(a); i++){
         if(a[i] == NULL){
         break;
         }

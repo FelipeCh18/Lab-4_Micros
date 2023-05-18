@@ -80,7 +80,7 @@
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
 "283
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"305
+"304
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 "48 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
@@ -232,16 +232,16 @@
 {
 "109
 } 0
-"305 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"304 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 {
-"358
+"357
 [v Imprimir_Resultado@j j `i  1 a 2 58 ]
-"307
+"306
 [v Imprimir_Resultado@i i `i  1 a 2 50 ]
-"305
+"304
 [v Imprimir_Resultado@r r `l  1 p 4 42 ]
-"378
+"377
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\pow.c
 [v _pow pow `(d  1 e 3 0 ]
@@ -562,7 +562,7 @@
 "283
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"303
+"302
 } 0
 "261 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]

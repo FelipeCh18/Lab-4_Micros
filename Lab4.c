@@ -7,12 +7,12 @@
 #pragma config FOSC=INTOSC_EC //Sentencia para usar oscilador externo
 #pragma config WDT=OFF //Apagar el perro guardian
 #pragma config PBADEN=OFF
-#pragma config LVP=ON
+#pragma config LVP=OFF
 #pragma config MCLRE=ON
 
 unsigned char Tecla = 0; //Variable para leer teclado
 unsigned long partdecl = 0; //Parte decimal de un resultado
-unsigned long r = 0; //Resultado entero de las operaciones
+unsigned long int r = 0; //Resultado entero de las operaciones
 unsigned int n1 = 0; //Primer numero
 unsigned int n2 = 0; //Segundo numero
 unsigned int i = 0;
@@ -71,8 +71,7 @@ void main(void){
         verificador = 0;
         Tecla = LeerTeclado();
         ColorRGB();
-        if(Tecla=='C'){ //Limpiar la pantalla si se presiona [1][4] 
-            DireccionaLCD(0xC0); //Colocar el cursor en la primera posicion de segunda fila
+        if(Tecla=='C'){ //Limpiar la pantalla si se presiona [1][4]  //Colocar el cursor en la primera posicion de segunda fila
             //Limpiar variables
             op = ' ';
             n1c = ' ';
@@ -177,7 +176,7 @@ void main(void){
                     }
                     break;
                 case '^':
-                    r=pow(n1,n2);
+                    r=(long)pow(n1,n2);
                     partdecl = r*100;
                     break;   
                 default:
@@ -297,6 +296,7 @@ void __interrupt() ISR(void){
             DireccionaLCD(0x82);
             MensajeLCD_Var("LVP Activado");
             SLEEP();
+            while(1);
         }
     }
     
@@ -319,47 +319,60 @@ void Imprimir_Resultado(long r){
             }
                                               
         }
-    }else if(r>0xFFFF & r!=1000 & r !=1001){
+    }else if(r>0x51 & r!=1000 & r !=1001){
+        EscribeLCD_c('-');
         DireccionaLCD(0x85);
-        MensajeLCD_Var("Imposible");
-        DireccionaLCD(0xC0);
-        MensajeLCD_Var("de calcular");
+        r = ~r+1;
+        EscribeLCD_c(r+'0'); 
     }else{
-        if(r>=0xA & r!=1000 & r !=1001){
-            contador_digitos=0;
-            res=r;
-            do{
-                res=res/10;
-            }while(res>1);
-            EscribeLCD_n16(r,contador_digitos);
-//            do{
-//                i = i+1;
-//                r = r - 10;
-//            }while(r>=0xA);
-//            EscribeLCD_c(i+'0');
-//            DireccionaLCD(0x85);
-//            EscribeLCD_c(r+'0');
-//            int c, i, n;
-//            int digitos[10];
-//            unsigned long long int num;
-//            num = 0;
-//            for( n = 0; n < 10 && (c = getchar()) != '\n'; n++ ){
-//                digitos[n] = (c - '0')+48;
-//                num *= 10;
-//                num += digitos[n];
-//            }
-//            MensajeLCD_Var(digitos);
+        if(r>0xFFFF & r!=1000 & r !=1001){
+            DireccionaLCD(0x85);
+            MensajeLCD_Var("Imposible");
+            DireccionaLCD(0xC0);
+            MensajeLCD_Var("de calcular");
         }else{
-            if(r==1000){
-                MensajeLCD_Var("Infinito");
-            }else{
-                if(r==1001){
-                    DireccionaLCD(0xC1);
-                    MensajeLCD_Var("Indeterminado");
-                }else{
-                    EscribeLCD_c(r+'0'); 
+            if(r>=0xA & r!=1000 & r !=1001){
+/*//                  contador_digitos=0;
+//                  res=r;
+//                  do{
+//                      res=res/10;
+//                  }while(res>1);
+//                  EscribeLCD_n16(r,contador_digitos);
+//                    do{
+//                        i = i+1;
+//                        r = r - 10;
+//                    }while(r>=0xA);
+//                    EscribeLCD_c(i+'0');
+//                    DireccionaLCD(0x85);
+//                    EscribeLCD_c(r+'0');
+//                    int c, i, n;
+//                    int digitos[10];
+//                    unsigned long long int num;
+//                    num = 0;
+//                    for( n = 0; n < 10 && (c = getchar()) != '\n'; n++ ){
+//                        digitos[n] = (c - '0')+48;
+//                        num *= 10;
+//                        num += digitos[n];
+//                    }
+//                    MensajeLCD_Var(digitos);*/
+                for(int j=9;j>=0;j--){
+                    if(r/(long)pow(10,j)>0){
+                        EscribeLCD_c(r/(long)pow(10,j)+48);
+                        r=r%(long)pow(10,j);
+                    }
                 }
-            }
+            }else{
+                if(r==1000){
+                    MensajeLCD_Var("Infinito");
+                }else{
+                    if(r==1001){
+                        DireccionaLCD(0xC1);
+                        MensajeLCD_Var("Indeterminado");
+                    }else{
+                        EscribeLCD_c(r+'0'); 
+                    }
+                }
+            } 
         }
     }
 }

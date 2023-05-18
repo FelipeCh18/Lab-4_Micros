@@ -5364,238 +5364,232 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Lab4.c: 298: asm(" sleep");
 "298
 [; <"  sleep ;# ">
-[; ;Lab4.c: 299: while(1);
 "299
-[e :U 517 ]
-[e :U 516 ]
-[e $U 517  ]
-[e :U 518 ]
-"300
 }
 [e :U 515 ]
-"301
+"300
 }
 [e :U 514 ]
+[; ;Lab4.c: 299: }
 [; ;Lab4.c: 300: }
-[; ;Lab4.c: 301: }
-[; ;Lab4.c: 303: }
-"303
+[; ;Lab4.c: 302: }
+"302
 [e :UE 510 ]
 }
-"305
+"304
 [v _Imprimir_Resultado `(v ~T0 @X0 1 ef1`l ]
 {
-[; ;Lab4.c: 305: void Imprimir_Resultado(long r){
+[; ;Lab4.c: 304: void Imprimir_Resultado(long r){
 [e :U _Imprimir_Resultado ]
 [v _r `l ~T0 @X0 1 r1 ]
 [f ]
-[; ;Lab4.c: 306: if ((partdecl-(r*100))>0 | (partdecl-(r*100))<0){
-"306
-[e $ ! | > - _partdecl -> * _r -> -> 100 `i `l `ul -> -> -> 0 `i `l `ul < - _partdecl -> * _r -> -> 100 `i `l `ul -> -> -> 0 `i `l `ul 520  ]
+[; ;Lab4.c: 305: if ((partdecl-(r*100))>0 | (partdecl-(r*100))<0){
+"305
+[e $ ! | > - _partdecl -> * _r -> -> 100 `i `l `ul -> -> -> 0 `i `l `ul < - _partdecl -> * _r -> -> 100 `i `l `ul -> -> -> 0 `i `l `ul 517  ]
 {
-[; ;Lab4.c: 307: for (int i = 0; i < 3; i++) {
-"307
+[; ;Lab4.c: 306: for (int i = 0; i < 3; i++) {
+"306
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 3 `i 521  ]
-[e $U 522  ]
-[e :U 521 ]
+[e $ < _i -> 3 `i 518  ]
+[e $U 519  ]
+[e :U 518 ]
 {
-[; ;Lab4.c: 308: r = n1 / n2;
-"308
+[; ;Lab4.c: 307: r = n1 / n2;
+"307
 [e = _r -> / _n1 _n2 `l ]
-[; ;Lab4.c: 309: m = n1 % n2;
-"309
+[; ;Lab4.c: 308: m = n1 % n2;
+"308
 [e = _m -> % _n1 _n2 `ul ]
-[; ;Lab4.c: 310: EscribeLCD_c(r+'0');
-"310
+[; ;Lab4.c: 309: EscribeLCD_c(r+'0');
+"309
 [e ( _EscribeLCD_c (1 -> + _r -> -> 48 `ui `l `uc ]
-[; ;Lab4.c: 311: if(i == 0 && m != 0) {
+[; ;Lab4.c: 310: if(i == 0 && m != 0) {
+"310
+[e $ ! && == _i -> 0 `i != _m -> -> -> 0 `i `l `ul 521  ]
+{
+[; ;Lab4.c: 311: EscribeLCD_c(',');
 "311
-[e $ ! && == _i -> 0 `i != _m -> -> -> 0 `i `l `ul 524  ]
-{
-[; ;Lab4.c: 312: EscribeLCD_c(',');
-"312
 [e ( _EscribeLCD_c (1 -> -> 44 `ui `uc ]
-"313
+"312
 }
-[e :U 524 ]
-[; ;Lab4.c: 313: }
-[; ;Lab4.c: 315: if (m != 0) {
-"315
-[e $ ! != _m -> -> -> 0 `i `l `ul 525  ]
+[e :U 521 ]
+[; ;Lab4.c: 312: }
+[; ;Lab4.c: 314: if (m != 0) {
+"314
+[e $ ! != _m -> -> -> 0 `i `l `ul 522  ]
 {
-[; ;Lab4.c: 316: n1 = m * 10;
-"316
+[; ;Lab4.c: 315: n1 = m * 10;
+"315
 [e = _n1 -> * _m -> -> -> 10 `i `l `ul `ui ]
-"317
+"316
 }
-[; ;Lab4.c: 317: } else {
+[; ;Lab4.c: 316: } else {
+[e $U 523  ]
+[e :U 522 ]
+{
+[; ;Lab4.c: 317: break;
+"317
+[e $U 519  ]
+"318
+}
+[e :U 523 ]
+"320
+}
+"306
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 3 `i 518  ]
+[e :U 519 ]
+"320
+}
+"321
+}
+[; ;Lab4.c: 318: }
+[; ;Lab4.c: 320: }
+[; ;Lab4.c: 321: }else if(r>0x51 & r!=1000 & r !=1001){
+[e $U 524  ]
+[e :U 517 ]
+[e $ ! & & > _r -> -> 81 `i `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 525  ]
+{
+[; ;Lab4.c: 322: EscribeLCD_c('-');
+"322
+[e ( _EscribeLCD_c (1 -> -> 45 `ui `uc ]
+[; ;Lab4.c: 323: DireccionaLCD(0x85);
+"323
+[e ( _DireccionaLCD (1 -> -> 133 `i `uc ]
+[; ;Lab4.c: 324: r = ~r+1;
+"324
+[e = _r + ~ _r -> -> 1 `i `l ]
+[; ;Lab4.c: 325: EscribeLCD_c(r+'0');
+"325
+[e ( _EscribeLCD_c (1 -> + _r -> -> 48 `ui `l `uc ]
+"326
+}
+[; ;Lab4.c: 326: }else{
 [e $U 526  ]
 [e :U 525 ]
 {
-[; ;Lab4.c: 318: break;
-"318
-[e $U 522  ]
-"319
-}
-[e :U 526 ]
-"321
-}
-"307
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 3 `i 521  ]
-[e :U 522 ]
-"321
-}
-"322
-}
-[; ;Lab4.c: 319: }
-[; ;Lab4.c: 321: }
-[; ;Lab4.c: 322: }else if(r>0x51 & r!=1000 & r !=1001){
-[e $U 527  ]
-[e :U 520 ]
-[e $ ! & & > _r -> -> 81 `i `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 528  ]
-{
-[; ;Lab4.c: 323: EscribeLCD_c('-');
-"323
-[e ( _EscribeLCD_c (1 -> -> 45 `ui `uc ]
-[; ;Lab4.c: 324: DireccionaLCD(0x85);
-"324
-[e ( _DireccionaLCD (1 -> -> 133 `i `uc ]
-[; ;Lab4.c: 325: r = ~r+1;
-"325
-[e = _r + ~ _r -> -> 1 `i `l ]
-[; ;Lab4.c: 326: EscribeLCD_c(r+'0');
-"326
-[e ( _EscribeLCD_c (1 -> + _r -> -> 48 `ui `l `uc ]
+[; ;Lab4.c: 327: if(r>0xFFFF & r!=1000 & r !=1001){
 "327
-}
-[; ;Lab4.c: 327: }else{
-[e $U 529  ]
-[e :U 528 ]
+[e $ ! & & > _r -> -> 65535 `ui `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 527  ]
 {
-[; ;Lab4.c: 328: if(r>0xFFFF & r!=1000 & r !=1001){
+[; ;Lab4.c: 328: DireccionaLCD(0x85);
 "328
-[e $ ! & & > _r -> -> 65535 `ui `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 530  ]
-{
-[; ;Lab4.c: 329: DireccionaLCD(0x85);
-"329
 [e ( _DireccionaLCD (1 -> -> 133 `i `uc ]
-[; ;Lab4.c: 330: MensajeLCD_Var("Imposible");
-"330
+[; ;Lab4.c: 329: MensajeLCD_Var("Imposible");
+"329
 [e ( _MensajeLCD_Var (1 -> :s 12C `*uc ]
-[; ;Lab4.c: 331: DireccionaLCD(0xC0);
-"331
+[; ;Lab4.c: 330: DireccionaLCD(0xC0);
+"330
 [e ( _DireccionaLCD (1 -> -> 192 `i `uc ]
-[; ;Lab4.c: 332: MensajeLCD_Var("de calcular");
-"332
+[; ;Lab4.c: 331: MensajeLCD_Var("de calcular");
+"331
 [e ( _MensajeLCD_Var (1 -> :s 13C `*uc ]
-"333
+"332
 }
-[; ;Lab4.c: 333: }else{
-[e $U 531  ]
-[e :U 530 ]
+[; ;Lab4.c: 332: }else{
+[e $U 528  ]
+[e :U 527 ]
 {
-[; ;Lab4.c: 334: if(r>=0xA & r!=1000 & r !=1001){
-"334
-[e $ ! & & >= _r -> -> 10 `i `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 532  ]
+[; ;Lab4.c: 333: if(r>=0xA & r!=1000 & r !=1001){
+"333
+[e $ ! & & >= _r -> -> 10 `i `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 529  ]
 {
-[; ;Lab4.c: 358: for(int j=9;j>=0;j--){
-"358
+[; ;Lab4.c: 357: for(int j=9;j>=0;j--){
+"357
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 9 `i ]
-[e $ >= _j -> 0 `i 533  ]
-[e $U 534  ]
-[e :U 533 ]
+[e $ >= _j -> 0 `i 530  ]
+[e $U 531  ]
+[e :U 530 ]
 {
-[; ;Lab4.c: 359: if(r/(long)pow(10,j)>0){
+[; ;Lab4.c: 358: if(r/(long)pow(10,j)>0){
+"358
+[e $ ! > / _r -> ( _pow (2 , -> -> 10 `i `d -> _j `d `l -> -> 0 `i `l 533  ]
+{
+[; ;Lab4.c: 359: EscribeLCD_c(r/(long)pow(10,j)+48);
 "359
-[e $ ! > / _r -> ( _pow (2 , -> -> 10 `i `d -> _j `d `l -> -> 0 `i `l 536  ]
-{
-[; ;Lab4.c: 360: EscribeLCD_c(r/(long)pow(10,j)+48);
-"360
 [e ( _EscribeLCD_c (1 -> + / _r -> ( _pow (2 , -> -> 10 `i `d -> _j `d `l -> -> 48 `i `l `uc ]
-[; ;Lab4.c: 361: r=r%(long)pow(10,j);
-"361
+[; ;Lab4.c: 360: r=r%(long)pow(10,j);
+"360
 [e = _r % _r -> ( _pow (2 , -> -> 10 `i `d -> _j `d `l ]
+"361
+}
+[e :U 533 ]
 "362
 }
-[e :U 536 ]
-"363
-}
-"358
+"357
 [e -- _j -> 1 `i ]
-[e $ >= _j -> 0 `i 533  ]
-[e :U 534 ]
+[e $ >= _j -> 0 `i 530  ]
+[e :U 531 ]
+"362
+}
 "363
 }
-"364
-}
+[; ;Lab4.c: 361: }
 [; ;Lab4.c: 362: }
-[; ;Lab4.c: 363: }
-[; ;Lab4.c: 364: }else{
-[e $U 537  ]
-[e :U 532 ]
+[; ;Lab4.c: 363: }else{
+[e $U 534  ]
+[e :U 529 ]
 {
-[; ;Lab4.c: 365: if(r==1000){
+[; ;Lab4.c: 364: if(r==1000){
+"364
+[e $ ! == _r -> -> 1000 `i `l 535  ]
+{
+[; ;Lab4.c: 365: MensajeLCD_Var("Infinito");
 "365
-[e $ ! == _r -> -> 1000 `i `l 538  ]
-{
-[; ;Lab4.c: 366: MensajeLCD_Var("Infinito");
-"366
 [e ( _MensajeLCD_Var (1 -> :s 14C `*uc ]
+"366
+}
+[; ;Lab4.c: 366: }else{
+[e $U 536  ]
+[e :U 535 ]
+{
+[; ;Lab4.c: 367: if(r==1001){
 "367
-}
-[; ;Lab4.c: 367: }else{
-[e $U 539  ]
-[e :U 538 ]
+[e $ ! == _r -> -> 1001 `i `l 537  ]
 {
-[; ;Lab4.c: 368: if(r==1001){
+[; ;Lab4.c: 368: DireccionaLCD(0xC1);
 "368
-[e $ ! == _r -> -> 1001 `i `l 540  ]
-{
-[; ;Lab4.c: 369: DireccionaLCD(0xC1);
-"369
 [e ( _DireccionaLCD (1 -> -> 193 `i `uc ]
-[; ;Lab4.c: 370: MensajeLCD_Var("Indeterminado");
-"370
+[; ;Lab4.c: 369: MensajeLCD_Var("Indeterminado");
+"369
 [e ( _MensajeLCD_Var (1 -> :s 15C `*uc ]
-"371
+"370
 }
-[; ;Lab4.c: 371: }else{
-[e $U 541  ]
-[e :U 540 ]
+[; ;Lab4.c: 370: }else{
+[e $U 538  ]
+[e :U 537 ]
 {
-[; ;Lab4.c: 372: EscribeLCD_c(r+'0');
-"372
+[; ;Lab4.c: 371: EscribeLCD_c(r+'0');
+"371
 [e ( _EscribeLCD_c (1 -> + _r -> -> 48 `ui `l `uc ]
+"372
+}
+[e :U 538 ]
 "373
 }
-[e :U 541 ]
+[e :U 536 ]
 "374
 }
-[e :U 539 ]
+[e :U 534 ]
 "375
 }
-[e :U 537 ]
+[e :U 528 ]
 "376
 }
-[e :U 531 ]
-"377
-}
-[e :U 529 ]
-[e :U 527 ]
+[e :U 526 ]
+[e :U 524 ]
+[; ;Lab4.c: 372: }
 [; ;Lab4.c: 373: }
 [; ;Lab4.c: 374: }
 [; ;Lab4.c: 375: }
 [; ;Lab4.c: 376: }
 [; ;Lab4.c: 377: }
-[; ;Lab4.c: 378: }
-"378
-[e :UE 519 ]
+"377
+[e :UE 516 ]
 }
 [a 13C 100 101 32 99 97 108 99 117 108 97 114 0 ]
 [a 14C 73 110 102 105 110 105 116 111 0 ]
