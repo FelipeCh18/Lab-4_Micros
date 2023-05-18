@@ -176,7 +176,10 @@ void main(void){
                     }
                     break;
                 case '^':
-                    r=(long)pow(n1,n2);
+                    r=n1;
+                    for(i=1;i<n2;i++){
+                        r=r*n1;
+                    }
                     partdecl = r*100;
                     break;   
                 default:
