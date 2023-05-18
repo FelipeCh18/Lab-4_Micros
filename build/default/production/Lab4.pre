@@ -5971,7 +5971,7 @@ break;
 
 unsigned char Tecla = 0;
 unsigned long partdecl = 0;
-unsigned long int r = 0;
+long int r = 0;
 unsigned int n1 = 0;
 unsigned int n2 = 0;
 unsigned int i = 0;
@@ -6135,7 +6135,10 @@ partdecl = r*100;
 }
 break;
 case '^':
-r=(long)pow(n1,n2);
+r=n1;
+for(i=1;i<n2;i++){
+r=r*n1;
+}
 partdecl = r*100;
 break;
 default:
@@ -6248,7 +6251,7 @@ LATE2 = !LATE2;
 TMR0 = 49911;
 }
 
-if(contador == 20){
+if(contador == 2100){
 if(!verificador){
 LATC7 = !LATC7;
 BorraLCD();
@@ -6278,13 +6281,8 @@ break;
 }
 
 }
-}else if(r>0x51 & r!=1000 & r !=1001){
-EscribeLCD_c('-');
-DireccionaLCD(0x85);
-r = ~r+1;
-EscribeLCD_c(r+'0');
 }else{
-if(r>0xFFFF & r!=1000 & r !=1001){
+if(r>0x17179149 & r!=1000 & r !=1001){
 DireccionaLCD(0x85);
 MensajeLCD_Var("Imposible");
 DireccionaLCD(0xC0);
@@ -6292,7 +6290,7 @@ MensajeLCD_Var("de calcular");
 }else{
 if(r>=0xA & r!=1000 & r !=1001){
 
-# 358
+# 356
 for(int j=9;j>=0;j--){
 if(r/(long)pow(10,j)>0){
 EscribeLCD_c(r/(long)pow(10,j)+48);

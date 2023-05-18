@@ -49,8 +49,6 @@
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"28 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwtoft.c
-[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\pow.c
 [v _pow pow `(d  1 e 3 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcadd.c
@@ -72,15 +70,15 @@
 [v ___omul __omul `(ul  1 e 4 0 ]
 "37 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
-"204
+"207
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-"242
+"245
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
-"275
+"278
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
-"283
+"286
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"305
+"308
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 "48 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
@@ -168,7 +166,7 @@
 "14
 [v _partdecl partdecl `ul  1 e 4 0 ]
 "15
-[v _r r `ul  1 e 4 0 ]
+[v _r r `l  1 e 4 0 ]
 "16
 [v _n1 n1 `ui  1 e 2 0 ]
 "17
@@ -200,27 +198,21 @@
 "37 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
 {
-"201
+"204
 } 0
-"275
+"278
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
 {
-"276
+"279
 [v factorial_function@fact fact `i  1 a 2 23 ]
-"275
+"278
 [v factorial_function@a a `i  1 p 2 19 ]
-"281
+"284
 } 0
-"28 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwtoft.c
-[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
-{
-[v ___lwtoft@c c `ui  1 p 2 21 ]
-"31
-} 0
-"204 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"207
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 {
-"240
+"243
 } 0
 "62 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
@@ -232,16 +224,16 @@
 {
 "109
 } 0
-"305 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"308 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 {
-"358
+"356
 [v Imprimir_Resultado@j j `i  1 a 2 58 ]
-"307
+"310
 [v Imprimir_Resultado@i i `i  1 a 2 50 ]
-"305
+"308
 [v Imprimir_Resultado@r r `l  1 p 4 42 ]
-"378
+"376
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\pow.c
 [v _pow pow `(d  1 e 3 0 ]
@@ -554,15 +546,15 @@
 [v ConfiguraLCD@a a `uc  1 a 1 13 ]
 "51
 } 0
-"242 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"245 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
 {
-"273
+"276
 } 0
-"283
+"286
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"303
+"306
 } 0
 "261 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
