@@ -6251,7 +6251,7 @@ LATE2 = !LATE2;
 TMR0 = 49911;
 }
 
-if(contador == 2100){
+if(contador == 20){
 if(!verificador){
 LATC7 = !LATC7;
 BorraLCD();
@@ -6284,15 +6284,13 @@ break;
 
 }
 }else{
-if(r>0x17179149 & r!=1000 & r !=1001){
+if(r>0x8000 & r!=1000 & r !=1001){
+EscribeLCD_c('-');
 DireccionaLCD(0x85);
-MensajeLCD_Var("Imposible");
-DireccionaLCD(0xC0);
-MensajeLCD_Var("de calcular");
+r = ~r+1;
+EscribeLCD_c(r+'0');
 }else{
 if(r>=0xA & r!=1000 & r !=1001){
-
-# 358
 for(int j=9;j>=0;j--){
 potencia = 10;
 for(int k=j-1;k>0;k--){

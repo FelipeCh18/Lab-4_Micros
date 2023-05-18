@@ -292,7 +292,7 @@ void __interrupt() ISR(void){
         TMR0 = 49911;
     }
     
-    if(contador == 2100){
+    if(contador == 20){
         if(!verificador){   
             LATC7 = !LATC7;
             BorraLCD();
@@ -325,36 +325,13 @@ void Imprimir_Resultado(long r){
                                               
         }
     }else{
-        if(r>0x17179149 & r!=1000 & r !=1001){
+        if(r>0x8000 & r!=1000 & r !=1001){
+            EscribeLCD_c('-');
             DireccionaLCD(0x85);
-            MensajeLCD_Var("Imposible");
-            DireccionaLCD(0xC0);
-            MensajeLCD_Var("de calcular");
+            r = ~r+1;
+            EscribeLCD_c(r+'0'); 
         }else{
             if(r>=0xA & r!=1000 & r !=1001){
-/*//                  contador_digitos=0;
-//                  res=r;
-//                  do{
-//                      res=res/10;
-//                  }while(res>1);
-//                  EscribeLCD_n16(r,contador_digitos);
-//                    do{
-//                        i = i+1;
-//                        r = r - 10;
-//                    }while(r>=0xA);
-//                    EscribeLCD_c(i+'0');
-//                    DireccionaLCD(0x85);
-//                    EscribeLCD_c(r+'0');
-//                    int c, i, n;
-//                    int digitos[10];
-//                    unsigned long long int num;
-//                    num = 0;
-//                    for( n = 0; n < 10 && (c = getchar()) != '\n'; n++ ){
-//                        digitos[n] = (c - '0')+48;
-//                        num *= 10;
-//                        num += digitos[n];
-//                    }
-//                    MensajeLCD_Var(digitos);*/
                 for(int j=9;j>=0;j--){
                     potencia = 10;
                     for(int k=j-1;k>0;k--){   

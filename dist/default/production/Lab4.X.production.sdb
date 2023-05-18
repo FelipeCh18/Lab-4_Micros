@@ -199,9 +199,9 @@
 "308 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 {
-"360
+"337
 [v Imprimir_Resultado@k k `i  1 a 2 1 ]
-"358
+"335
 [v Imprimir_Resultado@j j `i  1 a 2 5 ]
 "312
 [v Imprimir_Resultado@i i `i  1 a 2 3 ]
@@ -211,7 +211,7 @@
 [v Imprimir_Resultado@flag flag `uc  1 a 1 0 ]
 "308
 [v Imprimir_Resultado@r r `l  1 p 4 27 ]
-"386
+"363
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]

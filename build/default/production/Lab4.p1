@@ -5356,9 +5356,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 515 ]
 [; ;Lab4.c: 293: }
-[; ;Lab4.c: 295: if(contador == 2100){
+[; ;Lab4.c: 295: if(contador == 20){
 "295
-[e $ ! == _contador -> 2100 `i 518  ]
+[e $ ! == _contador -> 20 `i 518  ]
 {
 [; ;Lab4.c: 296: if(!verificador){
 "296
@@ -5480,22 +5480,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 531  ]
 [e :U 524 ]
 {
-[; ;Lab4.c: 328: if(r>0x17179149 & r!=1000 & r !=1001){
+[; ;Lab4.c: 328: if(r>0x8000 & r!=1000 & r !=1001){
 "328
-[e $ ! & & > _r -> 387420489 `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 532  ]
+[e $ ! & & > _r -> -> 32768 `ui `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 532  ]
 {
-[; ;Lab4.c: 329: DireccionaLCD(0x85);
+[; ;Lab4.c: 329: EscribeLCD_c('-');
 "329
-[e ( _DireccionaLCD (1 -> -> 133 `i `uc ]
-[; ;Lab4.c: 330: MensajeLCD_Var("Imposible");
+[e ( _EscribeLCD_c (1 -> -> 45 `ui `uc ]
+[; ;Lab4.c: 330: DireccionaLCD(0x85);
 "330
-[e ( _MensajeLCD_Var (1 -> :s 12C `*uc ]
-[; ;Lab4.c: 331: DireccionaLCD(0xC0);
+[e ( _DireccionaLCD (1 -> -> 133 `i `uc ]
+[; ;Lab4.c: 331: r = ~r+1;
 "331
-[e ( _DireccionaLCD (1 -> -> 192 `i `uc ]
-[; ;Lab4.c: 332: MensajeLCD_Var("de calcular");
+[e = _r + ~ _r -> -> 1 `i `l ]
+[; ;Lab4.c: 332: EscribeLCD_c(r+'0');
 "332
-[e ( _MensajeLCD_Var (1 -> :s 13C `*uc ]
+[e ( _EscribeLCD_c (1 -> + _r -> -> 48 `ui `l `uc ]
 "333
 }
 [; ;Lab4.c: 333: }else{
@@ -5506,8 +5506,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "334
 [e $ ! & & >= _r -> -> 10 `i `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 534  ]
 {
-[; ;Lab4.c: 358: for(int j=9;j>=0;j--){
-"358
+[; ;Lab4.c: 335: for(int j=9;j>=0;j--){
+"335
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 9 `i ]
@@ -5515,11 +5515,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 536  ]
 [e :U 535 ]
 {
-[; ;Lab4.c: 359: potencia = 10;
-"359
+[; ;Lab4.c: 336: potencia = 10;
+"336
 [e = _potencia -> -> 10 `i `l ]
-[; ;Lab4.c: 360: for(int k=j-1;k>0;k--){
-"360
+[; ;Lab4.c: 337: for(int k=j-1;k>0;k--){
+"337
 {
 [v _k `i ~T0 @X0 1 a ]
 [e = _k - _j -> 1 `i ]
@@ -5527,134 +5527,132 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 539  ]
 [e :U 538 ]
 {
-[; ;Lab4.c: 361: potencia = potencia*10;
-"361
+[; ;Lab4.c: 338: potencia = potencia*10;
+"338
 [e = _potencia * _potencia -> -> 10 `i `l ]
-"362
+"339
 }
-"360
+"337
 [e -- _k -> 1 `i ]
 [e $ > _k -> 0 `i 538  ]
 [e :U 539 ]
-"362
+"339
 }
-[; ;Lab4.c: 362: }
-[; ;Lab4.c: 363: if(r/potencia>0){
-"363
+[; ;Lab4.c: 339: }
+[; ;Lab4.c: 340: if(r/potencia>0){
+"340
 [e $ ! > / _r _potencia -> -> 0 `i `l 541  ]
 {
-[; ;Lab4.c: 364: flag = 1;
-"364
+[; ;Lab4.c: 341: flag = 1;
+"341
 [e = _flag -> -> 1 `i `uc ]
-[; ;Lab4.c: 365: EscribeLCD_c(r/potencia+48);
-"365
+[; ;Lab4.c: 342: EscribeLCD_c(r/potencia+48);
+"342
 [e ( _EscribeLCD_c (1 -> + / _r _potencia -> -> 48 `i `l `uc ]
-[; ;Lab4.c: 366: r=r%potencia;
-"366
+[; ;Lab4.c: 343: r=r%potencia;
+"343
 [e = _r % _r _potencia ]
-"367
+"344
 }
-[; ;Lab4.c: 367: }else if( (r/potencia)==0 && flag){
+[; ;Lab4.c: 344: }else if( (r/potencia)==0 && flag){
 [e $U 542  ]
 [e :U 541 ]
 [e $ ! && == / _r _potencia -> -> 0 `i `l != -> _flag `i -> -> -> 0 `i `uc `i 543  ]
 {
-[; ;Lab4.c: 368: if(r<10) EscribeLCD_c(r+48);
-"368
+[; ;Lab4.c: 345: if(r<10) EscribeLCD_c(r+48);
+"345
 [e $ ! < _r -> -> 10 `i `l 544  ]
 [e ( _EscribeLCD_c (1 -> + _r -> -> 48 `i `l `uc ]
 [e $U 545  ]
-"369
+"346
 [e :U 544 ]
-[; ;Lab4.c: 369: else EscribeLCD_c(48);
+[; ;Lab4.c: 346: else EscribeLCD_c(48);
 [e ( _EscribeLCD_c (1 -> -> 48 `i `uc ]
 [e :U 545 ]
-"370
+"347
 }
 [e :U 543 ]
-"371
+"348
 [e :U 542 ]
 }
-"358
+"335
 [e -- _j -> 1 `i ]
 [e $ >= _j -> 0 `i 535  ]
 [e :U 536 ]
-"371
+"348
 }
-"372
+"349
 }
-[; ;Lab4.c: 370: }
-[; ;Lab4.c: 371: }
-[; ;Lab4.c: 372: }else{
+[; ;Lab4.c: 347: }
+[; ;Lab4.c: 348: }
+[; ;Lab4.c: 349: }else{
 [e $U 546  ]
 [e :U 534 ]
 {
-[; ;Lab4.c: 373: if(r==1000){
-"373
+[; ;Lab4.c: 350: if(r==1000){
+"350
 [e $ ! == _r -> -> 1000 `i `l 547  ]
 {
-[; ;Lab4.c: 374: MensajeLCD_Var("Infinito");
-"374
-[e ( _MensajeLCD_Var (1 -> :s 14C `*uc ]
-"375
+[; ;Lab4.c: 351: MensajeLCD_Var("Infinito");
+"351
+[e ( _MensajeLCD_Var (1 -> :s 12C `*uc ]
+"352
 }
-[; ;Lab4.c: 375: }else{
+[; ;Lab4.c: 352: }else{
 [e $U 548  ]
 [e :U 547 ]
 {
-[; ;Lab4.c: 376: if(r==1001){
-"376
+[; ;Lab4.c: 353: if(r==1001){
+"353
 [e $ ! == _r -> -> 1001 `i `l 549  ]
 {
-[; ;Lab4.c: 377: DireccionaLCD(0xC1);
-"377
+[; ;Lab4.c: 354: DireccionaLCD(0xC1);
+"354
 [e ( _DireccionaLCD (1 -> -> 193 `i `uc ]
-[; ;Lab4.c: 378: MensajeLCD_Var("Indeterminado");
-"378
-[e ( _MensajeLCD_Var (1 -> :s 15C `*uc ]
-"379
+[; ;Lab4.c: 355: MensajeLCD_Var("Indeterminado");
+"355
+[e ( _MensajeLCD_Var (1 -> :s 13C `*uc ]
+"356
 }
-[; ;Lab4.c: 379: }else{
+[; ;Lab4.c: 356: }else{
 [e $U 550  ]
 [e :U 549 ]
 {
-[; ;Lab4.c: 380: EscribeLCD_c(r+'0');
-"380
+[; ;Lab4.c: 357: EscribeLCD_c(r+'0');
+"357
 [e ( _EscribeLCD_c (1 -> + _r -> -> 48 `ui `l `uc ]
-"381
+"358
 }
 [e :U 550 ]
-"382
+"359
 }
 [e :U 548 ]
-"383
+"360
 }
 [e :U 546 ]
-"384
+"361
 }
 [e :U 533 ]
-"385
+"362
 }
 [e :U 531 ]
-[; ;Lab4.c: 381: }
-[; ;Lab4.c: 382: }
-[; ;Lab4.c: 383: }
-[; ;Lab4.c: 384: }
-[; ;Lab4.c: 385: }
-[; ;Lab4.c: 386: }
-"386
+[; ;Lab4.c: 358: }
+[; ;Lab4.c: 359: }
+[; ;Lab4.c: 360: }
+[; ;Lab4.c: 361: }
+[; ;Lab4.c: 362: }
+[; ;Lab4.c: 363: }
+"363
 [e :UE 523 ]
 }
-[a 13C 100 101 32 99 97 108 99 117 108 97 114 0 ]
-[a 14C 73 110 102 105 110 105 116 111 0 ]
+[a 12C 73 110 102 105 110 105 116 111 0 ]
 [a 11C 76 86 80 32 65 99 116 105 118 97 100 111 0 ]
 [a 4C 65 99 116 105 118 97 100 111 0 ]
 [a 6C 65 99 116 105 118 97 100 111 0 ]
 [a 8C 65 99 116 105 118 97 100 111 0 ]
 [a 10C 65 99 116 105 118 97 100 111 0 ]
-[a 15C 73 110 100 101 116 101 114 109 105 110 97 100 111 0 ]
+[a 13C 73 110 100 101 116 101 114 109 105 110 97 100 111 0 ]
 [a 7C 77 111 100 111 32 70 97 99 116 111 114 105 97 108 0 ]
-[a 12C 73 109 112 111 115 105 98 108 101 0 ]
 [a 9C 77 111 100 111 32 82 101 115 116 97 0 ]
 [a 5C 77 111 100 111 32 83 117 109 97 0 ]
 [a 1C 69 110 101 114 103 105 97 0 ]

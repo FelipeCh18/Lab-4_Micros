@@ -11,15 +11,15 @@
  Intel Hex-file ranges:
   0h - 3h		(dist/default/production\Lab4.X.production.hex)
   8h - 11h		(dist/default/production\Lab4.X.production.hex)
-  800h - 87Ah		(dist/default/production\Lab4.X.production.hex)
-  87Ch - 1AB3h		(dist/default/production\Lab4.X.production.hex)
+  800h - 864h		(dist/default/production\Lab4.X.production.hex)
+  866h - 1A9Dh		(dist/default/production\Lab4.X.production.hex)
   200000h - 200007h		(dist/default/production\Lab4.X.production.hex)
   300000h - 30000Dh		(dist/default/production\Lab4.X.production.hex)
  Unused ranges:
   4h - 7h
   12h - 7FFh
-  87Bh - 87Bh
-  1AB4h - 1FFFFFh
+  865h - 865h
+  1A9Eh - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -38,8 +38,8 @@
 00000830 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000840 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000850 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000860 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000870 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- H1 H1 H1 H1
+00000860 | H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000870 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000880 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000890 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000008A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -329,9 +329,7 @@
 00001A60 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001A70 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001A80 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001A90 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001AA0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001AB0 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
+00001A90 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
