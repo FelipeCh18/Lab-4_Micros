@@ -306,6 +306,8 @@ void __interrupt() ISR(void){
 }
 
 void Imprimir_Resultado(long r){
+    long potencia = 10;
+    bool flag=false;
     if ((partdecl-(r*100))>0 | (partdecl-(r*100))<0){
         for (int i = 0; i < 3; i++) {
             r = n1 / n2;
@@ -354,9 +356,17 @@ void Imprimir_Resultado(long r){
 //                    }
 //                    MensajeLCD_Var(digitos);*/
                 for(int j=9;j>=0;j--){
-                    if(r/(long)pow(10,j)>0){
-                        EscribeLCD_c(r/(long)pow(10,j)+48);
-                        r=r%(long)pow(10,j);
+                    potencia = 10;
+                    for(int k=j-1;k>0;k--){   
+                        potencia = potencia*10;
+                    }
+                    if(r/potencia>0){
+                        flag = true;
+                        EscribeLCD_c(r/potencia+48);
+                        r=r%potencia;
+                    }else if( (r/potencia)==0 && flag){
+                        if(r<10) EscribeLCD_c(r+48);
+                        else EscribeLCD_c(48);
                     }
                 }
             }else{
