@@ -1,38 +1,35 @@
 #include<xc.h> //Libreria para PIC
 #include<stdio.h> //Libreria adicional para manejo de decimales
-#include<stdbool.h>
-#include<math.h>
+#include<stdbool.h> //Libreria adicional para manejo de booleanos
 #define _XTAL_FREQ 1000000 //Frecuencia de reloj
 #include "LibLCDXC8.h" //Libreria para uso de LCD
 #pragma config FOSC=INTOSC_EC //Sentencia para usar oscilador externo
 #pragma config WDT=OFF //Apagar el perro guardian
-#pragma config PBADEN=OFF
-#pragma config LVP=OFF
-#pragma config MCLRE=ON
+#pragma config PBADEN=OFF //Apagar funciones análogas
+#pragma config LVP=OFF //Apagar el modo de bajo consumo
+#pragma config MCLRE=ON //Encender el MCLR
 
-unsigned char Tecla = 0; //Variable para leer teclado
-unsigned long partdecl = 0; //Parte decimal de un resultado
-long int r = 0; //Resultado entero de las operaciones
-unsigned int n1 = 0; //Primer numero
-unsigned int n2 = 0; //Segundo numero
+unsigned char Boton = 0; //Variable para leer Teclado
+unsigned long Parte_Decimal = 0; //Parte decimal de un resultado
+long int Resultado = 0; //Resultado entero de las operaciones
+unsigned int Numero_1 = 0; //Primer numero
+unsigned int Numero_2 = 0; //Segundo numero
 unsigned int i = 0;
 unsigned long m = 0;
-unsigned char op = ' '; //Operador
-unsigned char n1c = ' '; //Primer numero en caracter
-unsigned char n2c = ' ';  //Segundo numero en caracter
-unsigned int color = 0;
-int contador = 0;
-int contador_digitos = 0;
-int verificador = 0;
-bool potencia = false;
-bool factorial = false;
+unsigned char Operador = ' '; //Operador
+unsigned char Numero_1-Char = ' '; //Primer numero en caracter
+unsigned char Numero_2-Char = ' ';  //Segundo numero en caracter
+unsigned int Color = 0;
+int Contador = 0;
+int Verificador = 0;
+bool Potencia = false;
+bool Factorial = false;
 int a;
 int b;
-unsigned long res;
-unsigned char LeerTeclado(void);
-unsigned long factorial_function(int);//Declarar funcion para lectura de matricial
-void ColorRGB(void);
-void Imprimir_Resultado(long);
+unsigned char LeerTeclado(void);//Declarar funcion para lectura de matricial
+unsigned long factorial_function(int);//Declarar funcion para calcular el Factorial
+void ColorRGB(void);//Declarar funcion para escritura de colores del RGB
+void Imprimir_Resultado(long);//Declarar funcion para imprimir cada resultado
 
 void main(void){
     ADCON1=15; //Deshabilitar funciones analogicas del puerto E
@@ -41,18 +38,18 @@ void main(void){
     TRISE=0; //Colocar puerto E como salida
     TRISC=0; //Pines para RGB
     RBPU=0; //Activar resistencias pull up
-    ConfiguraLCD(4);
+    ConfiguraLCD(4);//Configurar LCD para operacion en 4 bits
     InicializaLCD(); //Funcion para configuracion inicial del LCD
     //Timer0 interrupcion
-    T0CON=0b10000010;
-    TMR0IF=0;
-    TMR0=49911;
-    TMR0IE=1;
-    GIE=1;
-    TMR0ON=1;
+    T0CON=0b10000010;//Configuracion del modo temporizador y del prescaler
+    TMR0IF=0;//Bandera del Timer0
+    TMR0=49911;//Precarga del Timer0
+    TMR0IE=1;//Habilitacion del Timer0
+    GIE=1;//Habilitacion global de interrupciones
+    TMR0ON=1;//Encendido del Timer0
     //Fin de configuracion para Timer0
     //Para bajo consumo
-    OSCCON = 0b11000100;
+    OSCCON = 0b11000100;//Configuracion del oscilador para entrar en modo IDLE ante instruccion SLEEP y ajuste de frecuencia
     //Fin de bajo conumo
     BorraLCD(); //Limpiar el LCD
     if(TO == 1 && PD == 1){
@@ -68,22 +65,22 @@ void main(void){
     BorraLCD(); 
     while(1){
         LATB=0b00000000;
-        verificador = 0;
-        Tecla = LeerTeclado();
+        Verificador = 0;
+        Boton = LeerTeclado();
         ColorRGB();
-        if(Tecla=='C'){ //Limpiar la pantalla si se presiona [1][4]  //Colocar el cursor en la primera posicion de segunda fila
+        if(Boton=='C'){ //Limpiar la pantalla si se presiona [1][4]  //Colocar el cursor en la primera posicion de segunda fila
             //Limpiar variables
-            op = ' ';
-            n1c = ' ';
-            n2c = ' ';
-            n1 = 0;
-            n2 = 0;
+            Operador = ' ';
+            Numero_1-Char = ' ';
+            Numero_2-Char = ' ';
+            Numero_1 = 0;
+            Numero_2 = 0;
             i = 0;
-            partdecl = 0;
+            Parte_Decimal = 0;
             BorraLCD();
-        }else if(op==' ' & (Tecla=='+'|Tecla=='^') & n1c == ' ' & n2c ==' '){
-            potencia=~potencia;
-            if(potencia){
+        }else if(Operador==' ' & (Boton=='+'|Boton=='^') & Numero_1-Char == ' ' & Numero_2-Char ==' '){
+            Potencia=~Potencia;
+            if(Potencia){
                 DireccionaLCD(0x80); //Colocar el cursor en la primera posicion de primera fila
                 MensajeLCD_Var("Modo Potencia"); //Mandar mensaje vacio para limpiar
                 DireccionaLCD(0xC0);
@@ -100,9 +97,9 @@ void main(void){
                 BorraLCD();
                 continue;
             }
-        }else if(op==' ' & (Tecla=='-'|Tecla=='!') & n1c == ' ' & n2c ==' '){
-            factorial=~factorial;
-            if(factorial){
+        }else if(Operador==' ' & (Boton=='-'|Boton=='!') & Numero_1-Char == ' ' & Numero_2-Char ==' '){
+            Factorial=~Factorial;
+            if(Factorial){
                 DireccionaLCD(0x80); //Colocar el cursor en la primera posicion de primera fila
                 MensajeLCD_Var("Modo Factorial"); //Mandar mensaje vacio para limpiar
                 DireccionaLCD(0xC0);
@@ -120,80 +117,80 @@ void main(void){
                 continue;
             }            
         }else{
-            if((n1c==' '|n2c==' '|op==' ') & !factorial){ //Funciones si no se ha recibido nada
-                if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x'|Tecla=='^') & n1c != ' ' & n2c ==' '){
+            if((Numero_1-Char==' '|Numero_2-Char==' '|Operador==' ') & !Factorial){ //Funciones si no se ha recibido nada
+                if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^') & Numero_1-Char != ' ' & Numero_2-Char ==' '){
                     DireccionaLCD(0x81);
-                    EscribeLCD_c(Tecla);
-                    op = Tecla;
-                }else if(n1c == ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='^')){
+                    EscribeLCD_c(Boton);
+                    Operador = Boton;
+                }else if(Numero_1-Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
                     DireccionaLCD(0x80);  
-                    EscribeLCD_c(Tecla);
-                    n1c=Tecla;
-                    n1 = Tecla-'0';
-                }else if(n2c==' ' & op!=' ' & n1c != ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='^')){
+                    EscribeLCD_c(Boton);
+                    Numero_1-Char=Boton;
+                    Numero_1 = Boton-'0';
+                }else if(Numero_2-Char==' ' & Operador!=' ' & Numero_1-Char != ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
                     DireccionaLCD(0x82);
-                    EscribeLCD_c(Tecla);
-                    n2c=Tecla;
-                    n2 = Tecla-'0';
+                    EscribeLCD_c(Boton);
+                    Numero_2-Char=Boton;
+                    Numero_2 = Boton-'0';
                 }
-            }else if ((n1c==' '|op==' ') & factorial){
-                if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x'|Tecla=='^'|Tecla=='!') & n1c != ' ' & n2c ==' '){
+            }else if ((Numero_1-Char==' '|Operador==' ') & Factorial){
+                if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^'|Boton=='!') & Numero_1-Char != ' ' & Numero_2-Char ==' '){
                     DireccionaLCD(0x81);
-                    EscribeLCD_c(Tecla);
-                    op = Tecla;
-                }else if(n1c == ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='^'|Tecla!='!')){
+                    EscribeLCD_c(Boton);
+                    Operador = Boton;
+                }else if(Numero_1-Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^'|Boton!='!')){
                     DireccionaLCD(0x80);  
-                    EscribeLCD_c(Tecla);
-                    n1c=Tecla;
-                    n1 = Tecla-'0';
+                    EscribeLCD_c(Boton);
+                    Numero_1-Char=Boton;
+                    Numero_1 = Boton-'0';
                 }
-            }else if((Tecla=='=' & n2c!=' ' & op!=' ' & n1c != ' ') & !factorial){
+            }else if((Boton=='=' & Numero_2-Char!=' ' & Operador!=' ' & Numero_1-Char != ' ') & !Factorial){
                 DireccionaLCD(0x83);
                 EscribeLCD_c('=');
-                switch(op){
+                switch(Operador){
                 case '+': 
-                    r = n1 + n2;
-                    partdecl = r*100;
+                    Resultado = Numero_1 + Numero_2;
+                    Parte_Decimal = Resultado*100;
                     break;
                 case '-':
-                    r = n1 - n2;
-                    partdecl = r*100;
+                    Resultado = Numero_1 - Numero_2;
+                    Parte_Decimal = Resultado*100;
                     break; 
                 case 'x': 
-                    r = n1*n2;
-                    partdecl = r*100;
+                    Resultado = Numero_1*Numero_2;
+                    Parte_Decimal = Resultado*100;
                     break;
                 case '/': 
-                    if(n2!=0){
-                        if(n1!=0){
-                        r = n1/n2; //Parte entera
-                        partdecl = (n1*100)/n2; //((n1/n2)-r)*10
+                    if(Numero_2!=0){
+                        if(Numero_1!=0){
+                        Resultado = Numero_1/Numero_2; //Parte entera
+                        Parte_Decimal = (Numero_1*100)/Numero_2; //((Numero_1/Numero_2)-r)*10
                         }
                     }else{
-                        if(n1 != 0 & n2 == 0) r = 1000;
-                        else if(n1 == 0 & n2 == 0) r = 1001;
-                        partdecl = r*100;
+                        if(Numero_1 != 0 & Numero_2 == 0) Resultado = 1000;
+                        else if(Numero_1 == 0 & Numero_2 == 0) Resultado = 1001;
+                        Parte_Decimal = Resultado*100;
                     }
                     break;
                 case '^':
-                    r=n1;
-                    for(i=1;i<n2;i++){
-                        r=r*n1;
+                    Resultado=Numero_1;
+                    for(i=1;i<Numero_2;i++){
+                        Resultado=Resultado*Numero_1;
                     }
-                    partdecl = r*100;
+                    Parte_Decimal = Resultado*100;
                     break;   
                 default:
-                    r = 0;
+                    Resultado = 0;
                     break;
                 }
                 DireccionaLCD(0x84);
-                Imprimir_Resultado(r);
-            }else if((Tecla=='=' & op=='!' & n1c != ' ') & factorial) {
+                Imprimir_Resultado(Resultado);
+            }else if((Boton=='=' & Operador=='!' & Numero_1-Char != ' ') & Factorial) {
                 DireccionaLCD(0x82);
                 EscribeLCD_c('=');
-                r=factorial_function(n1);
-                partdecl = r*100;
-                Imprimir_Resultado(r);
+                Resultado=factorial_function(Numero_1);
+                Parte_Decimal = Resultado*100;
+                Imprimir_Resultado(Resultado);
             }else{
                 EscribeLCD_c('W');
             }
@@ -205,11 +202,11 @@ void main(void){
     
 unsigned char LeerTeclado(void){
     while(RB4==1 && RB5==1 && RB6==1 && RB7==1);
-    verificador = 1;
+    Verificador = 1;
     LATB=0b11111110;
     if(RB4==0){
-        if(!potencia) return '+';
-        else if(potencia) return '^';
+        if(!Potencia) return '+';
+        else if(Potencia) return '^';
     }
     else if(RB5==0) return '=';
     else if(RB6==0) return '0';
@@ -217,8 +214,8 @@ unsigned char LeerTeclado(void){
     else{
     LATB=0b11111101;
     if(RB4==0){
-        if(!factorial) return '-';
-        else if(factorial) return '!';
+        if(!Factorial) return '-';
+        else if(Factorial) return '!';
     }
     else if(RB5==0) return '9';
     else if(RB6==0) return '8';
@@ -242,8 +239,8 @@ unsigned char LeerTeclado(void){
 }
 
 void ColorRGB(void){
-    if(color==8) color = 0;
-    switch(color){
+    if(Color==8) Color = 0;
+    switch(Color){
         case 0:
             LATC = 0b00000000;
             break;
@@ -271,7 +268,7 @@ void ColorRGB(void){
         default:
             break;
     }
-    color += 1;
+    Color += 1;
 }
 
 unsigned long factorial_function(int a){
@@ -285,15 +282,15 @@ unsigned long factorial_function(int a){
 
 void __interrupt() ISR(void){
     if(TMR0IF==1){
-        if(!verificador) contador = contador +1;
-        else contador = 0;
+        if(!Verificador) Contador = Contador +1;
+        else Contador = 0;
         TMR0IF=0;
         LATE2 = !LATE2;
         TMR0 = 49911;
     }
     
-    if(contador == 20){
-        if(!verificador){   
+    if(Contador == 20){
+        if(!Verificador){   
             LATC7 = !LATC7;
             BorraLCD();
             DireccionaLCD(0x82);
@@ -305,56 +302,56 @@ void __interrupt() ISR(void){
     
 }
 
-void Imprimir_Resultado(long r){
-    long potencia = 10;
+void Imprimir_Resultado(long Resultado){
+    long Potencia = 10;
     bool flag=false;
-    if ((partdecl-(r*100))>0 | (partdecl-(r*100))<0){
+    if ((Parte_Decimal-(Resultado*100))>0 | (Parte_Decimal-(Resultado*100))<0){
         for (int i = 0; i < 3; i++) {
-            r = n1 / n2;
-            m = n1 % n2;
-            EscribeLCD_c(r+'0');
+            Resultado = Numero_1 / Numero_2;
+            m = Numero_1 % Numero_2;
+            EscribeLCD_c(Resultado+'0');
             if(i == 0 && m != 0) {
                 EscribeLCD_c(',');
             }
                         
             if (m != 0) {
-                n1 = m * 10;
+                Numero_1 = m * 10;
             } else {
                 break;
             }
                                               
         }
     }else{
-        if(r>0x8000 & r!=1000 & r !=1001){
+        if(Resultado>0x8000 & Resultado!=1000 & Resultado !=1001){
             EscribeLCD_c('-');
             DireccionaLCD(0x85);
-            r = ~r+1;
-            EscribeLCD_c(r+'0'); 
+            Resultado = ~Resultado+1;
+            EscribeLCD_c(Resultado+'0'); 
         }else{
-            if(r>=0xA & r!=1000 & r !=1001){
+            if(Resultado>=0xA & Resultado!=1000 & Resultado !=1001){
                 for(int j=9;j>=0;j--){
-                    potencia = 10;
+                    Potencia = 10;
                     for(int k=j-1;k>0;k--){   
-                        potencia = potencia*10;
+                        Potencia = Potencia*10;
                     }
-                    if(r/potencia>0){
+                    if(Resultado/Potencia>0){
                         flag = true;
-                        EscribeLCD_c(r/potencia+48);
-                        r=r%potencia;
-                    }else if( (r/potencia)==0 && flag){
-                        if(r<10) EscribeLCD_c(r+48);
+                        EscribeLCD_c(Resultado/Potencia+48);
+                        Resultado=Resultado%Potencia;
+                    }else if( (Resultado/Potencia)==0 && flag){
+                        if(Resultado<10) EscribeLCD_c(Resultado+48);
                         else EscribeLCD_c(48);
                     }
                 }
             }else{
-                if(r==1000){
+                if(Resultado==1000){
                     MensajeLCD_Var("Infinito");
                 }else{
-                    if(r==1001){
+                    if(Resultado==1001){
                         DireccionaLCD(0xC1);
                         MensajeLCD_Var("Indeterminado");
                     }else{
-                        EscribeLCD_c(r+'0'); 
+                        EscribeLCD_c(Resultado+'0'); 
                     }
                 }
             } 
