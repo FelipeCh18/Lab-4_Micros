@@ -193,7 +193,6 @@ void main(void){
                 EscribeLCD_c('=');
                 r=factorial_function(n1);
                 partdecl = r*100;
-                DireccionaLCD(0x83);
                 Imprimir_Resultado(r);
             }else{
                 EscribeLCD_c('W');
@@ -276,10 +275,11 @@ void ColorRGB(void){
 }
 
 unsigned long factorial_function(int a){
-    int fact = 1;
+    long fact = 1;
     for (b = a; b > 1; b--){
         fact = fact * b;
     }
+    
     return fact;
 }
 

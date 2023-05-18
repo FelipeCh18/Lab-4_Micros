@@ -44,11 +44,11 @@
 [v ___omul __omul `(ul  1 e 4 0 ]
 "37 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
-"207
+"206
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-"245
+"244
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
-"278
+"277
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
 "286
 [v _ISR ISR `IIH(v  1 e 1 0 ]
@@ -170,21 +170,21 @@
 "37 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
 {
-"204
+"203
 } 0
-"278
+"277
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
 {
-"279
-[v factorial_function@fact fact `i  1 a 2 23 ]
 "278
-[v factorial_function@a a `i  1 p 2 19 ]
+[v factorial_function@fact fact `l  1 a 4 29 ]
+"277
+[v factorial_function@a a `i  1 p 2 25 ]
 "284
 } 0
-"207
+"206
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 {
-"243
+"242
 } 0
 "62 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
@@ -344,10 +344,10 @@
 [v ConfiguraLCD@a a `uc  1 a 1 13 ]
 "51
 } 0
-"245 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"244 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
 {
-"276
+"275
 } 0
 "286
 [v _ISR ISR `IIH(v  1 e 1 0 ]
