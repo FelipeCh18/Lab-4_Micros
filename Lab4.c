@@ -29,6 +29,17 @@ int b;
 unsigned char LeerTeclado(void);//Declarar funcion para lectura de matricial
 unsigned long factorial_function(int);//Declarar funcion para calcular el Factorial
 void ColorRGB(void);//Declarar funcion para escritura de colores del RGB
+unsigned char heart[]={
+    0b00000,
+    0b11011,
+    0b11111,
+    0b11111,
+    0b01110,
+    0b00100,
+    0b00000,
+    0b00000
+}
+
 void Imprimir_Resultado(long);//Declarar funcion para imprimir cada resultado
 
 void main(void){
@@ -63,6 +74,8 @@ void main(void){
     }
     __delay_ms(2000); //Retraso para evitar errores
     BorraLCD(); 
+    EscribeLCD_c(heart);
+    MensajeLCD_Var("Bienvenide");
     while(1){
         LATB=0b00000000;
         Verificador = 0;
