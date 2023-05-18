@@ -211,7 +211,52 @@ void EscribeLCD_d(double num, unsigned char digi, unsigned char digd){
 	
 }
  */
-
+void EscribeLCD_n16(unsigned long a,unsigned char b){
+//Función que escribe un número positivo de 16 bits en la pantalla
+//a es el número a escribir, el cual debe estar en el rango de 0 a 65535
+//b es el número de digitos que se desea mostrar empezando desde las unidades
+//Ejemplo EscribeLCD_n16(12754,5);	
+    unsigned char decena,unidad;
+	unsigned long centena,millar;
+    RS=1;
+	switch(b){
+		case 1: unidad=a%10;
+                EscribeLCD_c(unidad+48);
+				break;
+		case 2:	decena=(a%100)/10;
+				unidad=a%10;
+				EscribeLCD_c(decena+48);
+                EscribeLCD_c(unidad+48);
+				break;
+		case 3: centena=(a%1000)/100;
+                decena=(a%100)/10;
+				unidad=a%10;
+                EscribeLCD_c(centena+48);
+				EscribeLCD_c(decena+48);
+                EscribeLCD_c(unidad+48);
+				break;
+		case 4: millar=(a%10000)/1000;
+                centena=(a%1000)/100;
+                decena=(a%100)/10;
+				unidad=a%10;
+                EscribeLCD_c(millar+48);
+				EscribeLCD_c(centena+48);
+				EscribeLCD_c(decena+48);
+                EscribeLCD_c(unidad+48);
+				break;
+		case 5: EscribeLCD_c(a/10000 +48);
+				millar=(a%10000)/1000;
+                centena=(a%1000)/100;
+                decena=(a%100)/10;
+				unidad=a%10;
+                EscribeLCD_c(millar+48);
+				EscribeLCD_c(centena+48);
+				EscribeLCD_c(decena+48);
+                EscribeLCD_c(unidad+48);
+				break;
+		default: break;
+	}	
+}
 void MensajeLCD_Var(char* a){
 //Función que escribe una cadena de caracteres variable en la pantalla
 //a es una cadena de caracteres guardada en una variable *char
