@@ -52,13 +52,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _POR `Vb ~T0 @X0 0 e@32385 ]
 "3074
 [v _LATB `Vuc ~T0 @X0 0 e@3978 ]
-"32 Lab4.c
+"30 Lab4.c
 [v _LeerTeclado `(uc ~T0 @X0 0 ef ]
-"34
+"32
 [v _ColorRGB `(v ~T0 @X0 0 ef ]
-"35
-[v _Imprimir_Resultado `(v ~T0 @X0 0 ef1`l ]
 "33
+[v _Imprimir_Resultado `(v ~T0 @X0 0 ef1`l ]
+"31
 [v _factorial_function `(ul ~T0 @X0 0 ef1`i ]
 [t ~ __deprecated__ ]
 [t T16 __deprecated__ ]
@@ -3647,32 +3647,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
 [; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;math.h: 30: extern double fabs(double);
-[; ;math.h: 31: extern double floor(double);
-[; ;math.h: 32: extern double ceil(double);
-[; ;math.h: 33: extern double modf(double, double *);
-[; ;math.h: 34: extern double sqrt(double);
-[; ;math.h: 35: extern double atof(const char *);
-[; ;math.h: 36: extern double sin(double) ;
-[; ;math.h: 37: extern double cos(double) ;
-[; ;math.h: 38: extern double tan(double) ;
-[; ;math.h: 39: extern double asin(double) ;
-[; ;math.h: 40: extern double acos(double) ;
-[; ;math.h: 41: extern double atan(double);
-[; ;math.h: 42: extern double atan2(double, double) ;
-[; ;math.h: 43: extern double log(double);
-[; ;math.h: 44: extern double log10(double);
-[; ;math.h: 45: extern double pow(double, double) ;
-[; ;math.h: 46: extern double exp(double) ;
-[; ;math.h: 47: extern double sinh(double) ;
-[; ;math.h: 48: extern double cosh(double) ;
-[; ;math.h: 49: extern double tanh(double);
-[; ;math.h: 50: extern double eval_poly(double, const double *, int);
-[; ;math.h: 51: extern double frexp(double, int *);
-[; ;math.h: 52: extern double ldexp(double, int);
-[; ;math.h: 53: extern double fmod(double, double);
-[; ;math.h: 54: extern double trunc(double);
-[; ;math.h: 55: extern double round(double);
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
 [; ;string.h: 16: extern void * memset(void *, int, size_t);
@@ -4232,1418 +4206,1429 @@ Version 3.2 HI-TECH Software Intermediate Code
 "327
 [e :UE 396 ]
 }
-"7 Lab4.c
+"6 Lab4.c
 [p x FOSC=INTOSC_EC ]
-"8
+"7
 [p x WDT=OFF ]
-"9
+"8
 [p x PBADEN=OFF ]
-"10
+"9
 [p x LVP=OFF ]
-"11
+"10
 [p x MCLRE=ON ]
-"13
-[v _Tecla `uc ~T0 @X0 1 e ]
-[i _Tecla
+"12
+[v _Boton `uc ~T0 @X0 1 e ]
+[i _Boton
 -> -> 0 `i `uc
 ]
-[; ;Lab4.c: 13: unsigned char Tecla = 0;
-"14
-[v _partdecl `ul ~T0 @X0 1 e ]
-[i _partdecl
+[; ;Lab4.c: 12: unsigned char Boton = 0;
+"13
+[v _Parte_Decimal `ul ~T0 @X0 1 e ]
+[i _Parte_Decimal
 -> -> -> 0 `i `l `ul
 ]
-[; ;Lab4.c: 14: unsigned long partdecl = 0;
-"15
-[v _r `l ~T0 @X0 1 e ]
-[i _r
+[; ;Lab4.c: 13: unsigned long Parte_Decimal = 0;
+"14
+[v _Resultado `l ~T0 @X0 1 e ]
+[i _Resultado
 -> -> 0 `i `l
 ]
-[; ;Lab4.c: 15: long int r = 0;
+[; ;Lab4.c: 14: long int Resultado = 0;
+"15
+[v _Numero_1 `ui ~T0 @X0 1 e ]
+[i _Numero_1
+-> -> 0 `i `ui
+]
+[; ;Lab4.c: 15: unsigned int Numero_1 = 0;
 "16
-[v _n1 `ui ~T0 @X0 1 e ]
-[i _n1
+[v _Numero_2 `ui ~T0 @X0 1 e ]
+[i _Numero_2
 -> -> 0 `i `ui
 ]
-[; ;Lab4.c: 16: unsigned int n1 = 0;
+[; ;Lab4.c: 16: unsigned int Numero_2 = 0;
 "17
-[v _n2 `ui ~T0 @X0 1 e ]
-[i _n2
--> -> 0 `i `ui
-]
-[; ;Lab4.c: 17: unsigned int n2 = 0;
-"18
 [v _i `ui ~T0 @X0 1 e ]
 [i _i
 -> -> 0 `i `ui
 ]
-[; ;Lab4.c: 18: unsigned int i = 0;
-"19
+[; ;Lab4.c: 17: unsigned int i = 0;
+"18
 [v _m `ul ~T0 @X0 1 e ]
 [i _m
 -> -> -> 0 `i `l `ul
 ]
-[; ;Lab4.c: 19: unsigned long m = 0;
+[; ;Lab4.c: 18: unsigned long m = 0;
+"19
+[v _Operador `uc ~T0 @X0 1 e ]
+[i _Operador
+-> -> 32 `ui `uc
+]
+[; ;Lab4.c: 19: unsigned char Operador = ' ';
 "20
-[v _op `uc ~T0 @X0 1 e ]
-[i _op
+[v _Numero_1_Char `uc ~T0 @X0 1 e ]
+[i _Numero_1_Char
 -> -> 32 `ui `uc
 ]
-[; ;Lab4.c: 20: unsigned char op = ' ';
+[; ;Lab4.c: 20: unsigned char Numero_1_Char = ' ';
 "21
-[v _n1c `uc ~T0 @X0 1 e ]
-[i _n1c
+[v _Numero_2_Char `uc ~T0 @X0 1 e ]
+[i _Numero_2_Char
 -> -> 32 `ui `uc
 ]
-[; ;Lab4.c: 21: unsigned char n1c = ' ';
+[; ;Lab4.c: 21: unsigned char Numero_2_Char = ' ';
 "22
-[v _n2c `uc ~T0 @X0 1 e ]
-[i _n2c
--> -> 32 `ui `uc
-]
-[; ;Lab4.c: 22: unsigned char n2c = ' ';
-"23
-[v _color `ui ~T0 @X0 1 e ]
-[i _color
+[v _Color `ui ~T0 @X0 1 e ]
+[i _Color
 -> -> 0 `i `ui
 ]
-[; ;Lab4.c: 23: unsigned int color = 0;
+[; ;Lab4.c: 22: unsigned int Color = 0;
+"23
+[v _Contador `i ~T0 @X0 1 e ]
+[i _Contador
+-> 0 `i
+]
+[; ;Lab4.c: 23: int Contador = 0;
 "24
-[v _contador `i ~T0 @X0 1 e ]
-[i _contador
+[v _Verificador `i ~T0 @X0 1 e ]
+[i _Verificador
 -> 0 `i
 ]
-[; ;Lab4.c: 24: int contador = 0;
+[; ;Lab4.c: 24: int Verificador = 0;
 "25
-[v _contador_digitos `i ~T0 @X0 1 e ]
-[i _contador_digitos
--> 0 `i
+[v _Potencia `uc ~T0 @X0 1 e ]
+[i _Potencia
+-> -> 0 `i `uc
 ]
-[; ;Lab4.c: 25: int contador_digitos = 0;
+[; ;Lab4.c: 25: bool Potencia = 0;
 "26
-[v _verificador `i ~T0 @X0 1 e ]
-[i _verificador
--> 0 `i
+[v _Factorial `uc ~T0 @X0 1 e ]
+[i _Factorial
+-> -> 0 `i `uc
 ]
-[; ;Lab4.c: 26: int verificador = 0;
+[; ;Lab4.c: 26: bool Factorial = 0;
 "27
-[v _potencia `uc ~T0 @X0 1 e ]
-[i _potencia
+[v _Negativo `uc ~T0 @X0 1 e ]
+[i _Negativo
 -> -> 0 `i `uc
 ]
-[; ;Lab4.c: 27: bool potencia = 0;
+[; ;Lab4.c: 27: bool Negativo = 0;
 "28
-[v _factorial `uc ~T0 @X0 1 e ]
-[i _factorial
--> -> 0 `i `uc
-]
-[; ;Lab4.c: 28: bool factorial = 0;
-"29
 [v _a `i ~T0 @X0 1 e ]
-[; ;Lab4.c: 29: int a;
-"30
+[; ;Lab4.c: 28: int a;
+"29
 [v _b `i ~T0 @X0 1 e ]
-[; ;Lab4.c: 30: int b;
-"31
-[v _res `ul ~T0 @X0 1 e ]
-[; ;Lab4.c: 31: unsigned long res;
-[; ;Lab4.c: 32: unsigned char LeerTeclado(void);
-[; ;Lab4.c: 33: unsigned long factorial_function(int);
-[; ;Lab4.c: 34: void ColorRGB(void);
-[; ;Lab4.c: 35: void Imprimir_Resultado(long);
+[; ;Lab4.c: 29: int b;
+[; ;Lab4.c: 30: unsigned char LeerTeclado(void);
+[; ;Lab4.c: 31: unsigned long factorial_function(int);
+[; ;Lab4.c: 32: void ColorRGB(void);
+[; ;Lab4.c: 33: void Imprimir_Resultado(long);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"37
+"35
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;Lab4.c: 37: void main(void){
+[; ;Lab4.c: 35: void main(void){
 [e :U _main ]
 [f ]
-[; ;Lab4.c: 38: ADCON1=15;
-"38
+[; ;Lab4.c: 36: ADCON1=15;
+"36
 [e = _ADCON1 -> -> 15 `i `uc ]
-[; ;Lab4.c: 39: TRISD=0;
-"39
+[; ;Lab4.c: 37: TRISD=0;
+"37
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;Lab4.c: 40: TRISB=0b11110000;
-"40
+[; ;Lab4.c: 38: TRISB=0b11110000;
+"38
 [e = _TRISB -> -> 240 `i `uc ]
-[; ;Lab4.c: 41: TRISE=0;
-"41
+[; ;Lab4.c: 39: TRISE=0;
+"39
 [e = _TRISE -> -> 0 `i `uc ]
-[; ;Lab4.c: 42: TRISC=0;
-"42
+[; ;Lab4.c: 40: TRISC=0;
+"40
 [e = _TRISC -> -> 0 `i `uc ]
-[; ;Lab4.c: 43: RBPU=0;
-"43
+[; ;Lab4.c: 41: RBPU=0;
+"41
 [e = _RBPU -> -> 0 `i `b ]
-[; ;Lab4.c: 44: ConfiguraLCD(4);
-"44
+[; ;Lab4.c: 42: ConfiguraLCD(4);
+"42
 [e ( _ConfiguraLCD (1 -> -> 4 `i `uc ]
-[; ;Lab4.c: 45: InicializaLCD();
-"45
+[; ;Lab4.c: 43: InicializaLCD();
+"43
 [e ( _InicializaLCD ..  ]
-[; ;Lab4.c: 47: T0CON=0b10000010;
-"47
+[; ;Lab4.c: 45: T0CON=0b10000010;
+"45
 [e = _T0CON -> -> 130 `i `uc ]
-[; ;Lab4.c: 48: TMR0IF=0;
-"48
+[; ;Lab4.c: 46: TMR0IF=0;
+"46
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;Lab4.c: 49: TMR0=49911;
-"49
+[; ;Lab4.c: 47: TMR0=49911;
+"47
 [e = _TMR0 -> -> 49911 `l `us ]
-[; ;Lab4.c: 50: TMR0IE=1;
-"50
+[; ;Lab4.c: 48: TMR0IE=1;
+"48
 [e = _TMR0IE -> -> 1 `i `b ]
-[; ;Lab4.c: 51: GIE=1;
-"51
+[; ;Lab4.c: 49: GIE=1;
+"49
 [e = _GIE -> -> 1 `i `b ]
-[; ;Lab4.c: 52: TMR0ON=1;
-"52
+[; ;Lab4.c: 50: TMR0ON=1;
+"50
 [e = _TMR0ON -> -> 1 `i `b ]
-[; ;Lab4.c: 55: OSCCON = 0b11000100;
-"55
+[; ;Lab4.c: 53: OSCCON = 0b11000100;
+"53
 [e = _OSCCON -> -> 196 `i `uc ]
+[; ;Lab4.c: 55: BorraLCD();
+"55
+[e ( _BorraLCD ..  ]
+[; ;Lab4.c: 56: if(TO == 1 && PD == 1){
+"56
+[e $ ! && == -> _TO `i -> 1 `i == -> _PD `i -> 1 `i 405  ]
+{
 [; ;Lab4.c: 57: BorraLCD();
 "57
 [e ( _BorraLCD ..  ]
-[; ;Lab4.c: 58: if(TO == 1 && PD == 1){
+[; ;Lab4.c: 58: MensajeLCD_Var("Energia");
 "58
-[e $ ! && == -> _TO `i -> 1 `i == -> _PD `i -> 1 `i 405  ]
-{
-[; ;Lab4.c: 59: BorraLCD();
-"59
-[e ( _BorraLCD ..  ]
-[; ;Lab4.c: 60: MensajeLCD_Var("Energia");
-"60
 [e ( _MensajeLCD_Var (1 -> :s 1C `*uc ]
-"61
+"59
 }
-[; ;Lab4.c: 61: }else{
+[; ;Lab4.c: 59: }else{
 [e $U 406  ]
 [e :U 405 ]
 {
-[; ;Lab4.c: 62: if(POR==0){
-"62
+[; ;Lab4.c: 60: if(POR==0){
+"60
 [e $ ! == -> _POR `i -> 0 `i 407  ]
 {
-[; ;Lab4.c: 63: BorraLCD();
-"63
+[; ;Lab4.c: 61: BorraLCD();
+"61
 [e ( _BorraLCD ..  ]
-[; ;Lab4.c: 64: MensajeLCD_Var("MCLR");
-"64
+[; ;Lab4.c: 62: MensajeLCD_Var("MCLR");
+"62
 [e ( _MensajeLCD_Var (1 -> :s 2C `*uc ]
-"65
+"63
 }
 [e :U 407 ]
-"66
+"64
 }
 [e :U 406 ]
-[; ;Lab4.c: 65: }
-[; ;Lab4.c: 66: }
-[; ;Lab4.c: 67: _delay((unsigned long)((2000)*(1000000/4000.0)));
-"67
+[; ;Lab4.c: 63: }
+[; ;Lab4.c: 64: }
+[; ;Lab4.c: 65: _delay((unsigned long)((2000)*(1000000/4000.0)));
+"65
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;Lab4.c: 68: BorraLCD();
-"68
+[; ;Lab4.c: 66: BorraLCD();
+"66
 [e ( _BorraLCD ..  ]
-[; ;Lab4.c: 69: while(1){
-"69
+[; ;Lab4.c: 67: while(1){
+"67
 [e :U 409 ]
 {
-[; ;Lab4.c: 70: LATB=0b00000000;
-"70
+[; ;Lab4.c: 68: Negativo=0;
+"68
+[e = _Negativo -> -> 0 `i `uc ]
+[; ;Lab4.c: 69: LATB=0b00000000;
+"69
 [e = _LATB -> -> 0 `i `uc ]
-[; ;Lab4.c: 71: verificador = 0;
+[; ;Lab4.c: 70: Verificador = 0;
+"70
+[e = _Verificador -> 0 `i ]
+[; ;Lab4.c: 71: Boton = LeerTeclado();
 "71
-[e = _verificador -> 0 `i ]
-[; ;Lab4.c: 72: Tecla = LeerTeclado();
+[e = _Boton ( _LeerTeclado ..  ]
+[; ;Lab4.c: 72: ColorRGB();
 "72
-[e = _Tecla ( _LeerTeclado ..  ]
-[; ;Lab4.c: 73: ColorRGB();
-"73
 [e ( _ColorRGB ..  ]
-[; ;Lab4.c: 74: if(Tecla=='C'){
-"74
-[e $ ! == -> _Tecla `ui -> 67 `ui 411  ]
+[; ;Lab4.c: 73: if(Boton=='C'){
+"73
+[e $ ! == -> _Boton `ui -> 67 `ui 411  ]
 {
-[; ;Lab4.c: 76: op = ' ';
+[; ;Lab4.c: 75: Operador = ' ';
+"75
+[e = _Operador -> -> 32 `ui `uc ]
+[; ;Lab4.c: 76: Numero_1_Char = ' ';
 "76
-[e = _op -> -> 32 `ui `uc ]
-[; ;Lab4.c: 77: n1c = ' ';
+[e = _Numero_1_Char -> -> 32 `ui `uc ]
+[; ;Lab4.c: 77: Numero_2_Char = ' ';
 "77
-[e = _n1c -> -> 32 `ui `uc ]
-[; ;Lab4.c: 78: n2c = ' ';
+[e = _Numero_2_Char -> -> 32 `ui `uc ]
+[; ;Lab4.c: 78: Numero_1 = 0;
 "78
-[e = _n2c -> -> 32 `ui `uc ]
-[; ;Lab4.c: 79: n1 = 0;
+[e = _Numero_1 -> -> 0 `i `ui ]
+[; ;Lab4.c: 79: Numero_2 = 0;
 "79
-[e = _n1 -> -> 0 `i `ui ]
-[; ;Lab4.c: 80: n2 = 0;
+[e = _Numero_2 -> -> 0 `i `ui ]
+[; ;Lab4.c: 80: i = 0;
 "80
-[e = _n2 -> -> 0 `i `ui ]
-[; ;Lab4.c: 81: i = 0;
-"81
 [e = _i -> -> 0 `i `ui ]
-[; ;Lab4.c: 82: partdecl = 0;
+[; ;Lab4.c: 81: Parte_Decimal = 0;
+"81
+[e = _Parte_Decimal -> -> -> 0 `i `l `ul ]
+[; ;Lab4.c: 82: BorraLCD();
 "82
-[e = _partdecl -> -> -> 0 `i `l `ul ]
-[; ;Lab4.c: 83: BorraLCD();
-"83
 [e ( _BorraLCD ..  ]
-"84
+"83
 }
-[; ;Lab4.c: 84: }else if(op==' ' & (Tecla=='+'|Tecla=='^') & n1c == ' ' & n2c ==' '){
+[; ;Lab4.c: 83: }else if(Operador==' ' & (Boton=='+'|Boton=='^') & Numero_1_Char == ' ' & Numero_2_Char ==' '){
 [e $U 412  ]
 [e :U 411 ]
-[e $ ! & & & == -> _op `ui -> 32 `ui | == -> _Tecla `ui -> 43 `ui == -> _Tecla `ui -> 94 `ui == -> _n1c `ui -> 32 `ui == -> _n2c `ui -> 32 `ui 413  ]
+[e $ ! & & & == -> _Operador `ui -> 32 `ui | == -> _Boton `ui -> 43 `ui == -> _Boton `ui -> 94 `ui == -> _Numero_1_Char `ui -> 32 `ui == -> _Numero_2_Char `ui -> 32 `ui 413  ]
 {
-[; ;Lab4.c: 85: potencia=~potencia;
+[; ;Lab4.c: 84: Potencia=~Potencia;
+"84
+[e = _Potencia -> ~ -> _Potencia `i `uc ]
+[; ;Lab4.c: 85: if(Potencia){
 "85
-[e = _potencia -> ~ -> _potencia `i `uc ]
-[; ;Lab4.c: 86: if(potencia){
-"86
-[e $ ! != -> _potencia `i -> -> -> 0 `i `uc `i 414  ]
+[e $ ! != -> _Potencia `i -> -> -> 0 `i `uc `i 414  ]
 {
-[; ;Lab4.c: 87: DireccionaLCD(0x80);
-"87
+[; ;Lab4.c: 86: DireccionaLCD(0x80);
+"86
 [e ( _DireccionaLCD (1 -> -> 128 `i `uc ]
-[; ;Lab4.c: 88: MensajeLCD_Var("Modo Potencia");
-"88
+[; ;Lab4.c: 87: MensajeLCD_Var("Modo Potencia");
+"87
 [e ( _MensajeLCD_Var (1 -> :s 3C `*uc ]
-[; ;Lab4.c: 89: DireccionaLCD(0xC0);
-"89
+[; ;Lab4.c: 88: DireccionaLCD(0xC0);
+"88
 [e ( _DireccionaLCD (1 -> -> 192 `i `uc ]
-[; ;Lab4.c: 90: MensajeLCD_Var("Activado");
-"90
+[; ;Lab4.c: 89: MensajeLCD_Var("Activado");
+"89
 [e ( _MensajeLCD_Var (1 -> :s 4C `*uc ]
-[; ;Lab4.c: 91: _delay((unsigned long)((1000)*(1000000/4000.0)));
-"91
+[; ;Lab4.c: 90: _delay((unsigned long)((1000)*(1000000/4000.0)));
+"90
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;Lab4.c: 92: BorraLCD();
-"92
+[; ;Lab4.c: 91: BorraLCD();
+"91
 [e ( _BorraLCD ..  ]
-[; ;Lab4.c: 93: continue;
-"93
+[; ;Lab4.c: 92: continue;
+"92
 [e $U 408  ]
-"94
+"93
 }
-[; ;Lab4.c: 94: }else{
+[; ;Lab4.c: 93: }else{
 [e $U 415  ]
 [e :U 414 ]
 {
-[; ;Lab4.c: 95: DireccionaLCD(0x80);
-"95
+[; ;Lab4.c: 94: DireccionaLCD(0x80);
+"94
 [e ( _DireccionaLCD (1 -> -> 128 `i `uc ]
-[; ;Lab4.c: 96: MensajeLCD_Var("Modo Suma");
-"96
+[; ;Lab4.c: 95: MensajeLCD_Var("Modo Suma");
+"95
 [e ( _MensajeLCD_Var (1 -> :s 5C `*uc ]
-[; ;Lab4.c: 97: DireccionaLCD(0xC0);
-"97
+[; ;Lab4.c: 96: DireccionaLCD(0xC0);
+"96
 [e ( _DireccionaLCD (1 -> -> 192 `i `uc ]
-[; ;Lab4.c: 98: MensajeLCD_Var("Activado");
-"98
+[; ;Lab4.c: 97: MensajeLCD_Var("Activado");
+"97
 [e ( _MensajeLCD_Var (1 -> :s 6C `*uc ]
-[; ;Lab4.c: 99: _delay((unsigned long)((1000)*(1000000/4000.0)));
-"99
+[; ;Lab4.c: 98: _delay((unsigned long)((1000)*(1000000/4000.0)));
+"98
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;Lab4.c: 100: BorraLCD();
-"100
+[; ;Lab4.c: 99: BorraLCD();
+"99
 [e ( _BorraLCD ..  ]
-[; ;Lab4.c: 101: continue;
-"101
+[; ;Lab4.c: 100: continue;
+"100
 [e $U 408  ]
-"102
+"101
 }
 [e :U 415 ]
-"103
+"102
 }
-[; ;Lab4.c: 102: }
-[; ;Lab4.c: 103: }else if(op==' ' & (Tecla=='-'|Tecla=='!') & n1c == ' ' & n2c ==' '){
+[; ;Lab4.c: 101: }
+[; ;Lab4.c: 102: }else if(Operador==' ' & (Boton=='-'|Boton=='!') & Numero_1_Char == ' ' & Numero_2_Char ==' '){
 [e $U 416  ]
 [e :U 413 ]
-[e $ ! & & & == -> _op `ui -> 32 `ui | == -> _Tecla `ui -> 45 `ui == -> _Tecla `ui -> 33 `ui == -> _n1c `ui -> 32 `ui == -> _n2c `ui -> 32 `ui 417  ]
+[e $ ! & & & == -> _Operador `ui -> 32 `ui | == -> _Boton `ui -> 45 `ui == -> _Boton `ui -> 33 `ui == -> _Numero_1_Char `ui -> 32 `ui == -> _Numero_2_Char `ui -> 32 `ui 417  ]
 {
-[; ;Lab4.c: 104: factorial=~factorial;
+[; ;Lab4.c: 103: Factorial=~Factorial;
+"103
+[e = _Factorial -> ~ -> _Factorial `i `uc ]
+[; ;Lab4.c: 104: if(Factorial){
 "104
-[e = _factorial -> ~ -> _factorial `i `uc ]
-[; ;Lab4.c: 105: if(factorial){
-"105
-[e $ ! != -> _factorial `i -> -> -> 0 `i `uc `i 418  ]
+[e $ ! != -> _Factorial `i -> -> -> 0 `i `uc `i 418  ]
 {
-[; ;Lab4.c: 106: DireccionaLCD(0x80);
-"106
+[; ;Lab4.c: 105: DireccionaLCD(0x80);
+"105
 [e ( _DireccionaLCD (1 -> -> 128 `i `uc ]
-[; ;Lab4.c: 107: MensajeLCD_Var("Modo Factorial");
-"107
+[; ;Lab4.c: 106: MensajeLCD_Var("Modo Factorial");
+"106
 [e ( _MensajeLCD_Var (1 -> :s 7C `*uc ]
-[; ;Lab4.c: 108: DireccionaLCD(0xC0);
-"108
+[; ;Lab4.c: 107: DireccionaLCD(0xC0);
+"107
 [e ( _DireccionaLCD (1 -> -> 192 `i `uc ]
-[; ;Lab4.c: 109: MensajeLCD_Var("Activado");
-"109
+[; ;Lab4.c: 108: MensajeLCD_Var("Activado");
+"108
 [e ( _MensajeLCD_Var (1 -> :s 8C `*uc ]
-[; ;Lab4.c: 110: _delay((unsigned long)((1000)*(1000000/4000.0)));
-"110
+[; ;Lab4.c: 109: _delay((unsigned long)((1000)*(1000000/4000.0)));
+"109
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;Lab4.c: 111: BorraLCD();
-"111
+[; ;Lab4.c: 110: BorraLCD();
+"110
 [e ( _BorraLCD ..  ]
-[; ;Lab4.c: 112: continue;
-"112
+[; ;Lab4.c: 111: continue;
+"111
 [e $U 408  ]
-"113
+"112
 }
-[; ;Lab4.c: 113: }else{
+[; ;Lab4.c: 112: }else{
 [e $U 419  ]
 [e :U 418 ]
 {
-[; ;Lab4.c: 114: DireccionaLCD(0x80);
-"114
+[; ;Lab4.c: 113: DireccionaLCD(0x80);
+"113
 [e ( _DireccionaLCD (1 -> -> 128 `i `uc ]
-[; ;Lab4.c: 115: MensajeLCD_Var("Modo Resta");
-"115
+[; ;Lab4.c: 114: MensajeLCD_Var("Modo Resta");
+"114
 [e ( _MensajeLCD_Var (1 -> :s 9C `*uc ]
-[; ;Lab4.c: 116: DireccionaLCD(0xC0);
-"116
+[; ;Lab4.c: 115: DireccionaLCD(0xC0);
+"115
 [e ( _DireccionaLCD (1 -> -> 192 `i `uc ]
-[; ;Lab4.c: 117: MensajeLCD_Var("Activado");
-"117
+[; ;Lab4.c: 116: MensajeLCD_Var("Activado");
+"116
 [e ( _MensajeLCD_Var (1 -> :s 10C `*uc ]
-[; ;Lab4.c: 118: _delay((unsigned long)((1000)*(1000000/4000.0)));
-"118
+[; ;Lab4.c: 117: _delay((unsigned long)((1000)*(1000000/4000.0)));
+"117
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;Lab4.c: 119: BorraLCD();
-"119
+[; ;Lab4.c: 118: BorraLCD();
+"118
 [e ( _BorraLCD ..  ]
-[; ;Lab4.c: 120: continue;
-"120
+[; ;Lab4.c: 119: continue;
+"119
 [e $U 408  ]
-"121
+"120
 }
 [e :U 419 ]
-"122
+"121
 }
-[; ;Lab4.c: 121: }
-[; ;Lab4.c: 122: }else{
+[; ;Lab4.c: 120: }
+[; ;Lab4.c: 121: }else{
 [e $U 420  ]
 [e :U 417 ]
 {
-[; ;Lab4.c: 123: if((n1c==' '|n2c==' '|op==' ') & !factorial){
+[; ;Lab4.c: 122: if((Numero_1_Char==' '|Numero_2_Char==' '|Operador==' ') & !Factorial){
+"122
+[e $ ! & | | == -> _Numero_1_Char `ui -> 32 `ui == -> _Numero_2_Char `ui -> 32 `ui == -> _Operador `ui -> 32 `ui ! != -> _Factorial `i -> -> -> 0 `i `uc `i 421  ]
+{
+[; ;Lab4.c: 123: if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^') & Numero_1_Char != ' ' & Numero_2_Char ==' '){
 "123
-[e $ ! & | | == -> _n1c `ui -> 32 `ui == -> _n2c `ui -> 32 `ui == -> _op `ui -> 32 `ui ! != -> _factorial `i -> -> -> 0 `i `uc `i 421  ]
+[e $ ! & & & == -> _Operador `ui -> 32 `ui | | | | == -> _Boton `ui -> 43 `ui == -> _Boton `ui -> 45 `ui == -> _Boton `ui -> 47 `ui == -> _Boton `ui -> 120 `ui == -> _Boton `ui -> 94 `ui != -> _Numero_1_Char `ui -> 32 `ui == -> _Numero_2_Char `ui -> 32 `ui 422  ]
 {
-[; ;Lab4.c: 124: if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x'|Tecla=='^') & n1c != ' ' & n2c ==' '){
+[; ;Lab4.c: 124: DireccionaLCD(0x81);
 "124
-[e $ ! & & & == -> _op `ui -> 32 `ui | | | | == -> _Tecla `ui -> 43 `ui == -> _Tecla `ui -> 45 `ui == -> _Tecla `ui -> 47 `ui == -> _Tecla `ui -> 120 `ui == -> _Tecla `ui -> 94 `ui != -> _n1c `ui -> 32 `ui == -> _n2c `ui -> 32 `ui 422  ]
-{
-[; ;Lab4.c: 125: DireccionaLCD(0x81);
-"125
 [e ( _DireccionaLCD (1 -> -> 129 `i `uc ]
-[; ;Lab4.c: 126: EscribeLCD_c(Tecla);
+[; ;Lab4.c: 125: EscribeLCD_c(Boton);
+"125
+[e ( _EscribeLCD_c (1 _Boton ]
+[; ;Lab4.c: 126: Operador = Boton;
 "126
-[e ( _EscribeLCD_c (1 _Tecla ]
-[; ;Lab4.c: 127: op = Tecla;
+[e = _Operador _Boton ]
 "127
-[e = _op _Tecla ]
-"128
 }
-[; ;Lab4.c: 128: }else if(n1c == ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='^')){
+[; ;Lab4.c: 127: }else if(Numero_1_Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
 [e $U 423  ]
 [e :U 422 ]
-[e $ ! & == -> _n1c `ui -> 32 `ui | | | | | | != -> _Tecla `ui -> 43 `ui != -> _Tecla `ui -> 45 `ui != -> _Tecla `ui -> 47 `ui != -> _Tecla `ui -> 120 `ui != -> _Tecla `ui -> 61 `ui != -> _Tecla `ui -> 67 `ui != -> _Tecla `ui -> 94 `ui 424  ]
+[e $ ! & == -> _Numero_1_Char `ui -> 32 `ui | | | | | | != -> _Boton `ui -> 43 `ui != -> _Boton `ui -> 45 `ui != -> _Boton `ui -> 47 `ui != -> _Boton `ui -> 120 `ui != -> _Boton `ui -> 61 `ui != -> _Boton `ui -> 67 `ui != -> _Boton `ui -> 94 `ui 424  ]
 {
-[; ;Lab4.c: 129: DireccionaLCD(0x80);
-"129
+[; ;Lab4.c: 128: DireccionaLCD(0x80);
+"128
 [e ( _DireccionaLCD (1 -> -> 128 `i `uc ]
-[; ;Lab4.c: 130: EscribeLCD_c(Tecla);
+[; ;Lab4.c: 129: EscribeLCD_c(Boton);
+"129
+[e ( _EscribeLCD_c (1 _Boton ]
+[; ;Lab4.c: 130: Numero_1_Char=Boton;
 "130
-[e ( _EscribeLCD_c (1 _Tecla ]
-[; ;Lab4.c: 131: n1c=Tecla;
+[e = _Numero_1_Char _Boton ]
+[; ;Lab4.c: 131: Numero_1 = Boton-'0';
 "131
-[e = _n1c _Tecla ]
-[; ;Lab4.c: 132: n1 = Tecla-'0';
+[e = _Numero_1 - -> _Boton `ui -> 48 `ui ]
 "132
-[e = _n1 - -> _Tecla `ui -> 48 `ui ]
-"133
 }
-[; ;Lab4.c: 133: }else if(n2c==' ' & op!=' ' & n1c != ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='^')){
+[; ;Lab4.c: 132: }else if(Numero_2_Char==' ' & Operador!=' ' & Numero_1_Char != ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
 [e $U 425  ]
 [e :U 424 ]
-[e $ ! & & & == -> _n2c `ui -> 32 `ui != -> _op `ui -> 32 `ui != -> _n1c `ui -> 32 `ui | | | | | | != -> _Tecla `ui -> 43 `ui != -> _Tecla `ui -> 45 `ui != -> _Tecla `ui -> 47 `ui != -> _Tecla `ui -> 120 `ui != -> _Tecla `ui -> 61 `ui != -> _Tecla `ui -> 67 `ui != -> _Tecla `ui -> 94 `ui 426  ]
+[e $ ! & & & == -> _Numero_2_Char `ui -> 32 `ui != -> _Operador `ui -> 32 `ui != -> _Numero_1_Char `ui -> 32 `ui | | | | | | != -> _Boton `ui -> 43 `ui != -> _Boton `ui -> 45 `ui != -> _Boton `ui -> 47 `ui != -> _Boton `ui -> 120 `ui != -> _Boton `ui -> 61 `ui != -> _Boton `ui -> 67 `ui != -> _Boton `ui -> 94 `ui 426  ]
 {
-[; ;Lab4.c: 134: DireccionaLCD(0x82);
-"134
+[; ;Lab4.c: 133: DireccionaLCD(0x82);
+"133
 [e ( _DireccionaLCD (1 -> -> 130 `i `uc ]
-[; ;Lab4.c: 135: EscribeLCD_c(Tecla);
+[; ;Lab4.c: 134: EscribeLCD_c(Boton);
+"134
+[e ( _EscribeLCD_c (1 _Boton ]
+[; ;Lab4.c: 135: Numero_2_Char=Boton;
 "135
-[e ( _EscribeLCD_c (1 _Tecla ]
-[; ;Lab4.c: 136: n2c=Tecla;
+[e = _Numero_2_Char _Boton ]
+[; ;Lab4.c: 136: Numero_2 = Boton-'0';
 "136
-[e = _n2c _Tecla ]
-[; ;Lab4.c: 137: n2 = Tecla-'0';
+[e = _Numero_2 - -> _Boton `ui -> 48 `ui ]
 "137
-[e = _n2 - -> _Tecla `ui -> 48 `ui ]
-"138
 }
 [e :U 426 ]
-"139
+"138
 [e :U 425 ]
 [e :U 423 ]
 }
-[; ;Lab4.c: 138: }
-[; ;Lab4.c: 139: }else if ((n1c==' '|op==' ') & factorial){
+[; ;Lab4.c: 137: }
+[; ;Lab4.c: 138: }else if ((Numero_1_Char==' '|Operador==' ') & Factorial){
 [e $U 427  ]
 [e :U 421 ]
-[e $ ! != & -> | == -> _n1c `ui -> 32 `ui == -> _op `ui -> 32 `ui `i -> _factorial `i -> 0 `i 428  ]
+[e $ ! != & -> | == -> _Numero_1_Char `ui -> 32 `ui == -> _Operador `ui -> 32 `ui `i -> _Factorial `i -> 0 `i 428  ]
 {
-[; ;Lab4.c: 140: if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x'|Tecla=='^'|Tecla=='!') & n1c != ' ' & n2c ==' '){
+[; ;Lab4.c: 139: if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^'|Boton=='!') & Numero_1_Char != ' ' & Numero_2_Char ==' '){
+"139
+[e $ ! & & & == -> _Operador `ui -> 32 `ui | | | | | == -> _Boton `ui -> 43 `ui == -> _Boton `ui -> 45 `ui == -> _Boton `ui -> 47 `ui == -> _Boton `ui -> 120 `ui == -> _Boton `ui -> 94 `ui == -> _Boton `ui -> 33 `ui != -> _Numero_1_Char `ui -> 32 `ui == -> _Numero_2_Char `ui -> 32 `ui 429  ]
+{
+[; ;Lab4.c: 140: DireccionaLCD(0x81);
 "140
-[e $ ! & & & == -> _op `ui -> 32 `ui | | | | | == -> _Tecla `ui -> 43 `ui == -> _Tecla `ui -> 45 `ui == -> _Tecla `ui -> 47 `ui == -> _Tecla `ui -> 120 `ui == -> _Tecla `ui -> 94 `ui == -> _Tecla `ui -> 33 `ui != -> _n1c `ui -> 32 `ui == -> _n2c `ui -> 32 `ui 429  ]
-{
-[; ;Lab4.c: 141: DireccionaLCD(0x81);
-"141
 [e ( _DireccionaLCD (1 -> -> 129 `i `uc ]
-[; ;Lab4.c: 142: EscribeLCD_c(Tecla);
+[; ;Lab4.c: 141: EscribeLCD_c(Boton);
+"141
+[e ( _EscribeLCD_c (1 _Boton ]
+[; ;Lab4.c: 142: Operador = Boton;
 "142
-[e ( _EscribeLCD_c (1 _Tecla ]
-[; ;Lab4.c: 143: op = Tecla;
+[e = _Operador _Boton ]
 "143
-[e = _op _Tecla ]
-"144
 }
-[; ;Lab4.c: 144: }else if(n1c == ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='^'|Tecla!='!')){
+[; ;Lab4.c: 143: }else if(Numero_1_Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^'|Boton!='!')){
 [e $U 430  ]
 [e :U 429 ]
-[e $ ! & == -> _n1c `ui -> 32 `ui | | | | | | | != -> _Tecla `ui -> 43 `ui != -> _Tecla `ui -> 45 `ui != -> _Tecla `ui -> 47 `ui != -> _Tecla `ui -> 120 `ui != -> _Tecla `ui -> 61 `ui != -> _Tecla `ui -> 67 `ui != -> _Tecla `ui -> 94 `ui != -> _Tecla `ui -> 33 `ui 431  ]
+[e $ ! & == -> _Numero_1_Char `ui -> 32 `ui | | | | | | | != -> _Boton `ui -> 43 `ui != -> _Boton `ui -> 45 `ui != -> _Boton `ui -> 47 `ui != -> _Boton `ui -> 120 `ui != -> _Boton `ui -> 61 `ui != -> _Boton `ui -> 67 `ui != -> _Boton `ui -> 94 `ui != -> _Boton `ui -> 33 `ui 431  ]
 {
-[; ;Lab4.c: 145: DireccionaLCD(0x80);
-"145
+[; ;Lab4.c: 144: DireccionaLCD(0x80);
+"144
 [e ( _DireccionaLCD (1 -> -> 128 `i `uc ]
-[; ;Lab4.c: 146: EscribeLCD_c(Tecla);
+[; ;Lab4.c: 145: EscribeLCD_c(Boton);
+"145
+[e ( _EscribeLCD_c (1 _Boton ]
+[; ;Lab4.c: 146: Numero_1_Char=Boton;
 "146
-[e ( _EscribeLCD_c (1 _Tecla ]
-[; ;Lab4.c: 147: n1c=Tecla;
+[e = _Numero_1_Char _Boton ]
+[; ;Lab4.c: 147: Numero_1 = Boton-'0';
 "147
-[e = _n1c _Tecla ]
-[; ;Lab4.c: 148: n1 = Tecla-'0';
+[e = _Numero_1 - -> _Boton `ui -> 48 `ui ]
 "148
-[e = _n1 - -> _Tecla `ui -> 48 `ui ]
-"149
 }
 [e :U 431 ]
-"150
+"149
 [e :U 430 ]
 }
-[; ;Lab4.c: 149: }
-[; ;Lab4.c: 150: }else if((Tecla=='=' & n2c!=' ' & op!=' ' & n1c != ' ') & !factorial){
+[; ;Lab4.c: 148: }
+[; ;Lab4.c: 149: }else if((Boton=='=' & Numero_2_Char!=' ' & Operador!=' ' & Numero_1_Char != ' ') & !Factorial){
 [e $U 432  ]
 [e :U 428 ]
-[e $ ! & & & & == -> _Tecla `ui -> 61 `ui != -> _n2c `ui -> 32 `ui != -> _op `ui -> 32 `ui != -> _n1c `ui -> 32 `ui ! != -> _factorial `i -> -> -> 0 `i `uc `i 433  ]
+[e $ ! & & & & == -> _Boton `ui -> 61 `ui != -> _Numero_2_Char `ui -> 32 `ui != -> _Operador `ui -> 32 `ui != -> _Numero_1_Char `ui -> 32 `ui ! != -> _Factorial `i -> -> -> 0 `i `uc `i 433  ]
 {
-[; ;Lab4.c: 151: DireccionaLCD(0x83);
-"151
+[; ;Lab4.c: 150: DireccionaLCD(0x83);
+"150
 [e ( _DireccionaLCD (1 -> -> 131 `i `uc ]
-[; ;Lab4.c: 152: EscribeLCD_c('=');
-"152
+[; ;Lab4.c: 151: EscribeLCD_c('=');
+"151
 [e ( _EscribeLCD_c (1 -> -> 61 `ui `uc ]
-[; ;Lab4.c: 153: switch(op){
-"153
+[; ;Lab4.c: 152: switch(Operador){
+"152
 [e $U 435  ]
 {
-[; ;Lab4.c: 154: case '+':
-"154
+[; ;Lab4.c: 153: case '+':
+"153
 [e :U 436 ]
-[; ;Lab4.c: 155: r = n1 + n2;
+[; ;Lab4.c: 154: Resultado = Numero_1 + Numero_2;
+"154
+[e = _Resultado -> + _Numero_1 _Numero_2 `l ]
+[; ;Lab4.c: 155: Parte_Decimal = Resultado*100;
 "155
-[e = _r -> + _n1 _n2 `l ]
-[; ;Lab4.c: 156: partdecl = r*100;
+[e = _Parte_Decimal -> * _Resultado -> -> 100 `i `l `ul ]
+[; ;Lab4.c: 156: break;
 "156
-[e = _partdecl -> * _r -> -> 100 `i `l `ul ]
-[; ;Lab4.c: 157: break;
+[e $U 434  ]
+[; ;Lab4.c: 157: case '-':
 "157
-[e $U 434  ]
-[; ;Lab4.c: 158: case '-':
-"158
 [e :U 437 ]
-[; ;Lab4.c: 159: r = n1 - n2;
+[; ;Lab4.c: 158: Resultado = Numero_1 - Numero_2;
+"158
+[e = _Resultado -> - _Numero_1 _Numero_2 `l ]
+[; ;Lab4.c: 159: if(Numero_1<Numero_2){
 "159
-[e = _r -> - _n1 _n2 `l ]
-[; ;Lab4.c: 160: partdecl = r*100;
+[e $ ! < _Numero_1 _Numero_2 438  ]
+{
+[; ;Lab4.c: 160: Negativo=1;
 "160
-[e = _partdecl -> * _r -> -> 100 `i `l `ul ]
-[; ;Lab4.c: 161: break;
+[e = _Negativo -> -> 1 `i `uc ]
 "161
-[e $U 434  ]
-[; ;Lab4.c: 162: case 'x':
-"162
+}
 [e :U 438 ]
-[; ;Lab4.c: 163: r = n1*n2;
+[; ;Lab4.c: 161: }
+[; ;Lab4.c: 162: Parte_Decimal = Resultado*100;
+"162
+[e = _Parte_Decimal -> * _Resultado -> -> 100 `i `l `ul ]
+[; ;Lab4.c: 163: break;
 "163
-[e = _r -> * _n1 _n2 `l ]
-[; ;Lab4.c: 164: partdecl = r*100;
-"164
-[e = _partdecl -> * _r -> -> 100 `i `l `ul ]
-[; ;Lab4.c: 165: break;
-"165
 [e $U 434  ]
-[; ;Lab4.c: 166: case '/':
-"166
+[; ;Lab4.c: 164: case 'x':
+"164
 [e :U 439 ]
-[; ;Lab4.c: 167: if(n2!=0){
+[; ;Lab4.c: 165: Resultado = Numero_1*Numero_2;
+"165
+[e = _Resultado -> * _Numero_1 _Numero_2 `l ]
+[; ;Lab4.c: 166: Parte_Decimal = Resultado*100;
+"166
+[e = _Parte_Decimal -> * _Resultado -> -> 100 `i `l `ul ]
+[; ;Lab4.c: 167: break;
 "167
-[e $ ! != _n2 -> -> 0 `i `ui 440  ]
-{
-[; ;Lab4.c: 168: if(n1!=0){
+[e $U 434  ]
+[; ;Lab4.c: 168: case '/':
 "168
-[e $ ! != _n1 -> -> 0 `i `ui 441  ]
-{
-[; ;Lab4.c: 169: r = n1/n2;
-"169
-[e = _r -> / _n1 _n2 `l ]
-[; ;Lab4.c: 170: partdecl = (n1*100)/n2;
-"170
-[e = _partdecl -> / * _n1 -> -> 100 `i `ui _n2 `ul ]
-"171
-}
-[e :U 441 ]
-"172
-}
-[; ;Lab4.c: 171: }
-[; ;Lab4.c: 172: }else{
-[e $U 442  ]
 [e :U 440 ]
+[; ;Lab4.c: 169: if(Numero_2!=0){
+"169
+[e $ ! != _Numero_2 -> -> 0 `i `ui 441  ]
 {
-[; ;Lab4.c: 173: if(n1 != 0 & n2 == 0) r = 1000;
+[; ;Lab4.c: 170: if(Numero_1!=0){
+"170
+[e $ ! != _Numero_1 -> -> 0 `i `ui 442  ]
+{
+[; ;Lab4.c: 171: Resultado = Numero_1/Numero_2;
+"171
+[e = _Resultado -> / _Numero_1 _Numero_2 `l ]
+[; ;Lab4.c: 172: Parte_Decimal = (Numero_1*100)/Numero_2;
+"172
+[e = _Parte_Decimal -> / * _Numero_1 -> -> 100 `i `ui _Numero_2 `ul ]
 "173
-[e $ ! & != _n1 -> -> 0 `i `ui == _n2 -> -> 0 `i `ui 443  ]
-[e = _r -> -> 1000 `i `l ]
-[e $U 444  ]
-"174
-[e :U 443 ]
-[; ;Lab4.c: 174: else if(n1 == 0 & n2 == 0) r = 1001;
-[e $ ! & == _n1 -> -> 0 `i `ui == _n2 -> -> 0 `i `ui 445  ]
-[e = _r -> -> 1001 `i `l ]
-[e :U 445 ]
-"175
-[e :U 444 ]
-[; ;Lab4.c: 175: partdecl = r*100;
-[e = _partdecl -> * _r -> -> 100 `i `l `ul ]
-"176
 }
 [e :U 442 ]
-[; ;Lab4.c: 176: }
-[; ;Lab4.c: 177: break;
-"177
-[e $U 434  ]
-[; ;Lab4.c: 178: case '^':
-"178
+"174
+}
+[; ;Lab4.c: 173: }
+[; ;Lab4.c: 174: }else{
+[e $U 443  ]
+[e :U 441 ]
+{
+[; ;Lab4.c: 175: if(Numero_1 != 0 & Numero_2 == 0) Resultado = 1000;
+"175
+[e $ ! & != _Numero_1 -> -> 0 `i `ui == _Numero_2 -> -> 0 `i `ui 444  ]
+[e = _Resultado -> -> 1000 `i `l ]
+[e $U 445  ]
+"176
+[e :U 444 ]
+[; ;Lab4.c: 176: else if(Numero_1 == 0 & Numero_2 == 0) Resultado = 1001;
+[e $ ! & == _Numero_1 -> -> 0 `i `ui == _Numero_2 -> -> 0 `i `ui 446  ]
+[e = _Resultado -> -> 1001 `i `l ]
 [e :U 446 ]
-[; ;Lab4.c: 179: r=n1;
+"177
+[e :U 445 ]
+[; ;Lab4.c: 177: Parte_Decimal = Resultado*100;
+[e = _Parte_Decimal -> * _Resultado -> -> 100 `i `l `ul ]
+"178
+}
+[e :U 443 ]
+[; ;Lab4.c: 178: }
+[; ;Lab4.c: 179: break;
 "179
-[e = _r -> _n1 `l ]
-[; ;Lab4.c: 180: for(i=1;i<n2;i++){
+[e $U 434  ]
+[; ;Lab4.c: 180: case '^':
 "180
+[e :U 447 ]
+[; ;Lab4.c: 181: Resultado=Numero_1;
+"181
+[e = _Resultado -> _Numero_1 `l ]
+[; ;Lab4.c: 182: for(i=1;i<Numero_2;i++){
+"182
 {
 [e = _i -> -> 1 `i `ui ]
-[e $U 450  ]
-[e :U 447 ]
-{
-[; ;Lab4.c: 181: r=r*n1;
-"181
-[e = _r * _r -> _n1 `l ]
-"182
-}
-"180
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 450 ]
-[e $ < _i _n2 447  ]
+[e $U 451  ]
 [e :U 448 ]
-"182
-}
-[; ;Lab4.c: 182: }
-[; ;Lab4.c: 183: partdecl = r*100;
+{
+[; ;Lab4.c: 183: Resultado=Resultado*Numero_1;
 "183
-[e = _partdecl -> * _r -> -> 100 `i `l `ul ]
-[; ;Lab4.c: 184: break;
+[e = _Resultado * _Resultado -> _Numero_1 `l ]
 "184
-[e $U 434  ]
-[; ;Lab4.c: 185: default:
-"185
+}
+"182
+[e ++ _i -> -> 1 `i `ui ]
 [e :U 451 ]
-[; ;Lab4.c: 186: r = 0;
+[e $ < _i _Numero_2 448  ]
+[e :U 449 ]
+"184
+}
+[; ;Lab4.c: 184: }
+[; ;Lab4.c: 185: Parte_Decimal = Resultado*100;
+"185
+[e = _Parte_Decimal -> * _Resultado -> -> 100 `i `l `ul ]
+[; ;Lab4.c: 186: break;
 "186
-[e = _r -> -> 0 `i `l ]
-[; ;Lab4.c: 187: break;
+[e $U 434  ]
+[; ;Lab4.c: 187: default:
 "187
-[e $U 434  ]
+[e :U 452 ]
+[; ;Lab4.c: 188: Resultado = 0;
 "188
-}
-[; ;Lab4.c: 188: }
-[e $U 434  ]
-"153
-[e :U 435 ]
-[e [\ _op , $ -> -> 43 `ui `uc 436
- , $ -> -> 45 `ui `uc 437
- , $ -> -> 120 `ui `uc 438
- , $ -> -> 47 `ui `uc 439
- , $ -> -> 94 `ui `uc 446
- 451 ]
-"188
-[e :U 434 ]
-[; ;Lab4.c: 189: DireccionaLCD(0x84);
+[e = _Resultado -> -> 0 `i `l ]
+[; ;Lab4.c: 189: break;
 "189
-[e ( _DireccionaLCD (1 -> -> 132 `i `uc ]
-[; ;Lab4.c: 190: Imprimir_Resultado(r);
+[e $U 434  ]
 "190
-[e ( _Imprimir_Resultado (1 _r ]
+}
+[; ;Lab4.c: 190: }
+[e $U 434  ]
+"152
+[e :U 435 ]
+[e [\ _Operador , $ -> -> 43 `ui `uc 436
+ , $ -> -> 45 `ui `uc 437
+ , $ -> -> 120 `ui `uc 439
+ , $ -> -> 47 `ui `uc 440
+ , $ -> -> 94 `ui `uc 447
+ 452 ]
+"190
+[e :U 434 ]
+[; ;Lab4.c: 191: DireccionaLCD(0x84);
 "191
-}
-[; ;Lab4.c: 191: }else if((Tecla=='=' & op=='!' & n1c != ' ') & factorial) {
-[e $U 452  ]
-[e :U 433 ]
-[e $ ! != & -> & & == -> _Tecla `ui -> 61 `ui == -> _op `ui -> 33 `ui != -> _n1c `ui -> 32 `ui `i -> _factorial `i -> 0 `i 453  ]
-{
-[; ;Lab4.c: 192: DireccionaLCD(0x82);
+[e ( _DireccionaLCD (1 -> -> 132 `i `uc ]
+[; ;Lab4.c: 192: Imprimir_Resultado(Resultado);
 "192
-[e ( _DireccionaLCD (1 -> -> 130 `i `uc ]
-[; ;Lab4.c: 193: EscribeLCD_c('=');
+[e ( _Imprimir_Resultado (1 _Resultado ]
 "193
-[e ( _EscribeLCD_c (1 -> -> 61 `ui `uc ]
-[; ;Lab4.c: 194: r=factorial_function(n1);
-"194
-[e = _r -> ( _factorial_function (1 -> _n1 `i `l ]
-[; ;Lab4.c: 195: partdecl = r*100;
-"195
-[e = _partdecl -> * _r -> -> 100 `i `l `ul ]
-[; ;Lab4.c: 196: Imprimir_Resultado(r);
-"196
-[e ( _Imprimir_Resultado (1 _r ]
-"197
 }
-[; ;Lab4.c: 197: }else{
-[e $U 454  ]
-[e :U 453 ]
+[; ;Lab4.c: 193: }else if((Boton=='=' & Operador=='!' & Numero_1_Char != ' ') & Factorial) {
+[e $U 453  ]
+[e :U 433 ]
+[e $ ! != & -> & & == -> _Boton `ui -> 61 `ui == -> _Operador `ui -> 33 `ui != -> _Numero_1_Char `ui -> 32 `ui `i -> _Factorial `i -> 0 `i 454  ]
 {
-[; ;Lab4.c: 198: EscribeLCD_c('W');
+[; ;Lab4.c: 194: DireccionaLCD(0x82);
+"194
+[e ( _DireccionaLCD (1 -> -> 130 `i `uc ]
+[; ;Lab4.c: 195: EscribeLCD_c('=');
+"195
+[e ( _EscribeLCD_c (1 -> -> 61 `ui `uc ]
+[; ;Lab4.c: 196: Resultado=factorial_function(Numero_1);
+"196
+[e = _Resultado -> ( _factorial_function (1 -> _Numero_1 `i `l ]
+[; ;Lab4.c: 197: Parte_Decimal = Resultado*100;
+"197
+[e = _Parte_Decimal -> * _Resultado -> -> 100 `i `l `ul ]
+[; ;Lab4.c: 198: Imprimir_Resultado(Resultado);
 "198
-[e ( _EscribeLCD_c (1 -> -> 87 `ui `uc ]
+[e ( _Imprimir_Resultado (1 _Resultado ]
 "199
 }
+[; ;Lab4.c: 199: }else{
+[e $U 455  ]
 [e :U 454 ]
-[e :U 452 ]
+{
+[; ;Lab4.c: 200: EscribeLCD_c('W');
+"200
+[e ( _EscribeLCD_c (1 -> -> 87 `ui `uc ]
+"201
+}
+[e :U 455 ]
+[e :U 453 ]
 [e :U 432 ]
 [e :U 427 ]
-[; ;Lab4.c: 199: }
-[; ;Lab4.c: 200: _delay((unsigned long)((700)*(1000000/4000.0)));
-"200
+[; ;Lab4.c: 201: }
+[; ;Lab4.c: 202: _delay((unsigned long)((700)*(1000000/4000.0)));
+"202
 [e ( __delay (1 -> * -> -> 700 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"201
+"203
 }
 [e :U 420 ]
 [e :U 416 ]
 [e :U 412 ]
-"202
+"204
 }
 [e :U 408 ]
-"69
+"67
 [e $U 409  ]
 [e :U 410 ]
-[; ;Lab4.c: 201: }
-[; ;Lab4.c: 202: }
 [; ;Lab4.c: 203: }
-"203
+[; ;Lab4.c: 204: }
+[; ;Lab4.c: 205: }
+"205
 [e :UE 404 ]
 }
-"206
+"208
 [v _LeerTeclado `(uc ~T0 @X0 1 ef ]
 {
-[; ;Lab4.c: 206: unsigned char LeerTeclado(void){
+[; ;Lab4.c: 208: unsigned char LeerTeclado(void){
 [e :U _LeerTeclado ]
 [f ]
-[; ;Lab4.c: 207: while(RB4==1 && RB5==1 && RB6==1 && RB7==1);
-"207
-[e $U 456  ]
-[e :U 457 ]
-[e :U 456 ]
-[e $ && && && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 1 `i == -> _RB6 `i -> 1 `i == -> _RB7 `i -> 1 `i 457  ]
-[e :U 458 ]
-[; ;Lab4.c: 208: verificador = 1;
-"208
-[e = _verificador -> 1 `i ]
-[; ;Lab4.c: 209: LATB=0b11111110;
+[; ;Lab4.c: 209: while(RB4==1 && RB5==1 && RB6==1 && RB7==1);
 "209
-[e = _LATB -> -> 254 `i `uc ]
-[; ;Lab4.c: 210: if(RB4==0){
-"210
-[e $ ! == -> _RB4 `i -> 0 `i 459  ]
-{
-[; ;Lab4.c: 211: if(!potencia) return '+';
-"211
-[e $ ! ! != -> _potencia `i -> -> -> 0 `i `uc `i 460  ]
-[e ) -> -> 43 `ui `uc ]
-[e $UE 455  ]
-[e $U 461  ]
-"212
-[e :U 460 ]
-[; ;Lab4.c: 212: else if(potencia) return '^';
-[e $ ! != -> _potencia `i -> -> -> 0 `i `uc `i 462  ]
-[e ) -> -> 94 `ui `uc ]
-[e $UE 455  ]
-[e :U 462 ]
-"213
-[e :U 461 ]
-}
-[; ;Lab4.c: 213: }
-[e $U 463  ]
-"214
+[e $U 457  ]
+[e :U 458 ]
+[e :U 457 ]
+[e $ && && && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 1 `i == -> _RB6 `i -> 1 `i == -> _RB7 `i -> 1 `i 458  ]
 [e :U 459 ]
-[; ;Lab4.c: 214: else if(RB5==0) return '=';
-[e $ ! == -> _RB5 `i -> 0 `i 464  ]
-[e ) -> -> 61 `ui `uc ]
-[e $UE 455  ]
-[e $U 465  ]
-"215
-[e :U 464 ]
-[; ;Lab4.c: 215: else if(RB6==0) return '0';
-[e $ ! == -> _RB6 `i -> 0 `i 466  ]
-[e ) -> -> 48 `ui `uc ]
-[e $UE 455  ]
-[e $U 467  ]
-"216
-[e :U 466 ]
-[; ;Lab4.c: 216: else if(RB7==0) return 'C';
-[e $ ! == -> _RB7 `i -> 0 `i 468  ]
-[e ) -> -> 67 `ui `uc ]
-[e $UE 455  ]
-[e $U 469  ]
-"217
-[e :U 468 ]
-[; ;Lab4.c: 217: else{
+[; ;Lab4.c: 210: Verificador = 1;
+"210
+[e = _Verificador -> 1 `i ]
+[; ;Lab4.c: 211: LATB=0b11111110;
+"211
+[e = _LATB -> -> 254 `i `uc ]
+[; ;Lab4.c: 212: if(RB4==0){
+"212
+[e $ ! == -> _RB4 `i -> 0 `i 460  ]
 {
-[; ;Lab4.c: 218: LATB=0b11111101;
-"218
-[e = _LATB -> -> 253 `i `uc ]
-[; ;Lab4.c: 219: if(RB4==0){
-"219
-[e $ ! == -> _RB4 `i -> 0 `i 470  ]
-{
-[; ;Lab4.c: 220: if(!factorial) return '-';
-"220
-[e $ ! ! != -> _factorial `i -> -> -> 0 `i `uc `i 471  ]
-[e ) -> -> 45 `ui `uc ]
-[e $UE 455  ]
-[e $U 472  ]
-"221
-[e :U 471 ]
-[; ;Lab4.c: 221: else if(factorial) return '!';
-[e $ ! != -> _factorial `i -> -> -> 0 `i `uc `i 473  ]
-[e ) -> -> 33 `ui `uc ]
-[e $UE 455  ]
-[e :U 473 ]
-"222
-[e :U 472 ]
-}
-[; ;Lab4.c: 222: }
-[e $U 474  ]
-"223
-[e :U 470 ]
-[; ;Lab4.c: 223: else if(RB5==0) return '9';
-[e $ ! == -> _RB5 `i -> 0 `i 475  ]
-[e ) -> -> 57 `ui `uc ]
-[e $UE 455  ]
-[e $U 476  ]
-"224
-[e :U 475 ]
-[; ;Lab4.c: 224: else if(RB6==0) return '8';
-[e $ ! == -> _RB6 `i -> 0 `i 477  ]
-[e ) -> -> 56 `ui `uc ]
-[e $UE 455  ]
-[e $U 478  ]
-"225
-[e :U 477 ]
-[; ;Lab4.c: 225: else if(RB7==0) return '7';
-[e $ ! == -> _RB7 `i -> 0 `i 479  ]
-[e ) -> -> 55 `ui `uc ]
-[e $UE 455  ]
-[e $U 480  ]
-"226
-[e :U 479 ]
-[; ;Lab4.c: 226: else{
-{
-[; ;Lab4.c: 227: LATB=0b11111011;
-"227
-[e = _LATB -> -> 251 `i `uc ]
-[; ;Lab4.c: 228: if(RB4==0) return 'x';
-"228
-[e $ ! == -> _RB4 `i -> 0 `i 481  ]
-[e ) -> -> 120 `ui `uc ]
-[e $UE 455  ]
-[e $U 482  ]
-"229
-[e :U 481 ]
-[; ;Lab4.c: 229: else if(RB5==0) return '6';
-[e $ ! == -> _RB5 `i -> 0 `i 483  ]
-[e ) -> -> 54 `ui `uc ]
-[e $UE 455  ]
-[e $U 484  ]
-"230
-[e :U 483 ]
-[; ;Lab4.c: 230: else if(RB6==0) return '5';
-[e $ ! == -> _RB6 `i -> 0 `i 485  ]
-[e ) -> -> 53 `ui `uc ]
-[e $UE 455  ]
-[e $U 486  ]
-"231
-[e :U 485 ]
-[; ;Lab4.c: 231: else if(RB7==0) return '4';
-[e $ ! == -> _RB7 `i -> 0 `i 487  ]
-[e ) -> -> 52 `ui `uc ]
-[e $UE 455  ]
-[e $U 488  ]
-"232
-[e :U 487 ]
-[; ;Lab4.c: 232: else{
-{
-[; ;Lab4.c: 233: LATB=0b11110111;
-"233
-[e = _LATB -> -> 247 `i `uc ]
-[; ;Lab4.c: 234: if(RB4==0) return '/';
-"234
-[e $ ! == -> _RB4 `i -> 0 `i 489  ]
-[e ) -> -> 47 `ui `uc ]
-[e $UE 455  ]
-[e $U 490  ]
-"235
-[e :U 489 ]
-[; ;Lab4.c: 235: else if(RB5==0) return '3';
-[e $ ! == -> _RB5 `i -> 0 `i 491  ]
-[e ) -> -> 51 `ui `uc ]
-[e $UE 455  ]
-[e $U 492  ]
-"236
-[e :U 491 ]
-[; ;Lab4.c: 236: else if(RB6==0) return '2';
-[e $ ! == -> _RB6 `i -> 0 `i 493  ]
-[e ) -> -> 50 `ui `uc ]
-[e $UE 455  ]
-[e $U 494  ]
-"237
-[e :U 493 ]
-[; ;Lab4.c: 237: else if(RB7==0) return '1';
-[e $ ! == -> _RB7 `i -> 0 `i 495  ]
-[e ) -> -> 49 `ui `uc ]
-[e $UE 455  ]
-[e :U 495 ]
-"238
-[e :U 494 ]
-[e :U 492 ]
-[e :U 490 ]
-}
-[e :U 488 ]
-[e :U 486 ]
-[e :U 484 ]
-[e :U 482 ]
-"239
-}
-[e :U 480 ]
-[e :U 478 ]
-[e :U 476 ]
-[e :U 474 ]
-"240
-}
-[e :U 469 ]
-[e :U 467 ]
-[e :U 465 ]
+[; ;Lab4.c: 213: if(!Potencia) return '+';
+"213
+[e $ ! ! != -> _Potencia `i -> -> -> 0 `i `uc `i 461  ]
+[e ) -> -> 43 `ui `uc ]
+[e $UE 456  ]
+[e $U 462  ]
+"214
+[e :U 461 ]
+[; ;Lab4.c: 214: else if(Potencia) return '^';
+[e $ ! != -> _Potencia `i -> -> -> 0 `i `uc `i 463  ]
+[e ) -> -> 94 `ui `uc ]
+[e $UE 456  ]
 [e :U 463 ]
-[; ;Lab4.c: 238: }
-[; ;Lab4.c: 239: }
-[; ;Lab4.c: 240: }
-[; ;Lab4.c: 241: return '?';
-"241
-[e ) -> -> 63 `ui `uc ]
-[e $UE 455  ]
-[; ;Lab4.c: 242: }
-"242
-[e :UE 455 ]
+"215
+[e :U 462 ]
 }
+[; ;Lab4.c: 215: }
+[e $U 464  ]
+"216
+[e :U 460 ]
+[; ;Lab4.c: 216: else if(RB5==0) return '=';
+[e $ ! == -> _RB5 `i -> 0 `i 465  ]
+[e ) -> -> 61 `ui `uc ]
+[e $UE 456  ]
+[e $U 466  ]
+"217
+[e :U 465 ]
+[; ;Lab4.c: 217: else if(RB6==0) return '0';
+[e $ ! == -> _RB6 `i -> 0 `i 467  ]
+[e ) -> -> 48 `ui `uc ]
+[e $UE 456  ]
+[e $U 468  ]
+"218
+[e :U 467 ]
+[; ;Lab4.c: 218: else if(RB7==0) return 'C';
+[e $ ! == -> _RB7 `i -> 0 `i 469  ]
+[e ) -> -> 67 `ui `uc ]
+[e $UE 456  ]
+[e $U 470  ]
+"219
+[e :U 469 ]
+[; ;Lab4.c: 219: else{
+{
+[; ;Lab4.c: 220: LATB=0b11111101;
+"220
+[e = _LATB -> -> 253 `i `uc ]
+[; ;Lab4.c: 221: if(RB4==0){
+"221
+[e $ ! == -> _RB4 `i -> 0 `i 471  ]
+{
+[; ;Lab4.c: 222: if(!Factorial) return '-';
+"222
+[e $ ! ! != -> _Factorial `i -> -> -> 0 `i `uc `i 472  ]
+[e ) -> -> 45 `ui `uc ]
+[e $UE 456  ]
+[e $U 473  ]
+"223
+[e :U 472 ]
+[; ;Lab4.c: 223: else if(Factorial) return '!';
+[e $ ! != -> _Factorial `i -> -> -> 0 `i `uc `i 474  ]
+[e ) -> -> 33 `ui `uc ]
+[e $UE 456  ]
+[e :U 474 ]
+"224
+[e :U 473 ]
+}
+[; ;Lab4.c: 224: }
+[e $U 475  ]
+"225
+[e :U 471 ]
+[; ;Lab4.c: 225: else if(RB5==0) return '9';
+[e $ ! == -> _RB5 `i -> 0 `i 476  ]
+[e ) -> -> 57 `ui `uc ]
+[e $UE 456  ]
+[e $U 477  ]
+"226
+[e :U 476 ]
+[; ;Lab4.c: 226: else if(RB6==0) return '8';
+[e $ ! == -> _RB6 `i -> 0 `i 478  ]
+[e ) -> -> 56 `ui `uc ]
+[e $UE 456  ]
+[e $U 479  ]
+"227
+[e :U 478 ]
+[; ;Lab4.c: 227: else if(RB7==0) return '7';
+[e $ ! == -> _RB7 `i -> 0 `i 480  ]
+[e ) -> -> 55 `ui `uc ]
+[e $UE 456  ]
+[e $U 481  ]
+"228
+[e :U 480 ]
+[; ;Lab4.c: 228: else{
+{
+[; ;Lab4.c: 229: LATB=0b11111011;
+"229
+[e = _LATB -> -> 251 `i `uc ]
+[; ;Lab4.c: 230: if(RB4==0) return 'x';
+"230
+[e $ ! == -> _RB4 `i -> 0 `i 482  ]
+[e ) -> -> 120 `ui `uc ]
+[e $UE 456  ]
+[e $U 483  ]
+"231
+[e :U 482 ]
+[; ;Lab4.c: 231: else if(RB5==0) return '6';
+[e $ ! == -> _RB5 `i -> 0 `i 484  ]
+[e ) -> -> 54 `ui `uc ]
+[e $UE 456  ]
+[e $U 485  ]
+"232
+[e :U 484 ]
+[; ;Lab4.c: 232: else if(RB6==0) return '5';
+[e $ ! == -> _RB6 `i -> 0 `i 486  ]
+[e ) -> -> 53 `ui `uc ]
+[e $UE 456  ]
+[e $U 487  ]
+"233
+[e :U 486 ]
+[; ;Lab4.c: 233: else if(RB7==0) return '4';
+[e $ ! == -> _RB7 `i -> 0 `i 488  ]
+[e ) -> -> 52 `ui `uc ]
+[e $UE 456  ]
+[e $U 489  ]
+"234
+[e :U 488 ]
+[; ;Lab4.c: 234: else{
+{
+[; ;Lab4.c: 235: LATB=0b11110111;
+"235
+[e = _LATB -> -> 247 `i `uc ]
+[; ;Lab4.c: 236: if(RB4==0) return '/';
+"236
+[e $ ! == -> _RB4 `i -> 0 `i 490  ]
+[e ) -> -> 47 `ui `uc ]
+[e $UE 456  ]
+[e $U 491  ]
+"237
+[e :U 490 ]
+[; ;Lab4.c: 237: else if(RB5==0) return '3';
+[e $ ! == -> _RB5 `i -> 0 `i 492  ]
+[e ) -> -> 51 `ui `uc ]
+[e $UE 456  ]
+[e $U 493  ]
+"238
+[e :U 492 ]
+[; ;Lab4.c: 238: else if(RB6==0) return '2';
+[e $ ! == -> _RB6 `i -> 0 `i 494  ]
+[e ) -> -> 50 `ui `uc ]
+[e $UE 456  ]
+[e $U 495  ]
+"239
+[e :U 494 ]
+[; ;Lab4.c: 239: else if(RB7==0) return '1';
+[e $ ! == -> _RB7 `i -> 0 `i 496  ]
+[e ) -> -> 49 `ui `uc ]
+[e $UE 456  ]
+[e :U 496 ]
+"240
+[e :U 495 ]
+[e :U 493 ]
+[e :U 491 ]
+}
+[e :U 489 ]
+[e :U 487 ]
+[e :U 485 ]
+[e :U 483 ]
+"241
+}
+[e :U 481 ]
+[e :U 479 ]
+[e :U 477 ]
+[e :U 475 ]
+"242
+}
+[e :U 470 ]
+[e :U 468 ]
+[e :U 466 ]
+[e :U 464 ]
+[; ;Lab4.c: 240: }
+[; ;Lab4.c: 241: }
+[; ;Lab4.c: 242: }
+[; ;Lab4.c: 243: return '?';
+"243
+[e ) -> -> 63 `ui `uc ]
+[e $UE 456  ]
+[; ;Lab4.c: 244: }
 "244
+[e :UE 456 ]
+}
+"246
 [v _ColorRGB `(v ~T0 @X0 1 ef ]
 {
-[; ;Lab4.c: 244: void ColorRGB(void){
+[; ;Lab4.c: 246: void ColorRGB(void){
 [e :U _ColorRGB ]
 [f ]
-[; ;Lab4.c: 245: if(color==8) color = 0;
-"245
-[e $ ! == _color -> -> 8 `i `ui 497  ]
-[e = _color -> -> 0 `i `ui ]
-[e :U 497 ]
-[; ;Lab4.c: 246: switch(color){
-"246
-[e $U 499  ]
-{
-[; ;Lab4.c: 247: case 0:
+[; ;Lab4.c: 247: if(Color==8) Color = 0;
 "247
-[e :U 500 ]
-[; ;Lab4.c: 248: LATC = 0b00000000;
+[e $ ! == _Color -> -> 8 `i `ui 498  ]
+[e = _Color -> -> 0 `i `ui ]
+[e :U 498 ]
+[; ;Lab4.c: 248: switch(Color){
 "248
-[e = _LATC -> -> 0 `i `uc ]
-[; ;Lab4.c: 249: break;
+[e $U 500  ]
+{
+[; ;Lab4.c: 249: case 0:
 "249
-[e $U 498  ]
-[; ;Lab4.c: 250: case 1:
-"250
 [e :U 501 ]
-[; ;Lab4.c: 251: LATC = 0b00000101;
+[; ;Lab4.c: 250: LATC = 0b00000000;
+"250
+[e = _LATC -> -> 0 `i `uc ]
+[; ;Lab4.c: 251: break;
 "251
-[e = _LATC -> -> 5 `i `uc ]
-[; ;Lab4.c: 252: break;
+[e $U 499  ]
+[; ;Lab4.c: 252: case 1:
 "252
-[e $U 498  ]
-[; ;Lab4.c: 253: case 2:
-"253
 [e :U 502 ]
-[; ;Lab4.c: 254: LATC = 0b00000110;
+[; ;Lab4.c: 253: LATC = 0b00000101;
+"253
+[e = _LATC -> -> 5 `i `uc ]
+[; ;Lab4.c: 254: break;
 "254
-[e = _LATC -> -> 6 `i `uc ]
-[; ;Lab4.c: 255: break;
+[e $U 499  ]
+[; ;Lab4.c: 255: case 2:
 "255
-[e $U 498  ]
-[; ;Lab4.c: 256: case 3:
-"256
 [e :U 503 ]
-[; ;Lab4.c: 257: LATC = 0b00000011;
-"257
-[e = _LATC -> -> 3 `i `uc ]
-[; ;Lab4.c: 258: break;
-"258
-[e $U 498  ]
-[; ;Lab4.c: 259: case 4:
-"259
-[e :U 504 ]
-[; ;Lab4.c: 260: LATC = 0b00000010;
-"260
-[e = _LATC -> -> 2 `i `uc ]
-[; ;Lab4.c: 261: break;
-"261
-[e $U 498  ]
-[; ;Lab4.c: 262: case 5:
-"262
-[e :U 505 ]
-[; ;Lab4.c: 263: LATC = 0b00000110;
-"263
+[; ;Lab4.c: 256: LATC = 0b00000110;
+"256
 [e = _LATC -> -> 6 `i `uc ]
-[; ;Lab4.c: 264: break;
+[; ;Lab4.c: 257: break;
+"257
+[e $U 499  ]
+[; ;Lab4.c: 258: case 3:
+"258
+[e :U 504 ]
+[; ;Lab4.c: 259: LATC = 0b00000011;
+"259
+[e = _LATC -> -> 3 `i `uc ]
+[; ;Lab4.c: 260: break;
+"260
+[e $U 499  ]
+[; ;Lab4.c: 261: case 4:
+"261
+[e :U 505 ]
+[; ;Lab4.c: 262: LATC = 0b00000010;
+"262
+[e = _LATC -> -> 2 `i `uc ]
+[; ;Lab4.c: 263: break;
+"263
+[e $U 499  ]
+[; ;Lab4.c: 264: case 5:
 "264
-[e $U 498  ]
-[; ;Lab4.c: 265: case 6:
-"265
 [e :U 506 ]
-[; ;Lab4.c: 266: LATC = 0b00000100;
+[; ;Lab4.c: 265: LATC = 0b00000110;
+"265
+[e = _LATC -> -> 6 `i `uc ]
+[; ;Lab4.c: 266: break;
 "266
-[e = _LATC -> -> 4 `i `uc ]
-[; ;Lab4.c: 267: break;
+[e $U 499  ]
+[; ;Lab4.c: 267: case 6:
 "267
-[e $U 498  ]
-[; ;Lab4.c: 268: case 7:
-"268
 [e :U 507 ]
-[; ;Lab4.c: 269: LATC = 0b00000111;
+[; ;Lab4.c: 268: LATC = 0b00000100;
+"268
+[e = _LATC -> -> 4 `i `uc ]
+[; ;Lab4.c: 269: break;
 "269
-[e = _LATC -> -> 7 `i `uc ]
-[; ;Lab4.c: 270: break;
+[e $U 499  ]
+[; ;Lab4.c: 270: case 7:
 "270
-[e $U 498  ]
-[; ;Lab4.c: 271: default:
-"271
 [e :U 508 ]
+[; ;Lab4.c: 271: LATC = 0b00000111;
+"271
+[e = _LATC -> -> 7 `i `uc ]
 [; ;Lab4.c: 272: break;
 "272
-[e $U 498  ]
+[e $U 499  ]
+[; ;Lab4.c: 273: default:
 "273
-}
-[; ;Lab4.c: 273: }
-[e $U 498  ]
-"246
-[e :U 499 ]
-[e [\ _color , $ -> -> 0 `i `ui 500
- , $ -> -> 1 `i `ui 501
- , $ -> -> 2 `i `ui 502
- , $ -> -> 3 `i `ui 503
- , $ -> -> 4 `i `ui 504
- , $ -> -> 5 `i `ui 505
- , $ -> -> 6 `i `ui 506
- , $ -> -> 7 `i `ui 507
- 508 ]
-"273
-[e :U 498 ]
-[; ;Lab4.c: 274: color += 1;
+[e :U 509 ]
+[; ;Lab4.c: 274: break;
 "274
-[e =+ _color -> -> 1 `i `ui ]
-[; ;Lab4.c: 275: }
+[e $U 499  ]
 "275
-[e :UE 496 ]
 }
+[; ;Lab4.c: 275: }
+[e $U 499  ]
+"248
+[e :U 500 ]
+[e [\ _Color , $ -> -> 0 `i `ui 501
+ , $ -> -> 1 `i `ui 502
+ , $ -> -> 2 `i `ui 503
+ , $ -> -> 3 `i `ui 504
+ , $ -> -> 4 `i `ui 505
+ , $ -> -> 5 `i `ui 506
+ , $ -> -> 6 `i `ui 507
+ , $ -> -> 7 `i `ui 508
+ 509 ]
+"275
+[e :U 499 ]
+[; ;Lab4.c: 276: Color += 1;
+"276
+[e =+ _Color -> -> 1 `i `ui ]
+[; ;Lab4.c: 277: }
 "277
+[e :UE 497 ]
+}
+"279
 [v _factorial_function `(ul ~T0 @X0 1 ef1`i ]
 {
-[; ;Lab4.c: 277: unsigned long factorial_function(int a){
+[; ;Lab4.c: 279: unsigned long factorial_function(int a){
 [e :U _factorial_function ]
 [v _a `i ~T0 @X0 1 r1 ]
 [f ]
-"278
+"280
 [v _fact `l ~T0 @X0 1 a ]
-[; ;Lab4.c: 278: long fact = 1;
+[; ;Lab4.c: 280: long fact = 1;
 [e = _fact -> -> 1 `i `l ]
-[; ;Lab4.c: 279: for (b = a; b > 1; b--){
-"279
+[; ;Lab4.c: 281: for (b = a; b > 1; b--){
+"281
 {
 [e = _b _a ]
-[e $U 513  ]
-[e :U 510 ]
-{
-[; ;Lab4.c: 280: fact = fact * b;
-"280
-[e = _fact * _fact -> _b `l ]
-"281
-}
-"279
-[e -- _b -> 1 `i ]
-[e :U 513 ]
-[e $ > _b -> 1 `i 510  ]
+[e $U 514  ]
 [e :U 511 ]
-"281
-}
-[; ;Lab4.c: 281: }
-[; ;Lab4.c: 283: return fact;
+{
+[; ;Lab4.c: 282: fact = fact * b;
+"282
+[e = _fact * _fact -> _b `l ]
 "283
+}
+"281
+[e -- _b -> 1 `i ]
+[e :U 514 ]
+[e $ > _b -> 1 `i 511  ]
+[e :U 512 ]
+"283
+}
+[; ;Lab4.c: 283: }
+[; ;Lab4.c: 285: return fact;
+"285
 [e ) -> _fact `ul ]
-[e $UE 509  ]
-[; ;Lab4.c: 284: }
-"284
-[e :UE 509 ]
+[e $UE 510  ]
+[; ;Lab4.c: 286: }
+"286
+[e :UE 510 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"286
+"288
 [v _ISR `(v ~T47 @X0 1 ef ]
 {
-[; ;Lab4.c: 286: void __interrupt() ISR(void){
+[; ;Lab4.c: 288: void __interrupt() ISR(void){
 [e :U _ISR ]
 [f ]
-[; ;Lab4.c: 287: if(TMR0IF==1){
-"287
-[e $ ! == -> _TMR0IF `i -> 1 `i 515  ]
-{
-[; ;Lab4.c: 288: if(!verificador) contador = contador +1;
-"288
-[e $ ! ! != _verificador -> 0 `i 516  ]
-[e = _contador + _contador -> 1 `i ]
-[e $U 517  ]
+[; ;Lab4.c: 289: if(TMR0IF==1){
 "289
-[e :U 516 ]
-[; ;Lab4.c: 289: else contador = 0;
-[e = _contador -> 0 `i ]
-[e :U 517 ]
-[; ;Lab4.c: 290: TMR0IF=0;
+[e $ ! == -> _TMR0IF `i -> 1 `i 516  ]
+{
+[; ;Lab4.c: 290: if(!Verificador) Contador = Contador +1;
 "290
-[e = _TMR0IF -> -> 0 `i `b ]
-[; ;Lab4.c: 291: LATE2 = !LATE2;
+[e $ ! ! != _Verificador -> 0 `i 517  ]
+[e = _Contador + _Contador -> 1 `i ]
+[e $U 518  ]
 "291
-[e = _LATE2 ! _LATE2 ]
-[; ;Lab4.c: 292: TMR0 = 49911;
+[e :U 517 ]
+[; ;Lab4.c: 291: else Contador = 0;
+[e = _Contador -> 0 `i ]
+[e :U 518 ]
+[; ;Lab4.c: 292: TMR0IF=0;
 "292
-[e = _TMR0 -> -> 49911 `l `us ]
+[e = _TMR0IF -> -> 0 `i `b ]
+[; ;Lab4.c: 293: LATE2 = !LATE2;
 "293
-}
-[e :U 515 ]
-[; ;Lab4.c: 293: }
-[; ;Lab4.c: 295: if(contador == 20){
+[e = _LATE2 ! _LATE2 ]
+[; ;Lab4.c: 294: TMR0 = 49911;
+"294
+[e = _TMR0 -> -> 49911 `l `us ]
 "295
-[e $ ! == _contador -> 20 `i 518  ]
-{
-[; ;Lab4.c: 296: if(!verificador){
-"296
-[e $ ! ! != _verificador -> 0 `i 519  ]
-{
-[; ;Lab4.c: 297: LATC7 = !LATC7;
+}
+[e :U 516 ]
+[; ;Lab4.c: 295: }
+[; ;Lab4.c: 297: if(Contador == 20){
 "297
-[e = _LATC7 ! _LATC7 ]
-[; ;Lab4.c: 298: BorraLCD();
+[e $ ! == _Contador -> 20 `i 519  ]
+{
+[; ;Lab4.c: 298: if(!Verificador){
 "298
-[e ( _BorraLCD ..  ]
-[; ;Lab4.c: 299: DireccionaLCD(0x82);
+[e $ ! ! != _Verificador -> 0 `i 520  ]
+{
+[; ;Lab4.c: 299: LATC7 = !LATC7;
 "299
-[e ( _DireccionaLCD (1 -> -> 130 `i `uc ]
-[; ;Lab4.c: 300: MensajeLCD_Var("LVP Activado");
+[e = _LATC7 ! _LATC7 ]
+[; ;Lab4.c: 300: BorraLCD();
 "300
-[e ( _MensajeLCD_Var (1 -> :s 11C `*uc ]
-[; ;Lab4.c: 301: asm(" sleep");
+[e ( _BorraLCD ..  ]
+[; ;Lab4.c: 301: DireccionaLCD(0x82);
 "301
-[; <"  sleep ;# ">
-[; ;Lab4.c: 302: while(1);
+[e ( _DireccionaLCD (1 -> -> 130 `i `uc ]
+[; ;Lab4.c: 302: MensajeLCD_Var("LVP Activado");
 "302
-[e :U 521 ]
-[e :U 520 ]
-[e $U 521  ]
-[e :U 522 ]
+[e ( _MensajeLCD_Var (1 -> :s 11C `*uc ]
+[; ;Lab4.c: 303: asm(" sleep");
 "303
+[; <"  sleep ;# ">
+[; ;Lab4.c: 304: while(1);
+"304
+[e :U 522 ]
+[e :U 521 ]
+[e $U 522  ]
+[e :U 523 ]
+"305
+}
+[e :U 520 ]
+"306
 }
 [e :U 519 ]
-"304
-}
-[e :U 518 ]
-[; ;Lab4.c: 303: }
-[; ;Lab4.c: 304: }
+[; ;Lab4.c: 305: }
 [; ;Lab4.c: 306: }
-"306
-[e :UE 514 ]
-}
+[; ;Lab4.c: 308: }
 "308
+[e :UE 515 ]
+}
+"310
 [v _Imprimir_Resultado `(v ~T0 @X0 1 ef1`l ]
 {
-[; ;Lab4.c: 308: void Imprimir_Resultado(long r){
+[; ;Lab4.c: 310: void Imprimir_Resultado(long Resultado){
 [e :U _Imprimir_Resultado ]
-[v _r `l ~T0 @X0 1 r1 ]
+[v _Resultado `l ~T0 @X0 1 r1 ]
 [f ]
-[v _potencia `l ~T0 @X0 1 a ]
-[; ;Lab4.c: 309: long potencia = 10;
-"309
-[e = _potencia -> -> 10 `i `l ]
-"310
-[v _flag `uc ~T0 @X0 1 a ]
-[; ;Lab4.c: 310: bool flag=0;
-[e = _flag -> -> 0 `i `uc ]
-[; ;Lab4.c: 311: if ((partdecl-(r*100))>0 | (partdecl-(r*100))<0){
+[v _Potencia `l ~T0 @X0 1 a ]
+[; ;Lab4.c: 311: long Potencia = 10;
 "311
-[e $ ! | > - _partdecl -> * _r -> -> 100 `i `l `ul -> -> -> 0 `i `l `ul < - _partdecl -> * _r -> -> 100 `i `l `ul -> -> -> 0 `i `l `ul 524  ]
-{
-[; ;Lab4.c: 312: for (int i = 0; i < 3; i++) {
+[e = _Potencia -> -> 10 `i `l ]
 "312
+[v _flag `uc ~T0 @X0 1 a ]
+[; ;Lab4.c: 312: bool flag=0;
+[e = _flag -> -> 0 `i `uc ]
+[; ;Lab4.c: 313: if ((Parte_Decimal-(Resultado*100))>0 | (Parte_Decimal-(Resultado*100))<0){
+"313
+[e $ ! | > - _Parte_Decimal -> * _Resultado -> -> 100 `i `l `ul -> -> -> 0 `i `l `ul < - _Parte_Decimal -> * _Resultado -> -> 100 `i `l `ul -> -> -> 0 `i `l `ul 525  ]
+{
+[; ;Lab4.c: 314: for (int i = 0; i < 3; i++) {
+"314
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 3 `i 525  ]
-[e $U 526  ]
-[e :U 525 ]
+[e $ < _i -> 3 `i 526  ]
+[e $U 527  ]
+[e :U 526 ]
 {
-[; ;Lab4.c: 313: r = n1 / n2;
-"313
-[e = _r -> / _n1 _n2 `l ]
-[; ;Lab4.c: 314: m = n1 % n2;
-"314
-[e = _m -> % _n1 _n2 `ul ]
-[; ;Lab4.c: 315: EscribeLCD_c(r+'0');
+[; ;Lab4.c: 315: Resultado = Numero_1 / Numero_2;
 "315
-[e ( _EscribeLCD_c (1 -> + _r -> -> 48 `ui `l `uc ]
-[; ;Lab4.c: 316: if(i == 0 && m != 0) {
+[e = _Resultado -> / _Numero_1 _Numero_2 `l ]
+[; ;Lab4.c: 316: m = Numero_1 % Numero_2;
 "316
-[e $ ! && == _i -> 0 `i != _m -> -> -> 0 `i `l `ul 528  ]
-{
-[; ;Lab4.c: 317: EscribeLCD_c(',');
+[e = _m -> % _Numero_1 _Numero_2 `ul ]
+[; ;Lab4.c: 317: EscribeLCD_c(Resultado+'0');
 "317
-[e ( _EscribeLCD_c (1 -> -> 44 `ui `uc ]
+[e ( _EscribeLCD_c (1 -> + _Resultado -> -> 48 `ui `l `uc ]
+[; ;Lab4.c: 318: if(i == 0 && m != 0) {
 "318
-}
-[e :U 528 ]
-[; ;Lab4.c: 318: }
-[; ;Lab4.c: 320: if (m != 0) {
+[e $ ! && == _i -> 0 `i != _m -> -> -> 0 `i `l `ul 529  ]
+{
+[; ;Lab4.c: 319: EscribeLCD_c(',');
+"319
+[e ( _EscribeLCD_c (1 -> -> 44 `ui `uc ]
 "320
-[e $ ! != _m -> -> -> 0 `i `l `ul 529  ]
-{
-[; ;Lab4.c: 321: n1 = m * 10;
-"321
-[e = _n1 -> * _m -> -> -> 10 `i `l `ul `ui ]
-"322
 }
-[; ;Lab4.c: 322: } else {
-[e $U 530  ]
 [e :U 529 ]
+[; ;Lab4.c: 320: }
+[; ;Lab4.c: 322: if (m != 0) {
+"322
+[e $ ! != _m -> -> -> 0 `i `l `ul 530  ]
 {
-[; ;Lab4.c: 323: break;
+[; ;Lab4.c: 323: Numero_1 = m * 10;
 "323
-[e $U 526  ]
+[e = _Numero_1 -> * _m -> -> -> 10 `i `l `ul `ui ]
 "324
 }
-[e :U 530 ]
-"326
-}
-"312
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 3 `i 525  ]
-[e :U 526 ]
-"326
-}
-"327
-}
-[; ;Lab4.c: 324: }
-[; ;Lab4.c: 326: }
-[; ;Lab4.c: 327: }else{
+[; ;Lab4.c: 324: } else {
 [e $U 531  ]
-[e :U 524 ]
+[e :U 530 ]
 {
-[; ;Lab4.c: 328: if(r>0x8000 & r!=1000 & r !=1001){
-"328
-[e $ ! & & > _r -> -> 32768 `ui `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 532  ]
-{
-[; ;Lab4.c: 329: EscribeLCD_c('-');
-"329
-[e ( _EscribeLCD_c (1 -> -> 45 `ui `uc ]
-[; ;Lab4.c: 330: DireccionaLCD(0x85);
-"330
-[e ( _DireccionaLCD (1 -> -> 133 `i `uc ]
-[; ;Lab4.c: 331: r = ~r+1;
-"331
-[e = _r + ~ _r -> -> 1 `i `l ]
-[; ;Lab4.c: 332: EscribeLCD_c(r+'0');
-"332
-[e ( _EscribeLCD_c (1 -> + _r -> -> 48 `ui `l `uc ]
-"333
+[; ;Lab4.c: 325: break;
+"325
+[e $U 527  ]
+"326
 }
-[; ;Lab4.c: 333: }else{
-[e $U 533  ]
-[e :U 532 ]
+[e :U 531 ]
+"328
+}
+"314
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 3 `i 526  ]
+[e :U 527 ]
+"328
+}
+"329
+}
+[; ;Lab4.c: 326: }
+[; ;Lab4.c: 328: }
+[; ;Lab4.c: 329: }else{
+[e $U 532  ]
+[e :U 525 ]
 {
-[; ;Lab4.c: 334: if(r>=0xA & r!=1000 & r !=1001){
+[; ;Lab4.c: 330: if(Resultado>0x8000 & Resultado!=1000 & Resultado !=1001 & Negativo==1){
+"330
+[e $ ! & & & > _Resultado -> -> 32768 `ui `l != _Resultado -> -> 1000 `i `l != _Resultado -> -> 1001 `i `l == -> _Negativo `i -> 1 `i 533  ]
+{
+[; ;Lab4.c: 331: EscribeLCD_c('-');
+"331
+[e ( _EscribeLCD_c (1 -> -> 45 `ui `uc ]
+[; ;Lab4.c: 332: DireccionaLCD(0x85);
+"332
+[e ( _DireccionaLCD (1 -> -> 133 `i `uc ]
+[; ;Lab4.c: 333: Resultado = ~Resultado+1;
+"333
+[e = _Resultado + ~ _Resultado -> -> 1 `i `l ]
+[; ;Lab4.c: 334: EscribeLCD_c(Resultado+'0');
 "334
-[e $ ! & & >= _r -> -> 10 `i `l != _r -> -> 1000 `i `l != _r -> -> 1001 `i `l 534  ]
-{
-[; ;Lab4.c: 335: for(int j=9;j>=0;j--){
+[e ( _EscribeLCD_c (1 -> + _Resultado -> -> 48 `ui `l `uc ]
 "335
+}
+[; ;Lab4.c: 335: }else{
+[e $U 534  ]
+[e :U 533 ]
+{
+[; ;Lab4.c: 336: if(Resultado>=0xA & Resultado!=1000 & Resultado !=1001){
+"336
+[e $ ! & & >= _Resultado -> -> 10 `i `l != _Resultado -> -> 1000 `i `l != _Resultado -> -> 1001 `i `l 535  ]
+{
+[; ;Lab4.c: 337: for(int j=9;j>=0;j--){
+"337
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 9 `i ]
-[e $ >= _j -> 0 `i 535  ]
-[e $U 536  ]
-[e :U 535 ]
+[e $ >= _j -> 0 `i 536  ]
+[e $U 537  ]
+[e :U 536 ]
 {
-[; ;Lab4.c: 336: potencia = 10;
-"336
-[e = _potencia -> -> 10 `i `l ]
-[; ;Lab4.c: 337: for(int k=j-1;k>0;k--){
-"337
+[; ;Lab4.c: 338: Potencia = 10;
+"338
+[e = _Potencia -> -> 10 `i `l ]
+[; ;Lab4.c: 339: for(int k=j-1;k>0;k--){
+"339
 {
 [v _k `i ~T0 @X0 1 a ]
 [e = _k - _j -> 1 `i ]
-[e $ > _k -> 0 `i 538  ]
-[e $U 539  ]
-[e :U 538 ]
-{
-[; ;Lab4.c: 338: potencia = potencia*10;
-"338
-[e = _potencia * _potencia -> -> 10 `i `l ]
-"339
-}
-"337
-[e -- _k -> 1 `i ]
-[e $ > _k -> 0 `i 538  ]
+[e $ > _k -> 0 `i 539  ]
+[e $U 540  ]
 [e :U 539 ]
-"339
-}
-[; ;Lab4.c: 339: }
-[; ;Lab4.c: 340: if(r/potencia>0){
+{
+[; ;Lab4.c: 340: Potencia = Potencia*10;
 "340
-[e $ ! > / _r _potencia -> -> 0 `i `l 541  ]
-{
-[; ;Lab4.c: 341: flag = 1;
+[e = _Potencia * _Potencia -> -> 10 `i `l ]
 "341
-[e = _flag -> -> 1 `i `uc ]
-[; ;Lab4.c: 342: EscribeLCD_c(r/potencia+48);
+}
+"339
+[e -- _k -> 1 `i ]
+[e $ > _k -> 0 `i 539  ]
+[e :U 540 ]
+"341
+}
+[; ;Lab4.c: 341: }
+[; ;Lab4.c: 342: if(Resultado/Potencia>0){
 "342
-[e ( _EscribeLCD_c (1 -> + / _r _potencia -> -> 48 `i `l `uc ]
-[; ;Lab4.c: 343: r=r%potencia;
-"343
-[e = _r % _r _potencia ]
-"344
-}
-[; ;Lab4.c: 344: }else if( (r/potencia)==0 && flag){
-[e $U 542  ]
-[e :U 541 ]
-[e $ ! && == / _r _potencia -> -> 0 `i `l != -> _flag `i -> -> -> 0 `i `uc `i 543  ]
+[e $ ! > / _Resultado _Potencia -> -> 0 `i `l 542  ]
 {
-[; ;Lab4.c: 345: if(r<10) EscribeLCD_c(r+48);
+[; ;Lab4.c: 343: flag = 1;
+"343
+[e = _flag -> -> 1 `i `uc ]
+[; ;Lab4.c: 344: EscribeLCD_c(Resultado/Potencia+48);
+"344
+[e ( _EscribeLCD_c (1 -> + / _Resultado _Potencia -> -> 48 `i `l `uc ]
+[; ;Lab4.c: 345: Resultado=Resultado%Potencia;
 "345
-[e $ ! < _r -> -> 10 `i `l 544  ]
-[e ( _EscribeLCD_c (1 -> + _r -> -> 48 `i `l `uc ]
-[e $U 545  ]
+[e = _Resultado % _Resultado _Potencia ]
 "346
-[e :U 544 ]
-[; ;Lab4.c: 346: else EscribeLCD_c(48);
-[e ( _EscribeLCD_c (1 -> -> 48 `i `uc ]
-[e :U 545 ]
-"347
 }
-[e :U 543 ]
-"348
+[; ;Lab4.c: 346: }else if( (Resultado/Potencia)==0 && flag){
+[e $U 543  ]
 [e :U 542 ]
-}
-"335
-[e -- _j -> 1 `i ]
-[e $ >= _j -> 0 `i 535  ]
-[e :U 536 ]
+[e $ ! && == / _Resultado _Potencia -> -> 0 `i `l != -> _flag `i -> -> -> 0 `i `uc `i 544  ]
+{
+[; ;Lab4.c: 347: if(Resultado<10) EscribeLCD_c(Resultado+48);
+"347
+[e $ ! < _Resultado -> -> 10 `i `l 545  ]
+[e ( _EscribeLCD_c (1 -> + _Resultado -> -> 48 `i `l `uc ]
+[e $U 546  ]
 "348
-}
+[e :U 545 ]
+[; ;Lab4.c: 348: else EscribeLCD_c(48);
+[e ( _EscribeLCD_c (1 -> -> 48 `i `uc ]
+[e :U 546 ]
 "349
 }
-[; ;Lab4.c: 347: }
-[; ;Lab4.c: 348: }
-[; ;Lab4.c: 349: }else{
-[e $U 546  ]
-[e :U 534 ]
-{
-[; ;Lab4.c: 350: if(r==1000){
+[e :U 544 ]
 "350
-[e $ ! == _r -> -> 1000 `i `l 547  ]
-{
-[; ;Lab4.c: 351: MensajeLCD_Var("Infinito");
+[e :U 543 ]
+}
+"337
+[e -- _j -> 1 `i ]
+[e $ >= _j -> 0 `i 536  ]
+[e :U 537 ]
+"350
+}
 "351
-[e ( _MensajeLCD_Var (1 -> :s 12C `*uc ]
+}
+[; ;Lab4.c: 349: }
+[; ;Lab4.c: 350: }
+[; ;Lab4.c: 351: }else{
+[e $U 547  ]
+[e :U 535 ]
+{
+[; ;Lab4.c: 352: if(Resultado==1000){
 "352
-}
-[; ;Lab4.c: 352: }else{
-[e $U 548  ]
-[e :U 547 ]
+[e $ ! == _Resultado -> -> 1000 `i `l 548  ]
 {
-[; ;Lab4.c: 353: if(r==1001){
+[; ;Lab4.c: 353: MensajeLCD_Var("Infinito");
 "353
-[e $ ! == _r -> -> 1001 `i `l 549  ]
-{
-[; ;Lab4.c: 354: DireccionaLCD(0xC1);
+[e ( _MensajeLCD_Var (1 -> :s 12C `*uc ]
 "354
-[e ( _DireccionaLCD (1 -> -> 193 `i `uc ]
-[; ;Lab4.c: 355: MensajeLCD_Var("Indeterminado");
-"355
-[e ( _MensajeLCD_Var (1 -> :s 13C `*uc ]
-"356
 }
-[; ;Lab4.c: 356: }else{
-[e $U 550  ]
-[e :U 549 ]
+[; ;Lab4.c: 354: }else{
+[e $U 549  ]
+[e :U 548 ]
 {
-[; ;Lab4.c: 357: EscribeLCD_c(r+'0');
+[; ;Lab4.c: 355: if(Resultado==1001){
+"355
+[e $ ! == _Resultado -> -> 1001 `i `l 550  ]
+{
+[; ;Lab4.c: 356: DireccionaLCD(0xC1);
+"356
+[e ( _DireccionaLCD (1 -> -> 193 `i `uc ]
+[; ;Lab4.c: 357: MensajeLCD_Var("Indeterminado");
 "357
-[e ( _EscribeLCD_c (1 -> + _r -> -> 48 `ui `l `uc ]
+[e ( _MensajeLCD_Var (1 -> :s 13C `*uc ]
 "358
 }
+[; ;Lab4.c: 358: }else{
+[e $U 551  ]
 [e :U 550 ]
+{
+[; ;Lab4.c: 359: EscribeLCD_c(Resultado+'0');
 "359
-}
-[e :U 548 ]
+[e ( _EscribeLCD_c (1 -> + _Resultado -> -> 48 `ui `l `uc ]
 "360
 }
-[e :U 546 ]
+[e :U 551 ]
 "361
 }
-[e :U 533 ]
+[e :U 549 ]
 "362
 }
-[e :U 531 ]
-[; ;Lab4.c: 358: }
-[; ;Lab4.c: 359: }
+[e :U 547 ]
+"363
+}
+[e :U 534 ]
+"364
+}
+[e :U 532 ]
 [; ;Lab4.c: 360: }
 [; ;Lab4.c: 361: }
 [; ;Lab4.c: 362: }
 [; ;Lab4.c: 363: }
-"363
-[e :UE 523 ]
+[; ;Lab4.c: 364: }
+[; ;Lab4.c: 365: }
+"365
+[e :UE 524 ]
 }
 [a 12C 73 110 102 105 110 105 116 111 0 ]
 [a 11C 76 86 80 32 65 99 116 105 118 97 100 111 0 ]

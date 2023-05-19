@@ -5725,34 +5725,6 @@ extern int printf(const char *, ...);
 # 15 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 30 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-
 # 14 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
@@ -5962,32 +5934,31 @@ break;
 }
 
 
-# 7 "Lab4.c"
+# 6 "Lab4.c"
 #pragma config FOSC=INTOSC_EC
 #pragma config WDT=OFF
 #pragma config PBADEN=OFF
 #pragma config LVP=OFF
 #pragma config MCLRE=ON
 
-unsigned char Tecla = 0;
-unsigned long partdecl = 0;
-long int r = 0;
-unsigned int n1 = 0;
-unsigned int n2 = 0;
+unsigned char Boton = 0;
+unsigned long Parte_Decimal = 0;
+long int Resultado = 0;
+unsigned int Numero_1 = 0;
+unsigned int Numero_2 = 0;
 unsigned int i = 0;
 unsigned long m = 0;
-unsigned char op = ' ';
-unsigned char n1c = ' ';
-unsigned char n2c = ' ';
-unsigned int color = 0;
-int contador = 0;
-int contador_digitos = 0;
-int verificador = 0;
-bool potencia = 0;
-bool factorial = 0;
+unsigned char Operador = ' ';
+unsigned char Numero_1_Char = ' ';
+unsigned char Numero_2_Char = ' ';
+unsigned int Color = 0;
+int Contador = 0;
+int Verificador = 0;
+bool Potencia = 0;
+bool Factorial = 0;
+bool Negativo = 0;
 int a;
 int b;
-unsigned long res;
 unsigned char LeerTeclado(void);
 unsigned long factorial_function(int);
 void ColorRGB(void);
@@ -6026,23 +5997,24 @@ MensajeLCD_Var("MCLR");
 _delay((unsigned long)((2000)*(1000000/4000.0)));
 BorraLCD();
 while(1){
+Negativo=0;
 LATB=0b00000000;
-verificador = 0;
-Tecla = LeerTeclado();
+Verificador = 0;
+Boton = LeerTeclado();
 ColorRGB();
-if(Tecla=='C'){
+if(Boton=='C'){
 
-op = ' ';
-n1c = ' ';
-n2c = ' ';
-n1 = 0;
-n2 = 0;
+Operador = ' ';
+Numero_1_Char = ' ';
+Numero_2_Char = ' ';
+Numero_1 = 0;
+Numero_2 = 0;
 i = 0;
-partdecl = 0;
+Parte_Decimal = 0;
 BorraLCD();
-}else if(op==' ' & (Tecla=='+'|Tecla=='^') & n1c == ' ' & n2c ==' '){
-potencia=~potencia;
-if(potencia){
+}else if(Operador==' ' & (Boton=='+'|Boton=='^') & Numero_1_Char == ' ' & Numero_2_Char ==' '){
+Potencia=~Potencia;
+if(Potencia){
 DireccionaLCD(0x80);
 MensajeLCD_Var("Modo Potencia");
 DireccionaLCD(0xC0);
@@ -6059,9 +6031,9 @@ _delay((unsigned long)((1000)*(1000000/4000.0)));
 BorraLCD();
 continue;
 }
-}else if(op==' ' & (Tecla=='-'|Tecla=='!') & n1c == ' ' & n2c ==' '){
-factorial=~factorial;
-if(factorial){
+}else if(Operador==' ' & (Boton=='-'|Boton=='!') & Numero_1_Char == ' ' & Numero_2_Char ==' '){
+Factorial=~Factorial;
+if(Factorial){
 DireccionaLCD(0x80);
 MensajeLCD_Var("Modo Factorial");
 DireccionaLCD(0xC0);
@@ -6079,80 +6051,83 @@ BorraLCD();
 continue;
 }
 }else{
-if((n1c==' '|n2c==' '|op==' ') & !factorial){
-if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x'|Tecla=='^') & n1c != ' ' & n2c ==' '){
+if((Numero_1_Char==' '|Numero_2_Char==' '|Operador==' ') & !Factorial){
+if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^') & Numero_1_Char != ' ' & Numero_2_Char ==' '){
 DireccionaLCD(0x81);
-EscribeLCD_c(Tecla);
-op = Tecla;
-}else if(n1c == ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='^')){
+EscribeLCD_c(Boton);
+Operador = Boton;
+}else if(Numero_1_Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
 DireccionaLCD(0x80);
-EscribeLCD_c(Tecla);
-n1c=Tecla;
-n1 = Tecla-'0';
-}else if(n2c==' ' & op!=' ' & n1c != ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='^')){
+EscribeLCD_c(Boton);
+Numero_1_Char=Boton;
+Numero_1 = Boton-'0';
+}else if(Numero_2_Char==' ' & Operador!=' ' & Numero_1_Char != ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
 DireccionaLCD(0x82);
-EscribeLCD_c(Tecla);
-n2c=Tecla;
-n2 = Tecla-'0';
+EscribeLCD_c(Boton);
+Numero_2_Char=Boton;
+Numero_2 = Boton-'0';
 }
-}else if ((n1c==' '|op==' ') & factorial){
-if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x'|Tecla=='^'|Tecla=='!') & n1c != ' ' & n2c ==' '){
+}else if ((Numero_1_Char==' '|Operador==' ') & Factorial){
+if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^'|Boton=='!') & Numero_1_Char != ' ' & Numero_2_Char ==' '){
 DireccionaLCD(0x81);
-EscribeLCD_c(Tecla);
-op = Tecla;
-}else if(n1c == ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='^'|Tecla!='!')){
+EscribeLCD_c(Boton);
+Operador = Boton;
+}else if(Numero_1_Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^'|Boton!='!')){
 DireccionaLCD(0x80);
-EscribeLCD_c(Tecla);
-n1c=Tecla;
-n1 = Tecla-'0';
+EscribeLCD_c(Boton);
+Numero_1_Char=Boton;
+Numero_1 = Boton-'0';
 }
-}else if((Tecla=='=' & n2c!=' ' & op!=' ' & n1c != ' ') & !factorial){
+}else if((Boton=='=' & Numero_2_Char!=' ' & Operador!=' ' & Numero_1_Char != ' ') & !Factorial){
 DireccionaLCD(0x83);
 EscribeLCD_c('=');
-switch(op){
+switch(Operador){
 case '+':
-r = n1 + n2;
-partdecl = r*100;
+Resultado = Numero_1 + Numero_2;
+Parte_Decimal = Resultado*100;
 break;
 case '-':
-r = n1 - n2;
-partdecl = r*100;
+Resultado = Numero_1 - Numero_2;
+if(Numero_1<Numero_2){
+Negativo=1;
+}
+Parte_Decimal = Resultado*100;
 break;
 case 'x':
-r = n1*n2;
-partdecl = r*100;
+Resultado = Numero_1*Numero_2;
+Parte_Decimal = Resultado*100;
 break;
 case '/':
-if(n2!=0){
-if(n1!=0){
-r = n1/n2;
-partdecl = (n1*100)/n2;
+if(Numero_2!=0){
+if(Numero_1!=0){
+Resultado = Numero_1/Numero_2;
+Parte_Decimal = (Numero_1*100)/Numero_2;
 }
 }else{
-if(n1 != 0 & n2 == 0) r = 1000;
-else if(n1 == 0 & n2 == 0) r = 1001;
-partdecl = r*100;
+if(Numero_1 != 0 & Numero_2 == 0) Resultado = 1000;
+else if(Numero_1 == 0 & Numero_2 == 0) Resultado = 1001;
+Parte_Decimal = Resultado*100;
 }
 break;
 case '^':
-r=n1;
-for(i=1;i<n2;i++){
-r=r*n1;
+Resultado=Numero_1;
+for(i=1;i<Numero_2;i++){
+Resultado=Resultado*Numero_1;
 }
-partdecl = r*100;
+Parte_Decimal = Resultado*100;
 break;
 default:
-r = 0;
+Resultado = 0;
 break;
 }
 DireccionaLCD(0x84);
-Imprimir_Resultado(r);
-}else if((Tecla=='=' & op=='!' & n1c != ' ') & factorial) {
+Imprimir_Resultado(Resultado);
+}else if((Boton=='=' & Operador=='!' & Numero_1_Char != ' ') & Factorial) {
 DireccionaLCD(0x82);
 EscribeLCD_c('=');
-r=factorial_function(n1);
-partdecl = r*100;
-Imprimir_Resultado(r);
+Resultado=factorial_function(Numero_1);
+Parte_Decimal = Resultado*100;
+Imprimir_Resultado(Resultado);
 }else{
 EscribeLCD_c('W');
 }
@@ -6164,11 +6139,11 @@ _delay((unsigned long)((700)*(1000000/4000.0)));
 
 unsigned char LeerTeclado(void){
 while(RB4==1 && RB5==1 && RB6==1 && RB7==1);
-verificador = 1;
+Verificador = 1;
 LATB=0b11111110;
 if(RB4==0){
-if(!potencia) return '+';
-else if(potencia) return '^';
+if(!Potencia) return '+';
+else if(Potencia) return '^';
 }
 else if(RB5==0) return '=';
 else if(RB6==0) return '0';
@@ -6176,8 +6151,8 @@ else if(RB7==0) return 'C';
 else{
 LATB=0b11111101;
 if(RB4==0){
-if(!factorial) return '-';
-else if(factorial) return '!';
+if(!Factorial) return '-';
+else if(Factorial) return '!';
 }
 else if(RB5==0) return '9';
 else if(RB6==0) return '8';
@@ -6201,8 +6176,8 @@ return '?';
 }
 
 void ColorRGB(void){
-if(color==8) color = 0;
-switch(color){
+if(Color==8) Color = 0;
+switch(Color){
 case 0:
 LATC = 0b00000000;
 break;
@@ -6230,7 +6205,7 @@ break;
 default:
 break;
 }
-color += 1;
+Color += 1;
 }
 
 unsigned long factorial_function(int a){
@@ -6244,15 +6219,15 @@ return fact;
 
 void __interrupt() ISR(void){
 if(TMR0IF==1){
-if(!verificador) contador = contador +1;
-else contador = 0;
+if(!Verificador) Contador = Contador +1;
+else Contador = 0;
 TMR0IF=0;
 LATE2 = !LATE2;
 TMR0 = 49911;
 }
 
-if(contador == 20){
-if(!verificador){
+if(Contador == 20){
+if(!Verificador){
 LATC7 = !LATC7;
 BorraLCD();
 DireccionaLCD(0x82);
@@ -6264,56 +6239,56 @@ while(1);
 
 }
 
-void Imprimir_Resultado(long r){
-long potencia = 10;
+void Imprimir_Resultado(long Resultado){
+long Potencia = 10;
 bool flag=0;
-if ((partdecl-(r*100))>0 | (partdecl-(r*100))<0){
+if ((Parte_Decimal-(Resultado*100))>0 | (Parte_Decimal-(Resultado*100))<0){
 for (int i = 0; i < 3; i++) {
-r = n1 / n2;
-m = n1 % n2;
-EscribeLCD_c(r+'0');
+Resultado = Numero_1 / Numero_2;
+m = Numero_1 % Numero_2;
+EscribeLCD_c(Resultado+'0');
 if(i == 0 && m != 0) {
 EscribeLCD_c(',');
 }
 
 if (m != 0) {
-n1 = m * 10;
+Numero_1 = m * 10;
 } else {
 break;
 }
 
 }
 }else{
-if(r>0x8000 & r!=1000 & r !=1001){
+if(Resultado>0x8000 & Resultado!=1000 & Resultado !=1001 & Negativo==1){
 EscribeLCD_c('-');
 DireccionaLCD(0x85);
-r = ~r+1;
-EscribeLCD_c(r+'0');
+Resultado = ~Resultado+1;
+EscribeLCD_c(Resultado+'0');
 }else{
-if(r>=0xA & r!=1000 & r !=1001){
+if(Resultado>=0xA & Resultado!=1000 & Resultado !=1001){
 for(int j=9;j>=0;j--){
-potencia = 10;
+Potencia = 10;
 for(int k=j-1;k>0;k--){
-potencia = potencia*10;
+Potencia = Potencia*10;
 }
-if(r/potencia>0){
+if(Resultado/Potencia>0){
 flag = 1;
-EscribeLCD_c(r/potencia+48);
-r=r%potencia;
-}else if( (r/potencia)==0 && flag){
-if(r<10) EscribeLCD_c(r+48);
+EscribeLCD_c(Resultado/Potencia+48);
+Resultado=Resultado%Potencia;
+}else if( (Resultado/Potencia)==0 && flag){
+if(Resultado<10) EscribeLCD_c(Resultado+48);
 else EscribeLCD_c(48);
 }
 }
 }else{
-if(r==1000){
+if(Resultado==1000){
 MensajeLCD_Var("Infinito");
 }else{
-if(r==1001){
+if(Resultado==1001){
 DireccionaLCD(0xC1);
 MensajeLCD_Var("Indeterminado");
 }else{
-EscribeLCD_c(r+'0');
+EscribeLCD_c(Resultado+'0');
 }
 }
 }

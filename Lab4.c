@@ -17,13 +17,14 @@ unsigned int Numero_2 = 0; //Segundo numero
 unsigned int i = 0;
 unsigned long m = 0;
 unsigned char Operador = ' '; //Operador
-unsigned char Numero_1-Char = ' '; //Primer numero en caracter
-unsigned char Numero_2-Char = ' ';  //Segundo numero en caracter
+unsigned char Numero_1_Char = ' '; //Primer numero en caracter
+unsigned char Numero_2_Char = ' ';  //Segundo numero en caracter
 unsigned int Color = 0;
 int Contador = 0;
 int Verificador = 0;
 bool Potencia = false;
 bool Factorial = false;
+bool Negativo = false;
 int a;
 int b;
 unsigned char LeerTeclado(void);//Declarar funcion para lectura de matricial
@@ -64,6 +65,7 @@ void main(void){
     __delay_ms(2000); //Retraso para evitar errores
     BorraLCD(); 
     while(1){
+        Negativo=false;
         LATB=0b00000000;
         Verificador = 0;
         Boton = LeerTeclado();
@@ -71,14 +73,14 @@ void main(void){
         if(Boton=='C'){ //Limpiar la pantalla si se presiona [1][4]  //Colocar el cursor en la primera posicion de segunda fila
             //Limpiar variables
             Operador = ' ';
-            Numero_1-Char = ' ';
-            Numero_2-Char = ' ';
+            Numero_1_Char = ' ';
+            Numero_2_Char = ' ';
             Numero_1 = 0;
             Numero_2 = 0;
             i = 0;
             Parte_Decimal = 0;
             BorraLCD();
-        }else if(Operador==' ' & (Boton=='+'|Boton=='^') & Numero_1-Char == ' ' & Numero_2-Char ==' '){
+        }else if(Operador==' ' & (Boton=='+'|Boton=='^') & Numero_1_Char == ' ' & Numero_2_Char ==' '){
             Potencia=~Potencia;
             if(Potencia){
                 DireccionaLCD(0x80); //Colocar el cursor en la primera posicion de primera fila
@@ -97,7 +99,7 @@ void main(void){
                 BorraLCD();
                 continue;
             }
-        }else if(Operador==' ' & (Boton=='-'|Boton=='!') & Numero_1-Char == ' ' & Numero_2-Char ==' '){
+        }else if(Operador==' ' & (Boton=='-'|Boton=='!') & Numero_1_Char == ' ' & Numero_2_Char ==' '){
             Factorial=~Factorial;
             if(Factorial){
                 DireccionaLCD(0x80); //Colocar el cursor en la primera posicion de primera fila
@@ -117,34 +119,34 @@ void main(void){
                 continue;
             }            
         }else{
-            if((Numero_1-Char==' '|Numero_2-Char==' '|Operador==' ') & !Factorial){ //Funciones si no se ha recibido nada
-                if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^') & Numero_1-Char != ' ' & Numero_2-Char ==' '){
+            if((Numero_1_Char==' '|Numero_2_Char==' '|Operador==' ') & !Factorial){ //Funciones si no se ha recibido nada
+                if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^') & Numero_1_Char != ' ' & Numero_2_Char ==' '){
                     DireccionaLCD(0x81);
                     EscribeLCD_c(Boton);
                     Operador = Boton;
-                }else if(Numero_1-Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
+                }else if(Numero_1_Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
                     DireccionaLCD(0x80);  
                     EscribeLCD_c(Boton);
-                    Numero_1-Char=Boton;
+                    Numero_1_Char=Boton;
                     Numero_1 = Boton-'0';
-                }else if(Numero_2-Char==' ' & Operador!=' ' & Numero_1-Char != ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
+                }else if(Numero_2_Char==' ' & Operador!=' ' & Numero_1_Char != ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^')){
                     DireccionaLCD(0x82);
                     EscribeLCD_c(Boton);
-                    Numero_2-Char=Boton;
+                    Numero_2_Char=Boton;
                     Numero_2 = Boton-'0';
                 }
-            }else if ((Numero_1-Char==' '|Operador==' ') & Factorial){
-                if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^'|Boton=='!') & Numero_1-Char != ' ' & Numero_2-Char ==' '){
+            }else if ((Numero_1_Char==' '|Operador==' ') & Factorial){
+                if(Operador==' ' & (Boton=='+'|Boton=='-'|Boton=='/'|Boton=='x'|Boton=='^'|Boton=='!') & Numero_1_Char != ' ' & Numero_2_Char ==' '){
                     DireccionaLCD(0x81);
                     EscribeLCD_c(Boton);
                     Operador = Boton;
-                }else if(Numero_1-Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^'|Boton!='!')){
+                }else if(Numero_1_Char == ' ' & (Boton!='+'|Boton!='-'|Boton!='/'|Boton!='x'|Boton!='='|Boton!='C'|Boton!='^'|Boton!='!')){
                     DireccionaLCD(0x80);  
                     EscribeLCD_c(Boton);
-                    Numero_1-Char=Boton;
+                    Numero_1_Char=Boton;
                     Numero_1 = Boton-'0';
                 }
-            }else if((Boton=='=' & Numero_2-Char!=' ' & Operador!=' ' & Numero_1-Char != ' ') & !Factorial){
+            }else if((Boton=='=' & Numero_2_Char!=' ' & Operador!=' ' & Numero_1_Char != ' ') & !Factorial){
                 DireccionaLCD(0x83);
                 EscribeLCD_c('=');
                 switch(Operador){
@@ -154,6 +156,9 @@ void main(void){
                     break;
                 case '-':
                     Resultado = Numero_1 - Numero_2;
+                    if(Numero_1<Numero_2){
+                        Negativo=true;
+                    }
                     Parte_Decimal = Resultado*100;
                     break; 
                 case 'x': 
@@ -185,7 +190,7 @@ void main(void){
                 }
                 DireccionaLCD(0x84);
                 Imprimir_Resultado(Resultado);
-            }else if((Boton=='=' & Operador=='!' & Numero_1-Char != ' ') & Factorial) {
+            }else if((Boton=='=' & Operador=='!' & Numero_1_Char != ' ') & Factorial) {
                 DireccionaLCD(0x82);
                 EscribeLCD_c('=');
                 Resultado=factorial_function(Numero_1);
@@ -322,7 +327,7 @@ void Imprimir_Resultado(long Resultado){
                                               
         }
     }else{
-        if(Resultado>0x8000 & Resultado!=1000 & Resultado !=1001){
+        if(Resultado>0x8000 & Resultado!=1000 & Resultado !=1001 & Negativo==true){
             EscribeLCD_c('-');
             DireccionaLCD(0x85);
             Resultado = ~Resultado+1;

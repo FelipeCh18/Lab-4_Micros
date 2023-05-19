@@ -42,17 +42,17 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"37 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"35 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
-"206
+"208
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-"244
+"246
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
-"277
+"279
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
-"286
+"288
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"308
+"310
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 "48 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
@@ -133,58 +133,60 @@
 [v _TMR0ON TMR0ON `VEb  1 e 0 @32431 ]
 "10871
 [v _TO TO `VEb  1 e 0 @32387 ]
-"13 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
-[v _Tecla Tecla `uc  1 e 1 0 ]
+"12 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+[v _Boton Boton `uc  1 e 1 0 ]
+"13
+[v _Parte_Decimal Parte_Decimal `ul  1 e 4 0 ]
 "14
-[v _partdecl partdecl `ul  1 e 4 0 ]
+[v _Resultado Resultado `l  1 e 4 0 ]
 "15
-[v _r r `l  1 e 4 0 ]
+[v _Numero_1 Numero_1 `ui  1 e 2 0 ]
 "16
-[v _n1 n1 `ui  1 e 2 0 ]
+[v _Numero_2 Numero_2 `ui  1 e 2 0 ]
 "17
-[v _n2 n2 `ui  1 e 2 0 ]
-"18
 [v _i i `ui  1 e 2 0 ]
-"19
+"18
 [v _m m `ul  1 e 4 0 ]
+"19
+[v _Operador Operador `uc  1 e 1 0 ]
 "20
-[v _op op `uc  1 e 1 0 ]
+[v _Numero_1_Char Numero_1_Char `uc  1 e 1 0 ]
 "21
-[v _n1c n1c `uc  1 e 1 0 ]
+[v _Numero_2_Char Numero_2_Char `uc  1 e 1 0 ]
 "22
-[v _n2c n2c `uc  1 e 1 0 ]
+[v _Color Color `ui  1 e 2 0 ]
 "23
-[v _color color `ui  1 e 2 0 ]
+[v _Contador Contador `i  1 e 2 0 ]
 "24
-[v _contador contador `i  1 e 2 0 ]
+[v _Verificador Verificador `i  1 e 2 0 ]
+"25
+[v _Potencia Potencia `uc  1 e 1 0 ]
 "26
-[v _verificador verificador `i  1 e 2 0 ]
+[v _Factorial Factorial `uc  1 e 1 0 ]
 "27
-[v _potencia potencia `uc  1 e 1 0 ]
-"28
-[v _factorial factorial `uc  1 e 1 0 ]
-"30
+[v _Negativo Negativo `uc  1 e 1 0 ]
+"29
 [v _b b `i  1 e 2 0 ]
 "36 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _interfaz interfaz `uc  1 e 1 0 ]
-"37 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"35 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
 {
-"203
+"205
 } 0
-"277
+"279
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
 {
-"278
+"280
 [v factorial_function@fact fact `l  1 a 4 29 ]
-"277
+"279
 [v factorial_function@a a `i  1 p 2 25 ]
-"284
+"286
 } 0
-"206
+"208
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 {
-"242
+"244
 } 0
 "62 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
@@ -196,22 +198,22 @@
 {
 "109
 } 0
-"308 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"310 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 {
-"337
+"339
 [v Imprimir_Resultado@k k `i  1 a 2 1 ]
-"335
+"337
 [v Imprimir_Resultado@j j `i  1 a 2 5 ]
-"312
+"314
 [v Imprimir_Resultado@i i `i  1 a 2 3 ]
-"308
-[v Imprimir_Resultado@potencia potencia `l  1 a 4 7 ]
 "310
+[v Imprimir_Resultado@Potencia Potencia `l  1 a 4 7 ]
+"312
 [v Imprimir_Resultado@flag flag `uc  1 a 1 0 ]
-"308
-[v Imprimir_Resultado@r r `l  1 p 4 27 ]
-"363
+"310
+[v Imprimir_Resultado@Resultado Resultado `l  1 p 4 27 ]
+"365
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -344,15 +346,15 @@
 [v ConfiguraLCD@a a `uc  1 a 1 13 ]
 "51
 } 0
-"244 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"246 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
 {
-"275
+"277
 } 0
-"286
+"288
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"306
+"308
 } 0
 "261 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
