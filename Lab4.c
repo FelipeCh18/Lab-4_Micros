@@ -27,12 +27,16 @@ bool Factorial = false;
 bool Negativo = false;
 int a;
 int b;
+unsigned char ubicacion;
+unsigned char mapeo[];
+
 unsigned char LeerTeclado(void);//Declarar funcion para lectura de matricial
 unsigned long factorial_function(int);//Declarar funcion para calcular el Factorial
 void ColorRGB(void);//Declarar funcion para escritura de colores del RGB
 unsigned char heart[]={0,27,31,31,14,4,0,0};
 unsigned char persona[]={14,14,4,31,4,4,10,17};
 void Imprimir_Resultado(long);//Declarar funcion para imprimir cada resultado
+void NuevoCaracter(unsigned char, unsigned char[]);
 
 
 void main(void){
@@ -370,4 +374,15 @@ void Imprimir_Resultado(long Resultado){
             } 
         }
     }
+}
+
+void NuevoCaracter(unsigned char ubicacion, unsigned char mapeo[]){
+    ComandoLCD(0x40 | (ubicacion << 3));
+	ComandoLCD(0x00);
+	for (i=0;i<=8;i++){
+		EscribeLCD_c(mapeo [i]);
+		ComandoLCD(0);
+		ComandoLCD(2);
+		mapeo<<1;
+	}	
 }

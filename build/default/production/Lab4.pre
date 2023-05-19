@@ -5766,6 +5766,7 @@ void EnviaDato(unsigned char);
 void InicializaLCD(void);
 void HabilitaLCD(void);
 void BorraLCD(void);
+void ComandoLCD(char);
 void EscribeLCD_c(unsigned char);
 void MensajeLCD_Var(char *);
 void DireccionaLCD(unsigned char);
@@ -5833,7 +5834,7 @@ HabilitaLCD();
 RetardoLCD(2);
 }
 
-# 117
+# 118
 void EscribeLCD_c(unsigned char a){
 
 
@@ -5844,7 +5845,7 @@ HabilitaLCD();
 RetardoLCD(4);
 }
 
-# 215
+# 216
 void EscribeLCD_n16(unsigned long a,unsigned char b){
 
 
@@ -5912,7 +5913,7 @@ HabilitaLCD();
 RetardoLCD(4);
 }
 
-# 309
+# 310
 void RetardoLCD(unsigned char a){
 switch(a){
 case 1: _delay((unsigned long)((15)*(1000000/4000.0)));
@@ -5930,6 +5931,19 @@ case 4: _delay((unsigned long)((40)*(1000000/4000000.0)));
 break;
 default:
 break;
+}
+}
+void ComandoLCD(char a){
+
+LATE0=0;
+if(a==1)
+BorraLCD();
+else if((a&0b11111110)==2)
+CursorAInicio();
+else{
+EnviaDato(a);
+HabilitaLCD();
+RetardoLCD(4);
 }
 }
 
@@ -5959,10 +5973,17 @@ bool Factorial = 0;
 bool Negativo = 0;
 int a;
 int b;
+unsigned char ubicacion;
+unsigned char mapeo[];
+
 unsigned char LeerTeclado(void);
 unsigned long factorial_function(int);
 void ColorRGB(void);
+unsigned char heart[]={0,27,31,31,14,4,0,0};
+unsigned char persona[]={14,14,4,31,4,4,10,17};
 void Imprimir_Resultado(long);
+void NuevoCaracter(unsigned char, unsigned char[]);
+
 
 void main(void){
 ADCON1=15;
@@ -5996,6 +6017,11 @@ MensajeLCD_Var("MCLR");
 }
 _delay((unsigned long)((2000)*(1000000/4000.0)));
 BorraLCD();
+NuevoCaracter(0,heart);
+NuevoCaracter(1,persona);
+EscribeLCD_c(0);
+_delay((unsigned long)((500)*(1000000/4000.0)));
+EscribeLCD_c(1);
 while(1){
 Negativo=0;
 LATB=0b00000000;
@@ -6293,5 +6319,16 @@ EscribeLCD_c(Resultado+'0');
 }
 }
 }
+}
+}
+
+void NuevoCaracter(unsigned char ubicacion, unsigned char mapeo[]){
+ComandoLCD(0x40 | (ubicacion << 3));
+ComandoLCD(0x00);
+for (i=0;i<=8;i++){
+EscribeLCD_c(mapeo [i]);
+ComandoLCD(0);
+ComandoLCD(2);
+mapeo<<1;
 }
 }

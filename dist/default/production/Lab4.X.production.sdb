@@ -42,17 +42,17 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"35 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"38 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
-"208
+"216
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-"246
+"254
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
-"279
+"287
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
-"288
+"296
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"310
+"318
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 "48 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
@@ -167,26 +167,30 @@
 [v _Negativo Negativo `uc  1 e 1 0 ]
 "29
 [v _b b `i  1 e 2 0 ]
+"33
+[v _heart heart `[8]uc  1 e 8 0 ]
+"34
+[v _persona persona `[8]uc  1 e 8 0 ]
 "36 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _interfaz interfaz `uc  1 e 1 0 ]
-"35 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"38 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
 {
-"205
+"213
 } 0
-"279
+"287
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
 {
-"280
+"288
 [v factorial_function@fact fact `l  1 a 4 29 ]
-"279
+"287
 [v factorial_function@a a `i  1 p 2 25 ]
-"286
+"294
 } 0
-"208
+"216
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 {
-"244
+"252
 } 0
 "62 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
@@ -198,22 +202,22 @@
 {
 "109
 } 0
-"310 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"318 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 {
-"339
+"347
 [v Imprimir_Resultado@k k `i  1 a 2 1 ]
-"337
+"345
 [v Imprimir_Resultado@j j `i  1 a 2 5 ]
-"314
+"322
 [v Imprimir_Resultado@i i `i  1 a 2 3 ]
-"310
+"318
 [v Imprimir_Resultado@Potencia Potencia `l  1 a 4 7 ]
-"312
+"320
 [v Imprimir_Resultado@flag flag `uc  1 a 1 0 ]
-"310
+"318
 [v Imprimir_Resultado@Resultado Resultado `l  1 p 4 27 ]
-"365
+"373
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -346,15 +350,15 @@
 [v ConfiguraLCD@a a `uc  1 a 1 13 ]
 "51
 } 0
-"246 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"254 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
 {
-"277
+"285
 } 0
-"288
+"296
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"308
+"316
 } 0
 "261 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]

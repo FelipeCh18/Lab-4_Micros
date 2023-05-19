@@ -41,6 +41,7 @@ void EnviaDato(unsigned char);
 void InicializaLCD(void);
 void HabilitaLCD(void);
 void BorraLCD(void);
+void ComandoLCD(char);
 void EscribeLCD_c(unsigned char);
 void MensajeLCD_Var(char *);
 void DireccionaLCD(unsigned char);
@@ -324,5 +325,18 @@ void RetardoLCD(unsigned char a){
 		default:
 				break;
 	}
+}
+void ComandoLCD(char a){
+//Función que envia cualquier comando al LCD
+	RS=0;
+	if(a==1)
+		BorraLCD();
+	else if((a&0b11111110)==2)	
+		CursorAInicio();
+	else{	
+		EnviaDato(a);
+		HabilitaLCD();
+		RetardoLCD(4);
+	}		
 }
 #endif	/* LIBLCDXC8_H */
