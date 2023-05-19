@@ -5982,7 +5982,7 @@ void ColorRGB(void);
 unsigned char heart[]={0,27,31,31,14,4,0,0};
 unsigned char persona[]={14,14,4,31,4,4,10,17};
 void Imprimir_Resultado(long);
-void NuevoCaracter(unsigned char, unsigned char[]);
+
 
 
 void main(void){
@@ -6017,8 +6017,8 @@ MensajeLCD_Var("MCLR");
 }
 _delay((unsigned long)((2000)*(1000000/4000.0)));
 BorraLCD();
-NuevoCaracter(0,heart);
-NuevoCaracter(1,persona);
+
+
 EscribeLCD_c(0);
 _delay((unsigned long)((500)*(1000000/4000.0)));
 EscribeLCD_c(1);
@@ -6136,9 +6136,13 @@ Parte_Decimal = Resultado*100;
 }
 break;
 case '^':
+if(Numero_2==0){
+Resultado=1;
+}else{
 Resultado=Numero_1;
 for(i=1;i<Numero_2;i++){
 Resultado=Resultado*Numero_1;
+}
 }
 Parte_Decimal = Resultado*100;
 break;
@@ -6322,13 +6326,3 @@ EscribeLCD_c(Resultado+'0');
 }
 }
 
-void NuevoCaracter(unsigned char ubicacion, unsigned char mapeo[]){
-ComandoLCD(0x40 | (ubicacion << 3));
-ComandoLCD(0x00);
-for (i=0;i<=8;i++){
-EscribeLCD_c(mapeo [i]);
-ComandoLCD(0);
-ComandoLCD(2);
-mapeo<<1;
-}
-}

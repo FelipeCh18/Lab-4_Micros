@@ -36,7 +36,7 @@ void ColorRGB(void);//Declarar funcion para escritura de colores del RGB
 unsigned char heart[]={0,27,31,31,14,4,0,0};
 unsigned char persona[]={14,14,4,31,4,4,10,17};
 void Imprimir_Resultado(long);//Declarar funcion para imprimir cada resultado
-void NuevoCaracter(unsigned char, unsigned char[]);
+//void NuevoCaracter(unsigned char, unsigned char[]);
 
 
 void main(void){
@@ -71,8 +71,8 @@ void main(void){
     }
     __delay_ms(2000); //Retraso para evitar errores
     BorraLCD(); 
-    NuevoCaracter(0,heart);
-    NuevoCaracter(1,persona);
+    //NuevoCaracter(0,heart);
+    //NuevoCaracter(1,persona);
     EscribeLCD_c(0);
     __delay_ms(500);
     EscribeLCD_c(1);
@@ -190,9 +190,13 @@ void main(void){
                     }
                     break;
                 case '^':
-                    Resultado=Numero_1;
-                    for(i=1;i<Numero_2;i++){
-                        Resultado=Resultado*Numero_1;
+                    if(Numero_2==0){
+                        Resultado=1;
+                    }else{
+                        Resultado=Numero_1;
+                        for(i=1;i<Numero_2;i++){
+                            Resultado=Resultado*Numero_1;
+                        }
                     }
                     Parte_Decimal = Resultado*100;
                     break;   
@@ -376,7 +380,7 @@ void Imprimir_Resultado(long Resultado){
     }
 }
 
-void NuevoCaracter(unsigned char ubicacion, unsigned char mapeo[]){
+/*void NuevoCaracter(unsigned char ubicacion, unsigned char mapeo[]){
     ComandoLCD(0x40 | (ubicacion << 3));
 	ComandoLCD(0x00);
 	for (i=0;i<=8;i++){
@@ -385,4 +389,4 @@ void NuevoCaracter(unsigned char ubicacion, unsigned char mapeo[]){
 		ComandoLCD(2);
 		mapeo<<1;
 	}	
-}
+}*/

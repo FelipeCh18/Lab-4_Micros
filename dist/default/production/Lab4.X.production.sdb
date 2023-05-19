@@ -42,41 +42,41 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"38 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"42 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
-"216
+"224
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-"254
+"262
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
-"287
+"295
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
-"296
+"304
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"318
+"326
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
-"48 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+"49 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
-"52
+"53
 [v _EnviaDato EnviaDato `(v  1 e 1 0 ]
 [v i2_EnviaDato EnviaDato `(v  1 e 1 0 ]
-"62
+"63
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
-"96
+"97
 [v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
 [v i2_HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
-"103
+"104
 [v _BorraLCD BorraLCD `(v  1 e 1 0 ]
 [v i2_BorraLCD BorraLCD `(v  1 e 1 0 ]
-"117
+"118
 [v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
 [v i2_EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
-"261
+"262
 [v _MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
 [v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
-"273
+"274
 [v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
 [v i2_DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
-"309
+"310
 [v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
 [v i2_RetardoLCD RetardoLCD `(v  1 e 1 0 ]
 "3074 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4550.h
@@ -167,57 +167,53 @@
 [v _Negativo Negativo `uc  1 e 1 0 ]
 "29
 [v _b b `i  1 e 2 0 ]
-"33
-[v _heart heart `[8]uc  1 e 8 0 ]
-"34
-[v _persona persona `[8]uc  1 e 8 0 ]
 "36 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _interfaz interfaz `uc  1 e 1 0 ]
-"38 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"42 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _main main `(v  1 e 1 0 ]
 {
-"213
+"221
 } 0
-"287
+"295
 [v _factorial_function factorial_function `(ul  1 e 4 0 ]
 {
-"288
+"296
 [v factorial_function@fact fact `l  1 a 4 29 ]
-"287
+"295
 [v factorial_function@a a `i  1 p 2 25 ]
-"294
+"302
 } 0
-"216
+"224
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 {
-"252
+"260
 } 0
-"62 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+"63 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
 {
-"95
+"96
 } 0
-"103
+"104
 [v _BorraLCD BorraLCD `(v  1 e 1 0 ]
 {
-"109
+"110
 } 0
-"318 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"326 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _Imprimir_Resultado Imprimir_Resultado `(v  1 e 1 0 ]
 {
-"347
+"355
 [v Imprimir_Resultado@k k `i  1 a 2 1 ]
-"345
+"353
 [v Imprimir_Resultado@j j `i  1 a 2 5 ]
-"322
+"330
 [v Imprimir_Resultado@i i `i  1 a 2 3 ]
-"318
+"326
 [v Imprimir_Resultado@Potencia Potencia `l  1 a 4 7 ]
-"320
+"328
 [v Imprimir_Resultado@flag flag `uc  1 a 1 0 ]
-"318
+"326
 [v Imprimir_Resultado@Resultado Resultado `l  1 p 4 27 ]
-"373
+"381
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -285,14 +281,14 @@
 [v ___aldiv@divisor divisor `l  1 p 4 17 ]
 "41
 } 0
-"261 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+"262 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
 {
-"265
+"266
 [v MensajeLCD_Var@i i `i  1 a 2 20 ]
-"261
+"262
 [v MensajeLCD_Var@a a `*.31uc  1 p 1 18 ]
-"271
+"272
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
@@ -303,71 +299,71 @@
 [v strlen@s s `*.31Cuc  1 p 1 13 ]
 "13
 } 0
-"117 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+"118 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
 {
 [v EscribeLCD_c@a a `uc  1 a 1 wreg ]
 [v EscribeLCD_c@a a `uc  1 a 1 wreg ]
-"121
+"122
 [v EscribeLCD_c@a a `uc  1 a 1 17 ]
-"125
+"126
 } 0
-"273
+"274
 [v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
 {
 [v DireccionaLCD@a a `uc  1 a 1 wreg ]
 [v DireccionaLCD@a a `uc  1 a 1 wreg ]
-"276
+"277
 [v DireccionaLCD@a a `uc  1 a 1 17 ]
-"280
+"281
 } 0
-"52
+"53
 [v _EnviaDato EnviaDato `(v  1 e 1 0 ]
 {
 [v EnviaDato@a a `uc  1 a 1 wreg ]
 [v EnviaDato@a a `uc  1 a 1 wreg ]
 [v EnviaDato@a a `uc  1 a 1 16 ]
-"61
+"62
 } 0
-"309
+"310
 [v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
 {
 [v RetardoLCD@a a `uc  1 a 1 wreg ]
 [v RetardoLCD@a a `uc  1 a 1 wreg ]
 [v RetardoLCD@a a `uc  1 a 1 14 ]
-"327
+"328
 } 0
-"96
+"97
 [v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
 {
-"102
+"103
 } 0
-"48
+"49
 [v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
 {
 [v ConfiguraLCD@a a `uc  1 a 1 wreg ]
 [v ConfiguraLCD@a a `uc  1 a 1 wreg ]
 [v ConfiguraLCD@a a `uc  1 a 1 13 ]
-"51
+"52
 } 0
-"254 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
+"262 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\Lab4.c
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
 {
-"285
+"293
 } 0
-"296
+"304
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"316
+"324
 } 0
-"261 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+"262 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
 {
-"265
+"266
 [v i2MensajeLCD_Var@i i `i  1 a 2 7 ]
-"261
+"262
 [v i2MensajeLCD_Var@a a `*.31uc  1 p 1 5 ]
-"271
+"272
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\strlen.c
 [v i2_strlen strlen `(ui  1 e 2 0 ]
@@ -378,47 +374,47 @@
 [v i2strlen@s s `*.31Cuc  1 p 1 0 ]
 "13
 } 0
-"117 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
+"118 E:\Uni-Nacho\La Nacho\Microcontroladores\Lab4.X\LibLCDXC8.h
 [v i2_EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
 {
 [v i2EscribeLCD_c@a a `uc  1 a 1 wreg ]
 [v i2EscribeLCD_c@a a `uc  1 a 1 wreg ]
-"121
+"122
 [v i2EscribeLCD_c@a a `uc  1 a 1 4 ]
-"125
+"126
 } 0
-"273
+"274
 [v i2_DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
 {
 [v i2DireccionaLCD@a a `uc  1 a 1 wreg ]
 [v i2DireccionaLCD@a a `uc  1 a 1 wreg ]
-"276
+"277
 [v i2DireccionaLCD@a a `uc  1 a 1 4 ]
-"280
+"281
 } 0
-"103
+"104
 [v i2_BorraLCD BorraLCD `(v  1 e 1 0 ]
 {
-"109
+"110
 } 0
-"52
+"53
 [v i2_EnviaDato EnviaDato `(v  1 e 1 0 ]
 {
 [v i2EnviaDato@a a `uc  1 a 1 wreg ]
 [v i2EnviaDato@a a `uc  1 a 1 wreg ]
 [v i2EnviaDato@a a `uc  1 a 1 3 ]
-"61
+"62
 } 0
-"309
+"310
 [v i2_RetardoLCD RetardoLCD `(v  1 e 1 0 ]
 {
 [v i2RetardoLCD@a a `uc  1 a 1 wreg ]
 [v i2RetardoLCD@a a `uc  1 a 1 wreg ]
 [v i2RetardoLCD@a a `uc  1 a 1 1 ]
-"327
+"328
 } 0
-"96
+"97
 [v i2_HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
 {
-"102
+"103
 } 0
