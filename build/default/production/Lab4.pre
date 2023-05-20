@@ -5771,6 +5771,7 @@ void EscribeLCD_c(unsigned char);
 void MensajeLCD_Var(char *);
 void DireccionaLCD(unsigned char);
 
+
 void ConfiguraLCD(unsigned char a){
 if(a==4 | a ==8)
 interfaz=a;
@@ -5834,7 +5835,7 @@ HabilitaLCD();
 RetardoLCD(2);
 }
 
-# 118
+# 119
 void EscribeLCD_c(unsigned char a){
 
 
@@ -5845,7 +5846,7 @@ HabilitaLCD();
 RetardoLCD(4);
 }
 
-# 216
+# 217
 void EscribeLCD_n16(unsigned long a,unsigned char b){
 
 
@@ -5913,7 +5914,7 @@ HabilitaLCD();
 RetardoLCD(4);
 }
 
-# 310
+# 311
 void RetardoLCD(unsigned char a){
 switch(a){
 case 1: _delay((unsigned long)((15)*(1000000/4000.0)));
@@ -5936,14 +5937,18 @@ break;
 void ComandoLCD(char a){
 
 LATE0=0;
-if(a==1)
-BorraLCD();
-else if((a&0b11111110)==2)
-CursorAInicio();
-else{
-EnviaDato(a);
+LATD=a&0xF0;
 HabilitaLCD();
-RetardoLCD(4);
+LATD=(a&0xF0)<<4;
+HabilitaLCD();
+RetardoLCD(2);
+RetardoLCD(2);
+}
+void NuevoCaracter(unsigned char ubicacion, unsigned char mapeo[]){
+int i;
+ComandoLCD(0x40 + (ubicacion * 8));
+for (i=0;i<8;i++){
+EscribeLCD_c(mapeo [i]);
 }
 }
 
@@ -5973,16 +5978,12 @@ bool Factorial = 0;
 bool Negativo = 0;
 int a;
 int b;
-unsigned char ubicacion;
-unsigned char mapeo[];
-
 unsigned char LeerTeclado(void);
 unsigned long factorial_function(int);
 void ColorRGB(void);
 unsigned char heart[]={0,27,31,31,14,4,0,0};
 unsigned char persona[]={14,14,4,31,4,4,10,17};
 void Imprimir_Resultado(long);
-
 
 
 void main(void){
@@ -6006,23 +6007,31 @@ TMR0ON=1;
 OSCCON = 0b11000100;
 
 BorraLCD();
-if(TO == 1 && PD == 1){
+if(TO == 1 & RI == 1){
 BorraLCD();
+RI = 0;
 MensajeLCD_Var("Energia");
 }else{
-if(POR==0){
+if(TO == 1 | PD == 0 ){
 BorraLCD();
 MensajeLCD_Var("MCLR");
 }
 }
-_delay((unsigned long)((2000)*(1000000/4000.0)));
+_delay((unsigned long)((1000)*(1000000/4000.0)));
 BorraLCD();
-
-
+NuevoCaracter(0,heart);
+DireccionaLCD(0x80);
 EscribeLCD_c(0);
 _delay((unsigned long)((500)*(1000000/4000.0)));
-EscribeLCD_c(1);
+DireccionaLCD(0x82);
+MensajeLCD_Var("Bienvenido");
+NuevoCaracter(4,persona);
+DireccionaLCD(0x8E);
+EscribeLCD_c(4);
+_delay((unsigned long)((2000)*(1000000/4000.0)));
+BorraLCD();
 while(1){
+
 Negativo=0;
 LATB=0b00000000;
 Verificador = 0;
@@ -6325,4 +6334,3 @@ EscribeLCD_c(Resultado+'0');
 }
 }
 }
-

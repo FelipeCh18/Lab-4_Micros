@@ -5,7 +5,7 @@
 #include "LibLCDXC8.h" //Libreria para uso de LCD
 #pragma config FOSC=INTOSC_EC //Sentencia para usar oscilador externo
 #pragma config WDT=OFF //Apagar el perro guardian
-#pragma config PBADEN=OFF //Apagar funciones análogas
+//#pragma config PBADEN=OFF //Apagar funciones análogas
 #pragma config LVP=OFF //Apagar el modo de bajo consumo
 #pragma config MCLRE=ON //Encender el MCLR
 
@@ -27,16 +27,12 @@ bool Factorial = false;
 bool Negativo = false;
 int a;
 int b;
-unsigned char ubicacion;
-unsigned char mapeo[];
-
 unsigned char LeerTeclado(void);//Declarar funcion para lectura de matricial
 unsigned long factorial_function(int);//Declarar funcion para calcular el Factorial
 void ColorRGB(void);//Declarar funcion para escritura de colores del RGB
 unsigned char heart[]={0,27,31,31,14,4,0,0};
 unsigned char persona[]={14,14,4,31,4,4,10,17};
 void Imprimir_Resultado(long);//Declarar funcion para imprimir cada resultado
-//void NuevoCaracter(unsigned char, unsigned char[]);
 
 
 void main(void){
@@ -60,22 +56,29 @@ void main(void){
     OSCCON = 0b11000100;//Configuracion del oscilador para entrar en modo IDLE ante instruccion SLEEP y ajuste de frecuencia
     //Fin de bajo conumo
     BorraLCD(); //Limpiar el LCD
-    if(TO == 1 && PD == 1){
+    if(TO == 1 & RI == 1){
         BorraLCD();
+        RI = 0;
         MensajeLCD_Var("Energia");
     }else{
-        if(POR==0){
+        if(TO == 1 | PD == 0 ){ 
         BorraLCD();
         MensajeLCD_Var("MCLR");
-    } 
+        }
     }
-    __delay_ms(2000); //Retraso para evitar errores
+    __delay_ms(1000); //Retraso para evitar errores
     BorraLCD(); 
-    //NuevoCaracter(0,heart);
-    //NuevoCaracter(1,persona);
+    NuevoCaracter(0,heart);
+    DireccionaLCD(0x80);
     EscribeLCD_c(0);
     __delay_ms(500);
-    EscribeLCD_c(1);
+    DireccionaLCD(0x82);
+    MensajeLCD_Var("Bienvenido");
+    NuevoCaracter(4,persona);
+    DireccionaLCD(0x8E);
+    EscribeLCD_c(4);
+    __delay_ms(2000);
+    BorraLCD();
     while(1){
         Negativo=false;
         LATB=0b00000000;
@@ -379,14 +382,3 @@ void Imprimir_Resultado(long Resultado){
         }
     }
 }
-
-/*void NuevoCaracter(unsigned char ubicacion, unsigned char mapeo[]){
-    ComandoLCD(0x40 | (ubicacion << 3));
-	ComandoLCD(0x00);
-	for (i=0;i<=8;i++){
-		EscribeLCD_c(mapeo [i]);
-		ComandoLCD(0);
-		ComandoLCD(2);
-		mapeo<<1;
-	}	
-}*/
