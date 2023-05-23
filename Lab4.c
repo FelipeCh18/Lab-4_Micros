@@ -5,7 +5,7 @@
 #include "LibLCDXC8.h" //Libreria para uso de LCD
 #pragma config FOSC=INTOSC_EC //Sentencia para usar oscilador externo
 #pragma config WDT=OFF //Apagar el perro guardian
-//#pragma config PBADEN=OFF //Apagar funciones análogas
+#pragma config PBADEN=OFF //Apagar funciones análogas
 #pragma config LVP=OFF //Apagar el modo de bajo consumo
 #pragma config MCLRE=ON //Encender el MCLR
 
